@@ -1,0 +1,113 @@
+---
+---
+
+<footer class="footer">
+  <div class="container-wide">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <h4>ABOUT US</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#team">Meet The Team</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>OFFICE HOURS</h4>
+        <p>Monday-Saturday: 9:00AM – 5:00PM</p>
+        <p>Sunday: Closed</p>
+      </div>
+      <div class="footer-section">
+        <h4>LOCATION</h4>
+        <p>668 Wynnum road, Morningside, 4170</p>
+        <p>1 Ern Harley Drive, Burleigh Heads, QLD 4220</p>
+      </div>
+      <div class="footer-section">
+        <h4>CONTACT</h4>
+        <p><a href="tel:0413245022">0413 245 022</a></p>
+        <p><a href="mailto:info@edwardsandsmith.com.au">info@edwardsandsmith.com.au</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>2024 All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--white);
+    color: var(--text-primary);
+    padding: 60px 0 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-section h4 {
+    font-size: var(--body-medium);
+    color: var(--primary-green);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .footer-section ul {
+    list-style: none;
+  }
+
+  .footer-section li {
+    margin-bottom: 8px;
+  }
+
+  .footer-section a {
+    color: var(--text-primary);
+    font-size: var(--body-small);
+  }
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-section p {
+    font-size: var(--body-small);
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .footer-bottom p {
+    font-size: var(--body-small);
+    opacity: 0.7;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 576px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .footer {
+      padding: 40px 0 20px;
+    }
+  }
+</style>

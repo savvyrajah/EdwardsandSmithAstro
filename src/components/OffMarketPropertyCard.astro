@@ -1,0 +1,166 @@
+---
+interface Props {
+  suburb: string;
+  region: string;
+  beds: number;
+  baths: number;
+  cars?: number;
+  pool?: boolean;
+  price: string;
+  image?: string;
+  distanceToBeach?: string;
+}
+
+const { suburb, region, beds, baths, cars, pool, price, image, distanceToBeach } = Astro.props;
+---
+
+<div class="offmarket-card">
+  <div class="offmarket-image">
+    {image ? (
+      <img src={image} alt={`Property in ${suburb}`} loading="lazy" />
+    ) : (
+      <div class="image-placeholder"></div>
+    )}
+    <div class="offmarket-badge">OFF-MARKET</div>
+  </div>
+  <div class="offmarket-content">
+    <h3>{suburb}</h3>
+    <p class="region">{region}</p>
+    <div class="property-details">
+      <span class="detail"><strong>{beds}</strong> bed</span>
+      <span class="detail"><strong>{baths}</strong> bath</span>
+      {cars && <span class="detail"><strong>{cars}</strong> car</span>}
+      {pool && <span class="detail">Pool</span>}
+    </div>
+    {distanceToBeach && <p class="distance">{distanceToBeach}</p>}
+    <p class="price">{price}</p>
+    <a href="#contact" class="button-secondary">Book a Consultation</a>
+    <p class="reveal-note">Full details shared when you sign up with us</p>
+  </div>
+</div>
+
+<style>
+  .offmarket-card {
+    background: var(--white);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .offmarket-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--box-shadow-medium);
+  }
+
+  .offmarket-image {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+  }
+
+  .offmarket-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(12px) brightness(0.8);
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #5A5B54, #898B7A);
+  }
+
+  .offmarket-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .offmarket-content {
+    padding: 20px;
+  }
+
+  .offmarket-content h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: var(--primary-green);
+  }
+
+  .region {
+    font-size: 14px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+  }
+
+  .property-details {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .detail {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .detail strong {
+    color: var(--text-primary);
+  }
+
+  .distance {
+    font-size: 14px;
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+  }
+
+  .button-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    font-family: var(--font-heading);
+    font-size: 13px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .button-secondary:hover {
+    background-color: var(--primary-green);
+    color: var(--white);
+  }
+
+  .reveal-note {
+    font-size: 12px;
+    color: var(--text-light);
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+  }
+</style>

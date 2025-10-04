@@ -1,0 +1,457 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import OffMarketPropertyCard from '../components/OffMarketPropertyCard.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+---
+
+<Layout
+  title="Gold Coast Off-Market Properties | Burleigh, Palm Beach Pre-Market Homes | Edwards & Smith"
+  description="Access exclusive Gold Coast off-market properties in Burleigh Waters, Palm Beach, and more. Get pre-market access before public listings with Edwards & Smith Buyers Agents."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="offmarket-hero section">
+      <div class="container">
+        <h1>Gold Coast Off-Market & Pre-Market Properties</h1>
+        <p class="hero-subtitle">Exclusive Burleigh, Palm Beach & Mermaid Beach opportunities</p>
+        <p class="hero-description">
+          Access Gold Coast's most desirable off-market properties before they reach the public market.
+          From beachfront homes to family estates, we bring you exclusive opportunities.
+        </p>
+      </div>
+    </section>
+
+    <!-- Current Gold Coast Off-Market Properties -->
+    <section class="properties-section section">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2>Current Gold Coast Off-Market Opportunities</h2>
+          <p class="section-intro">
+            These premium Gold Coast properties are available to serious buyers only. Book a consultation to discuss these opportunities.
+          </p>
+        </div>
+
+        <div class="properties-grid">
+          <OffMarketPropertyCard
+            suburb="Mallawa Drive, Palm Beach"
+            region="Gold Coast - Beachside"
+            beds={4}
+            baths={2}
+            cars={2}
+            price="$2.5M"
+            image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Nuthatch Drive, Burleigh Waters"
+            region="Gold Coast"
+            beds={4}
+            baths={2}
+            cars={2}
+            price="$2.7M"
+            image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Wagtail Court, Burleigh Waters"
+            region="Gold Coast"
+            beds={3}
+            baths={2}
+            cars={2}
+            price="$1.3M"
+            image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Aruma Avenue, Burleigh Waters"
+            region="Gold Coast - Waterfront"
+            beds={5}
+            baths={3}
+            cars={2}
+            price="$4.5M"
+            image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Kingfisher Crescent, Burleigh Waters"
+            region="Gold Coast"
+            beds={5}
+            baths={2}
+            cars={2}
+            price="$3.5M"
+            image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Penguin Parade, Burleigh Waters"
+            region="Gold Coast"
+            beds={4}
+            baths={4}
+            cars={2}
+            price="$2.8M"
+            image="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Process -->
+    <section class="process-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>How It Works</h2>
+          <p class="section-intro">Our simple 4-step process to finding your dream Gold Coast property</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Book a Consultation</h3>
+            <p>We discuss your property goals, budget, preferred suburbs, and must-haves</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Sign Up With Us</h3>
+            <p>Sign our buyers agent agreement and we immediately start searching for properties that match your criteria</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Expert Property Advice</h3>
+            <p>We share off-market opportunities and provide expert analysis on properties aligned to your preferences</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Buy Your Dream Home</h3>
+            <p>Secure your property faster and at a better price than buying solo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Purchases on Gold Coast -->
+    <section class="recent-purchases section">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2>Recent Purchases on the Gold Coast</h2>
+          <p class="section-intro">See what we've secured for our clients across the Gold Coast</p>
+        </div>
+        <div class="properties-grid">
+          <PropertyCard
+            image="https://edwardsandsmith.com.au/wp-content/uploads/2025/08/image-29-e1755139676515-1024x689.jpg"
+            title="Burleigh Waters, 4220"
+            description="Not only did we secure this stunning family home in Burleigh within 2 weeks for our clients, but we also saved them over $100,000 with their budget."
+          />
+          <PropertyCard
+            image="https://edwardsandsmith.com.au/wp-content/uploads/2025/08/image0-e1755138640868-1024x692.jpg"
+            title="Burleigh Heads, 4220"
+            description="SMSF Warehouse in Burleigh Heads. We recently helped our client secure this blue chip investment"
+          />
+          <PropertyCard
+            image="https://edwardsandsmith.com.au/wp-content/uploads/2025/08/outdoor-carina.jpg"
+            title="Carina Heights, 4152"
+            description="Purchased for a time-poor professional after a 12-month solo search."
+          />
+        </div>
+        <div class="view-all-link">
+          <a href="/#recent" class="button-text">View All Recent Purchases →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold Coast Hot Spots -->
+    <section class="suburbs-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gold Coast Areas We Cover</h2>
+          <p class="section-intro">Specializing in the Gold Coast's most sought-after beachside suburbs</p>
+        </div>
+        <div class="suburbs-grid">
+          <div class="suburb-highlight">
+            <h3>Burleigh Heads & Waters</h3>
+            <p>Lifestyle capital of the Gold Coast. Strong demand for family homes near Burleigh village and beaches.</p>
+          </div>
+          <div class="suburb-highlight">
+            <h3>Palm Beach</h3>
+            <p>Prestigious beachfront living. Highly sought-after by families and downsizers seeking coastal luxury.</p>
+          </div>
+          <div class="suburb-highlight">
+            <h3>Mermaid Beach</h3>
+            <p>Central Gold Coast location. Perfect for professionals wanting beach access and city convenience.</p>
+          </div>
+          <div class="suburb-highlight">
+            <h3>Currumbin & Elanora</h3>
+            <p>Family-friendly southern Gold Coast. Great schools, parks, and more affordable entry points.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gold Coast Off-Market Success Stories</h2>
+        </div>
+        <div class="stories-grid">
+          <div class="story">
+            <h3>$100K Saved in Burleigh Waters</h3>
+            <p>"We secured a stunning family home for our clients in Burleigh Waters $100K under budget. The off-market opportunity meant no competition and strong negotiating power."</p>
+            <p class="story-details">4 bed, 2 bath | Purchased in 2 weeks</p>
+          </div>
+          <div class="story">
+            <h3>Perfect Palm Beach Find</h3>
+            <p>"After 12 months of searching, we found this family the perfect off-market property in Palm Beach. Saved them time, stress, and money."</p>
+            <p class="story-details">4 bed, 3 bath | Off-market exclusive</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+      <div class="container">
+        <h2>Don't Miss Gold Coast's Best Off-Market Opportunities</h2>
+        <p>Secure your dream property before it hits the market. Book your free consultation now.</p>
+        <a href="#contact" class="button-primary">Book Free Consultation</a>
+        <p class="cta-note">Act fast | Premium properties move quickly</p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .offmarket-hero {
+    background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1600'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+  }
+
+  .offmarket-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(90, 91, 84, 0.7), rgba(137, 139, 122, 0.7));
+    z-index: 0;
+  }
+
+  .offmarket-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .offmarket-hero h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: var(--body-regular);
+    line-height: 1.6;
+  }
+
+  .properties-section {
+    background-color: var(--white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 20px;
+  }
+
+  .section-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .recent-purchases {
+    background-color: #f9f9f9;
+  }
+
+  .view-all-link {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .button-text {
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .button-text:hover {
+    opacity: 0.7;
+  }
+
+  .suburbs-section {
+    background-color: var(--white);
+  }
+
+  .suburbs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .suburb-highlight {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: var(--border-radius-small);
+  }
+
+  .suburb-highlight h3 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+  }
+
+  .success-section {
+    background-color: #f9f9f9;
+  }
+
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .story {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-small);
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .story h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+  }
+
+  .story-details {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 15px;
+    font-weight: 600;
+  }
+
+  .process-section {
+    background-color: #f9f9f9;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 auto 15px;
+  }
+
+  .step h3 {
+    margin-bottom: 10px;
+  }
+
+  .cta-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    margin-bottom: 25px;
+    font-size: var(--body-large);
+  }
+
+  .cta-note {
+    font-size: 14px;
+    margin-top: 20px;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 1024px) {
+    .properties-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .properties-grid,
+    .suburbs-grid,
+    .stories-grid,
+    .steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Gold Coast Off-Market Property Access",
+  "provider": {
+    "@type": "RealEstateAgent",
+    "name": "Edwards & Smith Buyers Agents"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Gold Coast",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "description": "Exclusive access to Gold Coast off-market and pre-market properties in Burleigh, Palm Beach, and Mermaid Beach.",
+  "offers": {
+    "@type": "Offer",
+    "description": "Buyers agent service with off-market property access"
+  }
+}
+</script>

@@ -1,0 +1,547 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import OffMarketPropertyCard from '../components/OffMarketPropertyCard.astro';
+---
+
+<Layout
+  title="Pre & Off-Market Properties Brisbane, Gold Coast & Bali | Edwards & Smith"
+  description="Get exclusive access to pre & off-market properties before they hit the market. Brisbane, Gold Coast & Bali off-market opportunities with Edwards & Smith Buyers Agents."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="offmarket-hero section">
+      <div class="container">
+        <h1>Exclusive Pre & Off-Market Properties</h1>
+        <p class="hero-subtitle">Access properties before they hit the public market</p>
+        <p class="hero-description">
+          As trusted buyers agents, we receive pre & off-market properties from real estate agents
+          looking for serious, finance-approved buyers. Get early access to these exclusive opportunities.
+        </p>
+      </div>
+    </section>
+
+    <!-- What is Pre-Market vs Off-Market Section -->
+    <section class="info-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Understanding Pre-Market & Off-Market Properties</h2>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>What is a Pre-Market Property?</h3>
+            <p>
+              A pre-market property is one that will soon be listed publicly, but the agent offers it
+              to serious buyers first. This gives you 1-2 weeks head start before public competition begins.
+            </p>
+            <ul>
+              <li>First access before public listing</li>
+              <li>Less competition from other buyers</li>
+              <li>Better negotiating position</li>
+              <li>Time to do due diligence before auction/sale</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3>What is an Off-Market Property?</h3>
+            <p>
+              An off-market property is sold privately without any public advertising. The seller wants
+              a quiet, confidential sale and the agent brings it to qualified buyers only.
+            </p>
+            <ul>
+              <li>No public competition</li>
+              <li>Confidential sale process</li>
+              <li>Often below market value</li>
+              <li>Exclusive access for approved buyers</li>
+            </ul>
+          </div>
+        </div>
+        <div class="why-us">
+          <h3>Why Do Agents Come to Us First?</h3>
+          <p>
+            Real estate agents want to bring properties to <strong>serious buyers with finance approval</strong>.
+            They know buyers agents represent qualified clients ready to move quickly. This is why we get
+            first access to pre & off-market opportunities that never reach the public.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Current Off-Market Opportunities -->
+    <section class="current-opportunities section">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2>Current Off-Market Opportunities</h2>
+          <p class="section-intro">
+            These are some of our current pre & off-market properties. Book a consultation to receive
+            full property details including the exact address.
+          </p>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="location-filters">
+          <a href="#brisbane" class="filter-btn">Brisbane</a>
+          <a href="#goldcoast" class="filter-btn">Gold Coast</a>
+          <a href="#bali" class="filter-btn">Bali</a>
+        </div>
+
+        <!-- Brisbane Properties -->
+        <div id="brisbane" class="location-section">
+          <h3>Brisbane Off-Market Properties</h3>
+          <div class="properties-grid">
+            <OffMarketPropertyCard
+              suburb="Cypress Court, Minyama"
+              region="Brisbane - Sunshine Coast"
+              beds={5}
+              baths={4}
+              cars={4}
+              price="$24M"
+              image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800"
+            />
+            <OffMarketPropertyCard
+              suburb="Rochedale Road, Rochedale"
+              region="Brisbane South"
+              beds={4}
+              baths={2}
+              cars={2}
+              price="$7.5M"
+              image="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800"
+            />
+            <OffMarketPropertyCard
+              suburb="Fielding Street, Mount Gravatt"
+              region="Brisbane South"
+              beds={3}
+              baths={1}
+              cars={2}
+              price="$1.3M"
+              image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"
+            />
+          </div>
+          <a href="/off-market-brisbane" class="view-all-btn">View All Brisbane Off-Market Properties →</a>
+        </div>
+
+        <!-- Gold Coast Properties -->
+        <div id="goldcoast" class="location-section">
+          <h3>Gold Coast Off-Market Properties</h3>
+          <div class="properties-grid">
+            <OffMarketPropertyCard
+              suburb="Mallawa Drive, Palm Beach"
+              region="Gold Coast - Beachside"
+              beds={4}
+              baths={2}
+              cars={2}
+              price="$2.5M"
+              image="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800"
+            />
+            <OffMarketPropertyCard
+              suburb="Nuthatch Drive, Burleigh Waters"
+              region="Gold Coast"
+              beds={4}
+              baths={2}
+              cars={2}
+              price="$2.7M"
+              image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"
+            />
+            <OffMarketPropertyCard
+              suburb="Wagtail Court, Burleigh Waters"
+              region="Gold Coast"
+              beds={3}
+              baths={2}
+              cars={2}
+              price="$1.3M"
+              image="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800"
+            />
+          </div>
+          <a href="/off-market-gold-coast" class="view-all-btn">View All Gold Coast Off-Market Properties →</a>
+        </div>
+
+        <!-- Bali Properties -->
+        <div id="bali" class="location-section">
+          <h3>Bali Off-Market Villas</h3>
+          <div class="properties-grid">
+            <OffMarketPropertyCard
+              suburb="Uluwatu"
+              region="Bali"
+              beds={2}
+              baths={2}
+              pool={true}
+              price="$350,000 USD"
+              distanceToBeach="5 minutes to the beach"
+              image="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800"
+            />
+            <OffMarketPropertyCard
+              suburb="Canggu"
+              region="Bali"
+              beds={2}
+              baths={2}
+              pool={true}
+              price="$220,000 USD"
+              distanceToBeach="2 minutes from the beach"
+              image="https://images.unsplash.com/photo-1582610116397-edb318620f90?w=800"
+            />
+            <OffMarketPropertyCard
+              suburb="Seminyak"
+              region="Bali"
+              beds={3}
+              baths={3}
+              pool={true}
+              price="$480,000 USD"
+              distanceToBeach="1 minute to the beach"
+              image="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800"
+            />
+          </div>
+          <a href="/off-market-bali" class="view-all-btn">View All Bali Off-Market Villas →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>How do I get access to off-market properties?</h3>
+            <p>
+              Simply register your interest through our website or book a free consultation. We'll discuss
+              your requirements, budget, and timeline. Once we know you're a serious buyer, we'll start
+              sending you off-market opportunities that match your criteria.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Do I need to be finance approved?</h3>
+            <p>
+              While not always required, having finance pre-approval significantly increases your chances
+              of securing off-market properties. Sellers and agents want to work with buyers who can move quickly.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Are off-market properties cheaper?</h3>
+            <p>
+              Often yes. With no public competition and motivated sellers seeking a quiet sale, off-market
+              properties can sell for 5-15% below market value. Plus, you save on auction stress and bidding wars.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>What's the difference between pre-market and off-market?</h3>
+            <p>
+              Pre-market properties will be publicly listed soon, but you get first access. Off-market
+              properties are sold privately with no public listing at all. Both give you a competitive advantage.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>How quickly do I need to act?</h3>
+            <p>
+              Off-market opportunities move fast, often within 24-48 hours. Pre-market properties give you
+              1-2 weeks before going public. This is why working with a buyers agent is crucial - we move
+              quickly on your behalf.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you charge extra for off-market properties?</h3>
+            <p>
+              No. Off-market access is included in our standard buyers agent service. Our fee structure
+              remains the same whether we find you an on-market or off-market property.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+      <div class="container">
+        <h2>Don't Miss the Best Off-Market Deals</h2>
+        <p>Get exclusive access to properties before they hit the market. Book your free consultation today.</p>
+        <a href="#contact" class="button-primary">Book Free Consultation</a>
+        <p class="cta-note">New opportunities added weekly | Act fast</p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .offmarket-hero {
+    background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1600'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+  }
+
+  .offmarket-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(90, 91, 84, 0.7), rgba(137, 139, 122, 0.7));
+    z-index: 0;
+  }
+
+  .offmarket-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .offmarket-hero h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: var(--body-regular);
+    line-height: 1.6;
+  }
+
+  .info-section {
+    background-color: #f9f9f9;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 20px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .info-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-small);
+  }
+
+  .info-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+  }
+
+  .info-card ul {
+    margin-top: 15px;
+    padding-left: 20px;
+  }
+
+  .info-card li {
+    margin-bottom: 8px;
+  }
+
+  .why-us {
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+  }
+
+  .why-us h3 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .current-opportunities {
+    background-color: var(--white);
+  }
+
+  .section-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+
+  .location-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+  }
+
+  .filter-btn {
+    padding: 10px 25px;
+    background-color: transparent;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover {
+    background-color: var(--primary-green);
+    color: var(--white);
+  }
+
+  .location-section {
+    margin-bottom: 60px;
+  }
+
+  .location-section h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: var(--primary-green);
+    text-align: center;
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .view-all-btn {
+    display: block;
+    text-align: center;
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: opacity 0.3s ease;
+  }
+
+  .view-all-btn:hover {
+    opacity: 0.7;
+  }
+
+  .faq-section {
+    background-color: #f9f9f9;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .faq-item h3 {
+    color: var(--primary-green);
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .cta-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    margin-bottom: 25px;
+    font-size: var(--body-large);
+  }
+
+  .cta-note {
+    font-size: 14px;
+    margin-top: 20px;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 1024px) {
+    .info-grid,
+    .properties-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .properties-grid,
+    .info-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .location-filters {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I get access to off-market properties?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply register your interest through our website or book a free consultation. We'll discuss your requirements, budget, and timeline. Once we know you're a serious buyer, we'll start sending you off-market opportunities that match your criteria."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to be finance approved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While not always required, having finance pre-approval significantly increases your chances of securing off-market properties. Sellers and agents want to work with buyers who can move quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are off-market properties cheaper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Often yes. With no public competition and motivated sellers seeking a quiet sale, off-market properties can sell for 5-15% below market value. Plus, you save on auction stress and bidding wars."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between pre-market and off-market?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pre-market properties will be publicly listed soon, but you get first access. Off-market properties are sold privately with no public listing at all. Both give you a competitive advantage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly do I need to act on off-market properties?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Off-market opportunities move fast, often within 24-48 hours. Pre-market properties give you 1-2 weeks before going public. This is why working with a buyers agent is crucial - we move quickly on your behalf."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you charge extra for off-market properties?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Off-market access is included in our standard buyers agent service. Our fee structure remains the same whether we find you an on-market or off-market property."
+      }
+    }
+  ]
+}
+</script>

@@ -1,0 +1,159 @@
+---
+---
+
+<section class="stats section">
+  <div class="container-wide">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-value">
+          <span class="prefix">$</span>
+          <span class="counter" data-target="45600000">0</span>
+        </div>
+        <h3>PROPERTIES PURCHASED IN 2025 SO FAR</h3>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">
+          <span class="prefix">$</span>
+          <span class="counter" data-target="75250000">0</span>
+        </div>
+        <h3>PROPERTIES PURCHASED IN 2024</h3>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">
+          <span class="prefix">$</span>
+          <span class="counter" data-target="65000">0</span>
+        </div>
+        <h3>AVERAGE CLIENT SAVINGS</h3>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">
+          <span class="counter" data-target="4">0</span>
+          <span class="suffix"> WEEKS</span>
+        </div>
+        <h3>AVERAGE PURCHASE TIME</h3>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value">
+          <span class="counter" data-target="50">0</span>
+        </div>
+        <h3>5-STAR REVIEWS</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+  }
+
+  .stats-grid {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 32px;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--text-heading);
+    font-weight: 400;
+    margin-bottom: 10px;
+    line-height: 1;
+    white-space: nowrap;
+    letter-spacing: 1px;
+  }
+
+  .stat-item h3 {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-heading);
+  }
+
+  @media (max-width: 1200px) {
+    .stats-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-value {
+      font-size: 36px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .stat-value {
+      font-size: 32px;
+    }
+  }
+</style>
+
+<script>
+  function formatNumberWithSpaces(num: number): string {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  }
+
+  function animateCounter(element: HTMLElement, target: number, duration: number = 2900) {
+    const start = 0;
+    const startTime = performance.now();
+
+    function update(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const current = Math.floor(start + (target - start) * easeOutQuart);
+
+      element.textContent = formatNumberWithSpaces(current);
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        element.textContent = formatNumberWithSpaces(target);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // Intersection Observer to trigger animation when in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counters = entry.target.querySelectorAll('.counter');
+        counters.forEach((counter) => {
+          const target = parseInt((counter as HTMLElement).dataset.target || '0');
+          animateCounter(counter as HTMLElement, target);
+        });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  // Observe the stats section
+  const statsSection = document.querySelector('.stats');
+  if (statsSection) {
+    observer.observe(statsSection);
+  }
+</script>

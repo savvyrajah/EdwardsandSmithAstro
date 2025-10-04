@@ -1,0 +1,413 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import OffMarketPropertyCard from '../components/OffMarketPropertyCard.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+---
+
+<Layout
+  title="Brisbane Off-Market Properties | Exclusive Pre-Market Homes | Edwards & Smith"
+  description="Access exclusive Brisbane off-market and pre-market properties before they hit the market. From Minyama to Wynnum, find your dream Brisbane home with Edwards & Smith Buyers Agents."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="offmarket-hero section">
+      <div class="container">
+        <h1>Brisbane Off-Market & Pre-Market Properties</h1>
+        <p class="hero-subtitle">Exclusive access to Brisbane properties before they're publicly listed</p>
+        <p class="hero-description">
+          Get first access to Brisbane's best off-market opportunities. These properties are available
+          to serious, finance-approved buyers only through our buyers agent network.
+        </p>
+      </div>
+    </section>
+
+    <!-- Current Brisbane Off-Market Properties -->
+    <section class="properties-section section">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2>Current Brisbane Off-Market Opportunities</h2>
+          <p class="section-intro">
+            Book a consultation to discuss these exclusive Brisbane opportunities and receive full property details.
+          </p>
+        </div>
+
+        <div class="properties-grid">
+          <OffMarketPropertyCard
+            suburb="Cypress Court, Minyama"
+            region="Brisbane - Sunshine Coast"
+            beds={5}
+            baths={4}
+            cars={4}
+            price="$24M"
+            image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Rochedale Road, Rochedale"
+            region="Brisbane South"
+            beds={4}
+            baths={2}
+            cars={2}
+            price="$7.5M"
+            image="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Fielding Street, Mount Gravatt"
+            region="Brisbane South"
+            beds={3}
+            baths={1}
+            cars={2}
+            price="$1.3M"
+            image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Wynnum Road, Wynnum"
+            region="Brisbane Bayside"
+            beds={4}
+            baths={3}
+            cars={1}
+            price="$2M"
+            image="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Southern Cross Drive, Newport"
+            region="Brisbane North"
+            beds={4}
+            baths={2}
+            cars={2}
+            price="$1.3M"
+            image="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800"
+          />
+          <OffMarketPropertyCard
+            suburb="Stradbroke Avenue, Wynnum"
+            region="Brisbane Bayside"
+            beds={3}
+            baths={1}
+            cars={1}
+            price="$1.6M"
+            image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Process -->
+    <section class="process-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>How It Works</h2>
+          <p class="section-intro">Our simple 4-step process to finding your dream Brisbane property</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Book a Consultation</h3>
+            <p>We discuss your property goals, budget, preferred suburbs, and must-haves</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Sign Up With Us</h3>
+            <p>Sign our buyers agent agreement and we immediately start searching for properties that match your criteria</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Expert Property Advice</h3>
+            <p>We share off-market opportunities and provide expert analysis on properties aligned to your preferences</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Buy Your Dream Home</h3>
+            <p>Secure your property faster and at a better price than buying solo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Purchases in Brisbane -->
+    <section class="recent-purchases section">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2>Recent Purchases in Brisbane</h2>
+          <p class="section-intro">See what we've secured for our clients across Brisbane</p>
+        </div>
+        <div class="properties-grid">
+          <PropertyCard
+            image="https://edwardsandsmith.com.au/wp-content/uploads/2025/08/outdoor-carina.jpg"
+            title="Carina Heights, 4152"
+            description="Purchased for a time-poor professional after a 12-month solo search."
+          />
+          <PropertyCard
+            image="https://edwardsandsmith.com.au/wp-content/uploads/2025/08/image-29-e1755139676515-1024x689.jpg"
+            title="Burleigh Waters, 4220"
+            description="Not only did we secure this stunning family home in Burleigh within 2 weeks for our clients, but we also saved them over $100,000 with their budget."
+          />
+          <PropertyCard
+            image="https://edwardsandsmith.com.au/wp-content/uploads/2025/08/image0-e1755138640868-1024x692.jpg"
+            title="Burleigh Heads, 4220"
+            description="SMSF Warehouse in Burleigh Heads. We recently helped our client secure this blue chip investment"
+          />
+        </div>
+        <div class="view-all-link">
+          <a href="/#recent" class="button-text">View All Recent Purchases →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brisbane Suburbs We Cover -->
+    <section class="suburbs-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Brisbane Suburbs We Cover</h2>
+          <p class="section-intro">We source off-market properties across Brisbane's most sought-after suburbs</p>
+        </div>
+        <div class="suburbs-list">
+          <span class="suburb-tag">New Farm</span>
+          <span class="suburb-tag">Teneriffe</span>
+          <span class="suburb-tag">Hamilton</span>
+          <span class="suburb-tag">Ascot</span>
+          <span class="suburb-tag">Hawthorne</span>
+          <span class="suburb-tag">Clayfield</span>
+          <span class="suburb-tag">Bulimba</span>
+          <span class="suburb-tag">Coorparoo</span>
+          <span class="suburb-tag">Camp Hill</span>
+          <span class="suburb-tag">Carina</span>
+          <span class="suburb-tag">Wynnum</span>
+          <span class="suburb-tag">Morningside</span>
+          <span class="suburb-tag">Norman Park</span>
+          <span class="suburb-tag">Cannon Hill</span>
+          <span class="suburb-tag">West End</span>
+          <span class="suburb-tag">Tarragindi</span>
+          <span class="suburb-tag">Holland Park</span>
+          <span class="suburb-tag">Mount Gravatt</span>
+          <span class="suburb-tag">Rochedale</span>
+          <span class="suburb-tag">Minyama</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+      <div class="container">
+        <h2>Don't Miss Out on Brisbane's Best Off-Market Deals</h2>
+        <p>These exclusive properties won't last long. Book your free consultation today.</p>
+        <a href="#contact" class="button-primary">Book Free Consultation</a>
+        <p class="cta-note">Limited availability | Properties sell within weeks</p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .offmarket-hero {
+    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+  }
+
+  .offmarket-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(90, 91, 84, 0.7), rgba(137, 139, 122, 0.7));
+    z-index: 0;
+  }
+
+  .offmarket-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .offmarket-hero h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: var(--body-regular);
+    line-height: 1.6;
+  }
+
+  .properties-section {
+    background-color: var(--white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 20px;
+  }
+
+  .section-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .recent-purchases {
+    background-color: #f9f9f9;
+  }
+
+  .view-all-link {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .button-text {
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .button-text:hover {
+    opacity: 0.7;
+  }
+
+  .suburbs-section {
+    background-color: var(--white);
+  }
+
+  .suburbs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .suburb-tag {
+    background-color: #f0f0f0;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-primary);
+    transition: background-color 0.3s ease;
+  }
+
+  .suburb-tag:hover {
+    background-color: var(--primary-green);
+    color: var(--white);
+  }
+
+  .process-section {
+    background-color: #f9f9f9;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 auto 15px;
+  }
+
+  .step h3 {
+    margin-bottom: 10px;
+  }
+
+  .cta-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    margin-bottom: 25px;
+    font-size: var(--body-large);
+  }
+
+  .cta-note {
+    font-size: 14px;
+    margin-top: 20px;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 1024px) {
+    .properties-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .properties-grid,
+    .steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Brisbane Off-Market Property Access",
+  "provider": {
+    "@type": "RealEstateAgent",
+    "name": "Edwards & Smith Buyers Agents"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Brisbane",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "description": "Exclusive access to Brisbane off-market and pre-market properties for serious buyers.",
+  "offers": {
+    "@type": "Offer",
+    "description": "Buyers agent service with off-market property access"
+  }
+}
+</script>

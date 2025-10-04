@@ -1,0 +1,544 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import OffMarketPropertyCard from '../components/OffMarketPropertyCard.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+---
+
+<Layout
+  title="Bali Off-Market Villas | Uluwatu, Canggu, Seminyak Properties | Edwards & Smith"
+  description="Exclusive Bali off-market villas in Uluwatu, Canggu, and Seminyak. Investment and lifestyle properties from $220K USD. Edwards & Smith Bali property experts."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="offmarket-hero section">
+      <div class="container">
+        <h1>Bali Off-Market Villas & Investment Properties</h1>
+        <p class="hero-subtitle">Exclusive Uluwatu, Canggu & Seminyak opportunities</p>
+        <p class="hero-description">
+          Access Bali's best off-market villas before they're publicly listed. From beachfront investments
+          to lifestyle properties, we connect you with exclusive Indonesian real estate opportunities.
+        </p>
+      </div>
+    </section>
+
+    <!-- Current Bali Off-Market Properties -->
+    <section class="properties-section section">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2>Current Bali Off-Market Villas</h2>
+          <p class="section-intro">
+            Book a consultation to explore these exclusive Bali investment and lifestyle opportunities.
+          </p>
+        </div>
+
+        <div class="location-section">
+          <h3>Uluwatu Villas</h3>
+          <div class="properties-grid">
+            <OffMarketPropertyCard
+              suburb="Uluwatu"
+              region="Bali - Surf Coast"
+              beds={2}
+              baths={2}
+              pool={true}
+              price="$350,000 USD"
+              distanceToBeach="5 minutes to the beach"
+              image="https://images.unsplash.com/photo-1602391833977-358a52198938?w=800"
+            />
+            <OffMarketPropertyCard
+              suburb="Uluwatu"
+              region="Bali - Surf Coast"
+              beds={1}
+              baths={1}
+              pool={true}
+              price="$220,000 USD"
+              distanceToBeach="5 minutes to the beach"
+              image="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800"
+            />
+          </div>
+        </div>
+
+        <div class="location-section">
+          <h3>Canggu Villas</h3>
+          <div class="properties-grid">
+            <OffMarketPropertyCard
+              suburb="Canggu"
+              region="Bali - Beachside"
+              beds={2}
+              baths={2}
+              pool={true}
+              price="$220,000 USD"
+              distanceToBeach="2 minutes from the beach"
+              image="https://images.unsplash.com/photo-1615876234886-fd9a39fda97f?w=800"
+            />
+            <OffMarketPropertyCard
+              suburb="Canggu"
+              region="Bali - Beachside"
+              beds={2}
+              baths={2}
+              pool={true}
+              price="$280,000 USD"
+              distanceToBeach="5 minutes to the beach"
+              image="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800"
+            />
+          </div>
+        </div>
+
+        <div class="location-section">
+          <h3>Seminyak Villas</h3>
+          <div class="properties-grid">
+            <OffMarketPropertyCard
+              suburb="Seminyak"
+              region="Bali - Central"
+              beds={3}
+              baths={3}
+              pool={true}
+              price="$480,000 USD"
+              distanceToBeach="1 minute to the beach"
+              image="https://images.unsplash.com/photo-1602391833977-358a52198938?w=800"
+            />
+            <OffMarketPropertyCard
+              suburb="Seminyak"
+              region="Bali - Central"
+              beds={2}
+              baths={2}
+              pool={true}
+              price="$320,000 USD"
+              distanceToBeach="2 minutes to the beach"
+              image="https://images.unsplash.com/photo-1600011689032-8b628b8a8747?w=800"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Process -->
+    <section class="process-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>How It Works</h2>
+          <p class="section-intro">Our simple 4-step process to finding your dream Bali property</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Book a Consultation</h3>
+            <p>We discuss your Bali property goals, budget, preferred areas, and investment strategy</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Sign Up With Us</h3>
+            <p>Sign our buyers agent agreement and we immediately start searching for Bali villas that match your criteria</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Expert Property Advice</h3>
+            <p>We share off-market villas and provide expert analysis on investment potential and legal structures</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Buy Your Dream Villa</h3>
+            <p>Secure your Bali property with proper legal setup and start earning rental income</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Purchases in Bali -->
+    <section class="recent-purchases section">
+      <div class="container-wide">
+        <div class="section-header">
+          <h2>Recent Purchases in Bali</h2>
+          <p class="section-intro">See what we've secured for our clients across Bali</p>
+        </div>
+        <div class="properties-grid">
+          <PropertyCard
+            image="https://edwardsandsmith.com.au/wp-content/uploads/2025/08/image-29-e1755139676515-1024x689.jpg"
+            title="Burleigh Waters, 4220"
+            description="Not only did we secure this stunning family home in Burleigh within 2 weeks for our clients, but we also saved them over $100,000 with their budget."
+          />
+          <PropertyCard
+            image="https://edwardsandsmith.com.au/wp-content/uploads/2025/08/outdoor-carina.jpg"
+            title="Carina Heights, 4152"
+            description="Purchased for a time-poor professional after a 12-month solo search."
+          />
+          <PropertyCard
+            image="https://edwardsandsmith.com.au/wp-content/uploads/2025/08/image0-e1755138640868-1024x692.jpg"
+            title="Burleigh Heads, 4220"
+            description="SMSF Warehouse in Burleigh Heads. We recently helped our client secure this blue chip investment"
+          />
+        </div>
+        <div class="view-all-link">
+          <a href="/#recent" class="button-text">View All Recent Purchases →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bali Regions -->
+    <section class="regions-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Popular Bali Investment Areas</h2>
+        </div>
+        <div class="regions-grid">
+          <div class="region-card">
+            <h3>Uluwatu</h3>
+            <p><strong>Best for:</strong> Surf culture, clifftop views, luxury lifestyle</p>
+            <p><strong>Rental yield:</strong> 8-10% annually</p>
+            <p><strong>Beach access:</strong> 5-10 minutes</p>
+            <p><strong>Price range:</strong> $220K - $500K USD</p>
+          </div>
+          <div class="region-card">
+            <h3>Canggu</h3>
+            <p><strong>Best for:</strong> Digital nomads, expat community, surf beaches</p>
+            <p><strong>Rental yield:</strong> 10-12% annually</p>
+            <p><strong>Beach access:</strong> 2-5 minutes</p>
+            <p><strong>Price range:</strong> $220K - $400K USD</p>
+          </div>
+          <div class="region-card">
+            <h3>Seminyak</h3>
+            <p><strong>Best for:</strong> Central location, high-end tourism, dining & shopping</p>
+            <p><strong>Rental yield:</strong> 8-10% annually</p>
+            <p><strong>Beach access:</strong> 1-5 minutes</p>
+            <p><strong>Price range:</strong> $320K - $800K USD</p>
+          </div>
+          <div class="region-card">
+            <h3>Legian</h3>
+            <p><strong>Best for:</strong> Beach access, tourist hotspot, strong rentals</p>
+            <p><strong>Rental yield:</strong> 9-11% annually</p>
+            <p><strong>Beach access:</strong> Beachfront to 5 minutes</p>
+            <p><strong>Price range:</strong> $250K - $500K USD</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Australian Buyer's Guide -->
+    <section class="guide-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Buying Bali Property as an Australian</h2>
+        </div>
+        <div class="guide-grid">
+          <div class="guide-item">
+            <h3>Ownership Structure</h3>
+            <p>Australians typically purchase through a 25-30 year lease (Hak Pakai) with extensions, or set up a PMA company for freehold-like ownership.</p>
+          </div>
+          <div class="guide-item">
+            <h3>Legal Process</h3>
+            <p>We work with trusted Indonesian lawyers to ensure proper contracts, title verification, and compliant ownership structures.</p>
+          </div>
+          <div class="guide-item">
+            <h3>Property Management</h3>
+            <p>Professional villa management handles rentals, maintenance, and guest services. Hands-off income from Australia.</p>
+          </div>
+          <div class="guide-item">
+            <h3>Tax & Returns</h3>
+            <p>Indonesian rental income is taxable. We connect you with cross-border accountants to optimize your tax position.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Bali Property FAQs</h2>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Can Australians own property in Bali?</h3>
+            <p>Yes, through leasehold (Hak Pakai) or company ownership (PMA). We guide you through the legal process with trusted Indonesian lawyers.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What are the ongoing costs?</h3>
+            <p>Property tax (0.1-0.3%), villa management (20-30% of rental income), utilities, and insurance. Net yields still exceed 6-8%.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How do I rent out my villa?</h3>
+            <p>Professional management companies handle everything: Airbnb listings, guest services, maintenance, and remit income to your Australian bank account.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is Bali property a good investment?</h3>
+            <p>For lifestyle and income, yes. Rental yields of 8-12% beat Australian property. Capital growth depends on location and property quality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+      <div class="container">
+        <h2>Don't Miss Bali's Best Villa Opportunities</h2>
+        <p>Secure your luxury holiday home or investment villa before it's gone. Book your free consultation today.</p>
+        <a href="#contact" class="button-primary">Book Free Consultation</a>
+        <p class="cta-note">Limited availability | High demand from buyers</p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .offmarket-hero {
+    background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1600'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+  }
+
+  .offmarket-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(90, 91, 84, 0.7), rgba(137, 139, 122, 0.7));
+    z-index: 0;
+  }
+
+  .offmarket-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .offmarket-hero h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .hero-description {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: var(--body-regular);
+    line-height: 1.6;
+  }
+
+  .properties-section {
+    background-color: var(--white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 20px;
+  }
+
+  .section-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+
+  .location-section {
+    margin-bottom: 50px;
+  }
+
+  .location-section h3 {
+    font-size: 24px;
+    color: var(--primary-green);
+    margin-bottom: 25px;
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .recent-purchases {
+    background-color: #f9f9f9;
+  }
+
+  .view-all-link {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .button-text {
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .button-text:hover {
+    opacity: 0.7;
+  }
+
+  .regions-section {
+    background-color: var(--white);
+  }
+
+  .regions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .region-card {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: var(--border-radius-small);
+  }
+
+  .region-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 15px;
+  }
+
+  .region-card p {
+    margin-bottom: 8px;
+  }
+
+  .guide-section {
+    background-color: #f9f9f9;
+  }
+
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .guide-item {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius-small);
+  }
+
+  .guide-item h3 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+  }
+
+  .process-section {
+    background-color: #f9f9f9;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .step {
+    text-align: center;
+  }
+
+  .step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 auto 15px;
+  }
+
+  .step h3 {
+    margin-bottom: 10px;
+  }
+
+  .faq-section {
+    background-color: #f9f9f9;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .faq-item h3 {
+    color: var(--primary-green);
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  .cta-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    margin-bottom: 25px;
+    font-size: var(--body-large);
+  }
+
+  .cta-note {
+    font-size: 14px;
+    margin-top: 20px;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 1024px) {
+    .properties-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .properties-grid,
+    .regions-grid,
+    .guide-grid,
+    .faq-grid,
+    .steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Bali Property Investment Service",
+  "provider": {
+    "@type": "RealEstateAgent",
+    "name": "Edwards & Smith Buyers Agents"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Bali",
+    "addressCountry": "ID"
+  },
+  "description": "Helping Australians buy investment villas and lifestyle properties in Bali. Uluwatu, Canggu, Seminyak specialists.",
+  "offers": {
+    "@type": "Offer",
+    "description": "Bali property buying service for Australian investors"
+  }
+}
+</script>

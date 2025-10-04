@@ -1,0 +1,106 @@
+---
+---
+
+<section class="hero">
+  <div class="hero-video-container">
+    <video class="hero-video" autoplay muted playsinline loop preload="auto">
+      <source src="https://edwardsandsmith.com.au/wp-content/uploads/2024/12/website-banner.mov" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-content">
+    <h1>YOUR TRUSTED PROPERTY ADVISORS IN BRISBANE, GOLD COAST & BALI</h1>
+    <p class="hero-subheading">Get exclusive access to pre & off-market properties.</p>
+    <a href="#contact" class="button-primary">BOOK A FREE CONSULTATION CALL</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%);
+    object-fit: cover;
+    object-position: center 20%;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-subheading {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 500px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero {
+      min-height: 400px;
+    }
+
+    .hero-content {
+      padding: 20px;
+    }
+
+    .hero h1 {
+      margin-bottom: 15px;
+    }
+
+    .hero-subheading {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+  }
+</style>

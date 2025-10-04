@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+@import './variables.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--body-medium);
+  line-height: var(--line-height-body);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: var(--line-height-heading);
+  color: var(--text-heading);
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+h2 {
+  font-size: var(--h2-size);
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+h4 {
+  font-size: var(--h4-size);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-default);
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-default);
+}
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--padding-container);
+}
+
+.container-wide {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  padding: 0 var(--padding-container);
+}
+
+.section {
+  padding: var(--padding-section) 0;
+}
+
+.button-primary {
+  background-color: var(--white);
+  color: var(--primary-green);
+  font-family: var(--font-heading);
+  font-size: var(--button-text);
+  padding: var(--padding-button);
+  border: 1px solid var(--primary-green);
+  border-radius: var(--border-radius-minimal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition-default);
+}
+
+.button-primary:hover {
+  background-color: var(--olive-green);
+  color: var(--white);
+  border-color: var(--olive-green);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  :root {
+    --h1-size: 32px;
+    --h2-size: 28px;
+    --h3-size: 18px;
+    --body-medium: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --h1-size: 28px;
+    --h2-size: 24px;
+    --h3-size: 16px;
+    --padding-section: 40px;
+  }
+}
