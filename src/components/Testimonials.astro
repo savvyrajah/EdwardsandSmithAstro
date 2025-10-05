@@ -1,0 +1,193 @@
+---
+// Testimonials from brochure and original site
+const testimonials = [
+  {
+    quote: "After searching solo for 12 months, Edwards & Smith found us the perfect home in Carina Heights in just 2 weeks. Their market knowledge and speed saved us months of frustration.",
+    author: "Professional Couple",
+    location: "Carina Heights",
+    propertyType: "4 bed family home",
+    result: "Found in 2 weeks after 12-month solo search"
+  },
+  {
+    quote: "Not only did we secure this stunning family home in Burleigh within 2 weeks, but they also saved us over $100,000 within our budget. We couldn't have done this without their negotiation skills.",
+    author: "Family Buyers",
+    location: "Burleigh Waters",
+    propertyType: "Family home",
+    result: "$100K saved, secured in 2 weeks"
+  },
+  {
+    quote: "The team swiftly secured a highly sought after property with multiple interested buyers. Couldn't be happier! As a buyers agent client, we were given preference over other buyers.",
+    author: "Interstate Investor",
+    location: "Brisbane",
+    propertyType: "Investment property",
+    result: "Won against multiple offers"
+  },
+  {
+    quote: "Edwards & Smith provided exceptional service throughout our property purchase. Their market knowledge and professional approach exceeded our expectations. Highly recommend!",
+    author: "Zac Bailey",
+    location: "Camp Hill",
+    propertyType: "First home",
+    result: "AFL player - first home secured"
+  },
+  {
+    quote: "The team are reliable, contactable, and I would recommend them to anyone! I will for sure be using their service again. They found us an off-market property we never would have known about.",
+    author: "Repeat Client",
+    location: "Gold Coast",
+    propertyType: "Off-market investment",
+    result: "Exclusive off-market access"
+  },
+  {
+    quote: "I would highly recommend Edwards and Smith to anyone looking to get into the market! As a time-poor professional, they handled everything while I focused on work.",
+    author: "Time-Poor Professional",
+    location: "Brisbane",
+    propertyType: "Investment property",
+    result: "Hands-off purchase process"
+  }
+];
+---
+
+<section class="testimonials section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What Our Clients Say</h2>
+      <p>Real results from real clients across Queensland</p>
+    </div>
+
+    <div class="testimonials-grid">
+      {testimonials.map((testimonial) => (
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"{testimonial.quote}"</p>
+          <div class="testimonial-meta">
+            <p class="testimonial-author">{testimonial.author}</p>
+            <p class="testimonial-location">{testimonial.location}</p>
+            <p class="testimonial-property">{testimonial.propertyType}</p>
+          </div>
+          <div class="testimonial-result">
+            <span class="result-badge">{testimonial.result}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="cta-center">
+      <a href="/consultation" class="button-primary">Start Your Success Story</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    background-color: var(--white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 15px;
+  }
+
+  .section-header p {
+    font-size: var(--body-large);
+    color: var(--text-light);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .testimonial-card {
+    background-color: #f9f9f9;
+    padding: 35px 30px;
+    border-radius: var(--border-radius-small);
+    border-left: 4px solid var(--primary-green);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--box-shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .stars {
+    color: #FFB800;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-quote {
+    font-size: 16px;
+    line-height: 1.7;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    flex-grow: 1;
+  }
+
+  .testimonial-meta {
+    margin-bottom: 15px;
+  }
+
+  .testimonial-author {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+  }
+
+  .testimonial-location {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 3px;
+  }
+
+  .testimonial-property {
+    font-size: 13px;
+    color: var(--text-light);
+    font-style: italic;
+  }
+
+  .testimonial-result {
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .result-badge {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .cta-center {
+    text-align: center;
+  }
+
+  @media (max-width: 1024px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

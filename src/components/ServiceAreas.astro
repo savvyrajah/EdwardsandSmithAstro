@@ -1,0 +1,266 @@
+---
+---
+
+<section class="service-areas section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Where We Work</h2>
+      <p>Expert buyers agents across Queensland and Bali</p>
+    </div>
+
+    <div class="areas-grid">
+      <!-- Brisbane -->
+      <div class="area-card">
+        <div class="area-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h3>Brisbane</h3>
+        <p class="area-description">Queensland's capital with strong growth potential</p>
+
+        <div class="featured-suburbs">
+          <h4>Featured Suburbs:</h4>
+          <ul>
+            <li>New Farm</li>
+            <li>Teneriffe</li>
+            <li>Hamilton</li>
+            <li>Ascot</li>
+            <li>Hawthorne</li>
+            <li>Clayfield</li>
+            <li>Bulimba</li>
+            <li>Carina Heights</li>
+            <li>Camp Hill</li>
+          </ul>
+        </div>
+
+        <div class="area-cta">
+          <a href="/brisbane/recent-purchases" class="button-secondary">View Brisbane Properties</a>
+        </div>
+      </div>
+
+      <!-- Gold Coast -->
+      <div class="area-card">
+        <div class="area-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h3>Gold Coast</h3>
+        <p class="area-description">Premium coastal lifestyle and investment opportunities</p>
+
+        <div class="featured-suburbs">
+          <h4>Featured Suburbs:</h4>
+          <ul>
+            <li>Burleigh Heads</li>
+            <li>Palm Beach</li>
+            <li>Mermaid Beach</li>
+            <li>Currumbin</li>
+            <li>Miami</li>
+            <li>Burleigh Waters</li>
+            <li>Tallebudgera</li>
+            <li>Robina</li>
+          </ul>
+        </div>
+
+        <div class="area-cta">
+          <a href="/gold-coast/recent-purchases" class="button-secondary">View Gold Coast Properties</a>
+        </div>
+      </div>
+
+      <!-- Bali -->
+      <div class="area-card">
+        <div class="area-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h3>Bali, Indonesia</h3>
+        <p class="area-description">Investment villas with 8-10% annual capital growth</p>
+
+        <div class="featured-suburbs">
+          <h4>Featured Areas:</h4>
+          <ul>
+            <li>Canggu</li>
+            <li>Uluwatu</li>
+            <li>Seminyak</li>
+            <li>Legian</li>
+            <li>Pererenan</li>
+            <li>Berawa</li>
+          </ul>
+        </div>
+
+        <div class="bali-stats">
+          <p><strong>13-15% annual ROI</strong> for rental income</p>
+          <p><strong>8-10%</strong> annual property value increase</p>
+        </div>
+
+        <div class="area-cta">
+          <a href="/bali/recent-purchases" class="button-secondary">View Bali Properties</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-areas {
+    background-color: var(--white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 15px;
+  }
+
+  .section-header p {
+    font-size: var(--body-large);
+    color: var(--text-light);
+  }
+
+  .areas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .area-card {
+    background-color: #f9f9f9;
+    padding: 40px 35px;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--box-shadow-subtle);
+    border-top: 4px solid var(--primary-green);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .area-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  .area-icon {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+  }
+
+  .area-card h3 {
+    color: var(--primary-green);
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .area-description {
+    color: var(--text-light);
+    font-size: 15px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+
+  .featured-suburbs {
+    margin-bottom: 25px;
+  }
+
+  .featured-suburbs h4 {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .featured-suburbs ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .featured-suburbs li {
+    font-size: 14px;
+    color: var(--text-primary);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .featured-suburbs li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: bold;
+  }
+
+  .bali-stats {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    border-left: 3px solid var(--primary-green);
+  }
+
+  .bali-stats p {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .bali-stats p:last-child {
+    margin-bottom: 0;
+  }
+
+  .bali-stats strong {
+    color: var(--primary-green);
+    font-size: 16px;
+  }
+
+  .area-cta {
+    margin-top: 30px;
+  }
+
+  .button-secondary {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .button-secondary:hover {
+    background-color: var(--primary-green);
+    color: var(--white);
+  }
+
+  @media (max-width: 1024px) {
+    .areas-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-suburbs ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .featured-suburbs ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

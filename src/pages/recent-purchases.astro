@@ -1,0 +1,448 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const brisbaneProperties = [
+  {
+    location: "Carina Heights, QLD",
+    beds: 5, baths: 3, cars: 2,
+    image: "/assets/images/outdoor-carina.jpg",
+    story: "After moving from Melbourne for work, our clients wanted to call Brisbane home"
+  },
+  {
+    location: "Burleigh Waters, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Burleigh Heads, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg"
+  },
+  {
+    location: "Maudsland, QLD",
+    beds: 5, baths: 3, cars: 3,
+    image: "/assets/images/recent-purchase-3.jpg"
+  },
+  {
+    location: "Palm Beach, QLD",
+    beds: 4, baths: 3, cars: 2,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Bridgeman Downs, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg"
+  },
+  {
+    location: "Currumbin Waters, QLD",
+    beds: 5, baths: 3, cars: 2,
+    image: "/assets/images/recent-purchase-3.jpg"
+  },
+  {
+    location: "Carina, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Wakerley, QLD",
+    beds: 5, baths: 3, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg",
+    story: "Located in the fast-growing southeast of Brisbane, well within budget"
+  }
+];
+
+const goldCoastProperties = [
+  {
+    location: "Kingscliff, NSW",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-3.jpg"
+  },
+  {
+    location: "Mermaid Waters, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Robina, QLD",
+    beds: 3, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg"
+  },
+  {
+    location: "Burleigh Heads, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-3.jpg",
+    story: "AFL Suns star Ben King's dream home - secured in record time"
+  }
+];
+
+const otherProperties = [
+  {
+    location: "Caboolture, QLD",
+    beds: 3, baths: 1, cars: 1,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Griffin, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg"
+  },
+  {
+    location: "Clayfield, QLD",
+    beds: 5, baths: 3, cars: 2,
+    image: "/assets/images/recent-purchase-3.jpg"
+  },
+  {
+    location: "Hemmant, QLD",
+    beds: 3, baths: 2, cars: 1,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Eatons Hill, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg"
+  },
+  {
+    location: "Upper Coomera, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-3.jpg"
+  },
+  {
+    location: "Camp Hill, QLD",
+    beds: 3, baths: 2, cars: 1,
+    image: "/assets/images/recent-purchase-1.jpg"
+  }
+];
+
+const baliProperties = [
+  {
+    location: "Canggu, Bali",
+    beds: 2, baths: 2.5, cars: 0,
+    image: "/assets/images/recent-purchase-2.jpg",
+    story: "Rice Field Villa with 13-15% annual ROI for Australian investors"
+  },
+  {
+    location: "Sunshine Coast, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-3.jpg",
+    story: "Joel Birch (The Amity Affliction) - secured dream home in just 2 weeks"
+  }
+];
+---
+
+<Layout
+  title="Recent Purchases | Edwards & Smith Buyers Agents"
+  description="See our recent property purchases across Brisbane, Gold Coast, and Bali. Real results for real clients - from first home buyers to investors."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section">
+      <div class="container">
+        <h1>Recent Purchases</h1>
+        <p class="hero-subtitle">Real properties. Real results. Real clients.</p>
+      </div>
+    </section>
+
+    <!-- Brisbane Properties -->
+    <section class="properties-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Brisbane & Surrounds</h2>
+          <p>Helping clients find their dream homes across Greater Brisbane</p>
+        </div>
+        <div class="properties-grid">
+          {brisbaneProperties.map(property => (
+            <div class="property-card">
+              <div class="property-image">
+                <img src={property.image} alt={property.location} loading="lazy" />
+              </div>
+              <div class="property-details">
+                <h3>{property.location}</h3>
+                <div class="property-features">
+                  <span>{property.beds} bed</span>
+                  <span>{property.baths} bath</span>
+                  <span>{property.cars} car</span>
+                </div>
+                {property.story && (
+                  <p class="property-story">{property.story}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold Coast Properties -->
+    <section class="properties-section section alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gold Coast</h2>
+          <p>Securing premium properties in Australia's most desirable coastal region</p>
+        </div>
+        <div class="properties-grid">
+          {goldCoastProperties.map(property => (
+            <div class="property-card">
+              <div class="property-image">
+                <img src={property.image} alt={property.location} loading="lazy" />
+              </div>
+              <div class="property-details">
+                <h3>{property.location}</h3>
+                <div class="property-features">
+                  <span>{property.beds} bed</span>
+                  <span>{property.baths} bath</span>
+                  <span>{property.cars} car</span>
+                </div>
+                {property.story && (
+                  <p class="property-story">{property.story}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Queensland Wide -->
+    <section class="properties-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Queensland Wide</h2>
+          <p>Servicing property buyers across all of Queensland</p>
+        </div>
+        <div class="properties-grid">
+          {otherProperties.map(property => (
+            <div class="property-card">
+              <div class="property-image">
+                <img src={property.image} alt={property.location} loading="lazy" />
+              </div>
+              <div class="property-details">
+                <h3>{property.location}</h3>
+                <div class="property-features">
+                  <span>{property.beds} bed</span>
+                  <span>{property.baths} bath</span>
+                  <span>{property.cars} car</span>
+                </div>
+                {property.story && (
+                  <p class="property-story">{property.story}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Bali & Beyond -->
+    <section class="properties-section section alt-bg">
+      <div class="container">
+        <div class="section-header">
+          <h2>Bali & Special Purchases</h2>
+          <p>Investment properties and unique opportunities</p>
+        </div>
+        <div class="properties-grid">
+          {baliProperties.map(property => (
+            <div class="property-card">
+              <div class="property-image">
+                <img src={property.image} alt={property.location} loading="lazy" />
+              </div>
+              <div class="property-details">
+                <h3>{property.location}</h3>
+                <div class="property-features">
+                  <span>{property.beds} bed</span>
+                  <span>{property.baths} bath</span>
+                  {property.cars > 0 && <span>{property.cars} car</span>}
+                </div>
+                {property.story && (
+                  <p class="property-story">{property.story}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+      <div class="container">
+        <h2>Ready to Find Your Dream Property?</h2>
+        <p>Let us help you secure your next home or investment property</p>
+        <a href="/consultation" class="button-primary">Book Free Consultation</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--primary-green), var(--olive-green));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 18px;
+  }
+
+  .properties-section {
+    background-color: var(--white);
+  }
+
+  .properties-section.alt-bg {
+    background-color: #f9f9f9;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: var(--body-large);
+    color: var(--text-light);
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .property-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .alt-bg .property-card {
+    background-color: var(--white);
+  }
+
+  .property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .property-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .property-card:hover .property-image img {
+    transform: scale(1.05);
+  }
+
+  .property-details {
+    padding: 25px;
+  }
+
+  .property-details h3 {
+    color: var(--primary-green);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .property-features {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .property-features span {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .property-story {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  .cta-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    margin-bottom: 25px;
+    font-size: var(--body-large);
+  }
+
+  @media (max-width: 1024px) {
+    .properties-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .properties-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Place",
+        "name": "Brisbane Recent Purchases",
+        "description": "Properties recently purchased by Edwards & Smith in Brisbane"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Place",
+        "name": "Gold Coast Recent Purchases",
+        "description": "Properties recently purchased by Edwards & Smith on the Gold Coast"
+      }
+    }
+  ]
+}
+</script>
