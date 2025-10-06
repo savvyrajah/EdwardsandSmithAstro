@@ -204,10 +204,14 @@ import Footer from '../components/Footer.astro';
   .team-image {
     flex-shrink: 0;
     width: 280px;
+    height: 380px;
   }
 
   .team-image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     border-radius: var(--border-radius-small);
     box-shadow: var(--box-shadow-subtle);
   }
