@@ -5,58 +5,49 @@ import Footer from '../../components/Footer.astro';
 
 const goldCoastProperties = [
   {
-    location: "Burleigh Waters, QLD",
-    beds: 4, baths: 2, cars: 2,
-    image: "/assets/images/image-29-e1755139676515-1024x689.jpg",
-    story: "Secured in 2 weeks, saved over $100,000 on budget"
+    location: "Burleigh Heads, 4220",
+    image: "/assets/images/burleigh-heads-4220.jpg",
+    story: "This home is on the Gold Coast in Queensland, Australia, 89 km south of Brisbane. The suburb is bounded to the north by Tallebudgera Creek, to the east by the Coral Sea and to the west by Reedy Creek. Burleigh has one of the best beach breaks in Australia."
   },
   {
-    location: "Burleigh Heads, QLD",
-    beds: 4, baths: 2, cars: 2,
-    image: "/assets/images/image0-e1755138640868-1024x692.jpg",
-    story: "Off-market SMSF investment property secured"
+    location: "Southport, 4215",
+    image: "/assets/images/southport-4215.jpg",
+    story: "This home is located on the Gold Coast in Queensland, Australia. To the north Southport faces Southport Broadwater; to the east is the Nerang River; and to the south is the locality of Main Beach. Southport is the Gold Coast's central business district."
   },
   {
-    location: "Burleigh Heads, QLD",
-    beds: 4, baths: 2, cars: 2,
-    image: "/assets/images/recent-purchase-3.jpg",
-    story: "AFL Suns star Ben King's dream home - secured in record time"
+    location: "Miami, 4220",
+    image: "/assets/images/miami-4220.jpg",
+    story: "This home is on the Gold Coast in Queensland, Australia. The suburb is bordered by Burleigh Waters to the north, Burleigh Heads to the east and Palm Beach to the south. Miami is a family-friendly suburb with a relaxed coastal lifestyle."
   },
   {
-    location: "Maudsland, QLD",
-    beds: 5, baths: 3, cars: 3,
-    image: "/assets/images/recent-purchase-3.jpg"
+    location: "Palm Beach, 4221",
+    image: "/assets/images/palm-beach-4221.jpg",
+    story: "This home is on the Gold Coast in Queensland, Australia. The suburb is bordered by Miami to the north, the Pacific Ocean to the east, Currumbin to the south and Currumbin Valley to the west. Palm Beach is known for its beautiful beaches and relaxed coastal lifestyle."
   },
   {
-    location: "Palm Beach, QLD",
-    beds: 4, baths: 3, cars: 2,
-    image: "/assets/images/recent-purchase-1.jpg"
+    location: "Broadbeach, 4218",
+    image: "/assets/images/broadbeach-4218.jpg",
+    story: "This property is in Broadbeach, a popular suburb on the Gold Coast, located approximately 80 km south of Brisbane. Broadbeach is known for its beautiful beaches, vibrant dining and entertainment precinct, and close proximity to the Pacific Fair Shopping Centre and The Star Casino."
   },
   {
-    location: "Currumbin Waters, QLD",
-    beds: 5, baths: 3, cars: 2,
-    image: "/assets/images/recent-purchase-3.jpg"
+    location: "Surfers Paradise, 4217",
+    image: "/assets/images/surfers-paradise-4217.jpg",
+    story: "This property is in Surfers Paradise, the iconic tourist and entertainment hub of the Gold Coast, located approximately 80 km south of Brisbane. Surfers Paradise is known for its high-rise apartments, beautiful beaches, vibrant nightlife, and world-class shopping and dining."
   },
   {
-    location: "Mermaid Waters, QLD",
-    beds: 4, baths: 2, cars: 2,
-    image: "/assets/images/recent-purchase-1.jpg"
+    location: "Mermaid Beach, 4218",
+    image: "/assets/images/mermaid-beach-4218.jpg",
+    story: "This property is in Mermaid Beach, an upscale suburb on the Gold Coast, located approximately 80 km south of Brisbane. Mermaid Beach is known for its beautiful beaches, luxury homes, and proximity to high-end shopping and dining at Pacific Fair Shopping Centre and the Broadbeach dining precinct."
   },
   {
-    location: "Robina, QLD",
-    beds: 3, baths: 2, cars: 2,
-    image: "/assets/images/recent-purchase-2.jpg"
+    location: "Broadbeach Waters, 4218",
+    image: "/assets/images/broadbeach-waters-4218.jpg",
+    story: "This property is in Broadbeach Waters, a prestigious waterfront suburb on the Gold Coast, located approximately 80 km south of Brisbane. Broadbeach Waters is known for its waterfront properties, canal systems, proximity to beaches, and easy access to the Broadbeach dining and entertainment precinct."
   },
   {
-    location: "Upper Coomera, QLD",
-    beds: 4, baths: 2, cars: 2,
-    image: "/assets/images/recent-purchase-3.jpg"
-  },
-  {
-    location: "Kingscliff, NSW",
-    beds: 4, baths: 2, cars: 2,
-    image: "/assets/images/recent-purchase-3.jpg",
-    story: "Just south of the Gold Coast border - beachside lifestyle"
+    location: "Burleigh Heads, 4220",
+    image: "/assets/images/burleigh-heads-4220-2.jpg",
+    story: "This property is in Burleigh Heads, one of the Gold Coast's most sought-after suburbs, located approximately 90 km south of Brisbane. Burleigh Heads is known for its world-class surf breaks, stunning beaches, vibrant café culture, and the beautiful Burleigh Headland National Park."
   }
 ];
 ---
@@ -79,8 +70,8 @@ const goldCoastProperties = [
     <section class="properties-section section">
       <div class="container">
         <div class="section-header">
-          <h2>Gold Coast & Northern NSW</h2>
-          <p>Premium coastal properties from Burleigh to Kingscliff</p>
+          <h2>Gold Coast Properties</h2>
+          <p>Premium coastal properties across the Gold Coast region</p>
         </div>
         <div class="properties-grid">
           {goldCoastProperties.map(property => (
@@ -90,11 +81,6 @@ const goldCoastProperties = [
               </div>
               <div class="property-details">
                 <h3>{property.location}</h3>
-                <div class="property-features">
-                  <span>{property.beds} bed</span>
-                  <span>{property.baths} bath</span>
-                  <span>{property.cars} car</span>
-                </div>
                 {property.story && (
                   <p class="property-story">{property.story}</p>
                 )}
