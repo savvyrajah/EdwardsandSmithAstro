@@ -84,12 +84,19 @@ import Footer from '../components/Footer.astro';
     display: flex;
     gap: 20px;
     justify-content: center;
+    align-items: center;
     margin-bottom: 60px;
     flex-wrap: wrap;
   }
 
+  .cta-buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   .button-secondary {
-    display: inline-block;
     padding: 16px 32px;
     background-color: transparent;
     color: var(--primary-green);
