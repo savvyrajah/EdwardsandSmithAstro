@@ -14,278 +14,237 @@ import Footer from '../components/Footer.astro';
     <section class="consultation-hero section">
       <div class="container">
         <h1>Book Your Free Consultation</h1>
-        <p class="hero-subtitle">Let's discuss your property goals and create a tailored strategy to find your dream home or investment property.</p>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section section">
-      <div class="container">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"The team swiftly secured a highly sought after property with multiple interested buyers. Couldn't be happier!"</p>
-            <p class="testimonial-author">— Client, Brisbane</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"I would highly recommend Edwards and Smith to anyone looking to get into the market!"</p>
-            <p class="testimonial-author">— First Home Buyer</p>
-          </div>
-          <div class="testimonial-card">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"The team are reliable, contactable, and I would recommend them to anyone! I will for sure be using their service again."</p>
-            <p class="testimonial-author">— Investor Client</p>
-          </div>
+        <p class="hero-subtitle">Let's discuss your property goals and create a tailored strategy.</p>
+        <div class="fee-banner">
+          <p><strong>Our Fees:</strong> 2-3% in Queensland | Under 5% in Bali</p>
+          <p class="fee-subtext">Registration is free - fees only apply when we start actively searching for your property</p>
         </div>
       </div>
     </section>
 
-    <!-- Form Section -->
+    <!-- Main Content: Two Column Layout -->
     <section class="form-section section">
-      <div class="container-narrow">
-        <div class="form-intro">
-          <h2>Tell Us About Your Property Goals</h2>
-          <p>Please take a moment to share your requirements so we can provide you with the most tailored service.</p>
-        </div>
+      <div class="container-wide">
+        <div class="two-column-layout">
 
-        <form class="consultation-form" name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="consultation" />
-          <p class="hidden">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-          </p>
+          <!-- Left Column: Social Proof & Benefits -->
+          <div class="social-proof-column">
+            <div class="sticky-content">
 
-          <!-- Personal Information -->
-          <div class="form-section-header">
-            <h3>Personal Information</h3>
-          </div>
+              <!-- Stats -->
+              <div class="stats-box">
+                <h3>Why Choose Edwards & Smith?</h3>
+                <div class="stat-item">
+                  <div class="stat-number">$75M+</div>
+                  <div class="stat-label">Properties Purchased in 2024</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">$65k</div>
+                  <div class="stat-label">Average Client Savings</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">4 Weeks</div>
+                  <div class="stat-label">Average Purchase Time</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">50+</div>
+                  <div class="stat-label">5-Star Reviews</div>
+                </div>
+              </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name <span class="required">*</span></label>
-              <input type="text" id="firstName" name="firstName" required />
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name <span class="required">*</span></label>
-              <input type="text" id="lastName" name="lastName" required />
-            </div>
-          </div>
+              <!-- Testimonials -->
+              <div class="testimonials-box">
+                <h3>What Clients Say</h3>
+                <div class="testimonial">
+                  <div class="stars">★★★★★</div>
+                  <p>"The team swiftly secured a highly sought after property with multiple interested buyers. Couldn't be happier!"</p>
+                  <p class="author">— Brisbane Client</p>
+                </div>
+                <div class="testimonial">
+                  <div class="stars">★★★★★</div>
+                  <p>"I would highly recommend Edwards and Smith to anyone looking to get into the market!"</p>
+                  <p class="author">— First Home Buyer</p>
+                </div>
+                <div class="testimonial">
+                  <div class="stars">★★★★★</div>
+                  <p>"The team are reliable, contactable, and I would recommend them to anyone!"</p>
+                  <p class="author">— Investor Client</p>
+                </div>
+              </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number <span class="required">*</span></label>
-              <input type="tel" id="phone" name="phone" required />
-            </div>
-          </div>
+              <!-- Benefits -->
+              <div class="benefits-box">
+                <h3>What You Get</h3>
+                <ul class="benefits-list">
+                  <li>Access to off-market properties before they're public</li>
+                  <li>Expert negotiation saving you thousands</li>
+                  <li>No timeframe pressure - we take as long as needed</li>
+                  <li>Full-service support from search to settlement</li>
+                  <li>Deep local market knowledge across QLD & Bali</li>
+                </ul>
+              </div>
 
-          <!-- Property Requirements -->
-          <div class="form-section-header">
-            <h3>Property Requirements</h3>
-          </div>
-
-          <div class="form-group">
-            <label for="budget">Budget Range <span class="required">*</span></label>
-            <select id="budget" name="budget" required>
-              <option value="">Select your budget</option>
-              <option value="under-1m">Under $1M</option>
-              <option value="1m-1.5m">$1M - $1.5M</option>
-              <option value="1.5m-2m">$1.5M - $2M</option>
-              <option value="2m-3m">$2M - $3M</option>
-              <option value="3m-5m">$3M - $5M</option>
-              <option value="over-5m">Over $5M</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="propertyType">Property Type <span class="required">*</span></label>
-            <select id="propertyType" name="propertyType" required>
-              <option value="">Select property type</option>
-              <option value="house">House</option>
-              <option value="apartment">Apartment</option>
-              <option value="townhouse">Townhouse</option>
-              <option value="land">Land</option>
-              <option value="investment">Investment Property</option>
-              <option value="villa-bali">Villa (Bali)</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="location">Preferred Location/Suburbs <span class="required">*</span></label>
-            <textarea id="location" name="location" rows="3" placeholder="e.g., Burleigh Heads, Palm Beach, New Farm, Canggu" required></textarea>
-          </div>
-
-          <!-- Purchase Intent -->
-          <div class="form-section-header">
-            <h3>Purchase Timeline & Status</h3>
-          </div>
-
-          <div class="form-group">
-            <label>Finance Status <span class="required">*</span></label>
-            <div class="radio-group">
-              <label class="radio-label">
-                <input type="radio" name="financeStatus" value="pre-approved" required />
-                Pre-Approved (Ready to Buy Now)
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="financeStatus" value="in-progress" />
-                Finance Application in Progress
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="financeStatus" value="not-started" />
-                Haven't Started Finance Process
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="financeStatus" value="cash-buyer" />
-                Cash Buyer
-              </label>
             </div>
           </div>
 
-          <div class="form-group">
-            <label>Timeline <span class="required">*</span></label>
-            <div class="radio-group">
-              <label class="radio-label">
-                <input type="radio" name="timeline" value="immediate" required />
-                Immediate (0-3 months)
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="timeline" value="3-6-months" />
-                3-6 Months
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="timeline" value="6-12-months" />
-                6-12 Months
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="timeline" value="exploring" />
-                Just Exploring Options
-              </label>
+          <!-- Right Column: Form -->
+          <div class="form-column">
+            <div class="form-container">
+              <h2>Start Your Property Search</h2>
+              <p class="form-intro">Fill out the form below and we'll be in touch within 24 hours.</p>
+
+              <form class="consultation-form" name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="consultation" />
+                <p class="hidden">
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+
+                <!-- Personal Information -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="firstName" name="firstName" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="lastName" name="lastName" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required />
+                  </div>
+                </div>
+
+                <!-- Property Requirements -->
+                <div class="form-group">
+                  <label for="budget">Budget Range <span class="required">*</span></label>
+                  <select id="budget" name="budget" required>
+                    <option value="">Select your budget</option>
+                    <option value="under-1m">Under $1M</option>
+                    <option value="1m-1.5m">$1M - $1.5M</option>
+                    <option value="1.5m-2m">$1.5M - $2M</option>
+                    <option value="2m-3m">$2M - $3M</option>
+                    <option value="3m-5m">$3M - $5M</option>
+                    <option value="over-5m">Over $5M</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="location">Preferred Location <span class="required">*</span></label>
+                  <select id="location" name="location" required>
+                    <option value="">Select location</option>
+                    <option value="brisbane">Brisbane</option>
+                    <option value="gold-coast">Gold Coast</option>
+                    <option value="bali">Bali</option>
+                    <option value="multiple">Multiple Locations</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="propertyType">Property Type <span class="required">*</span></label>
+                  <select id="propertyType" name="propertyType" required>
+                    <option value="">Select property type</option>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="townhouse">Townhouse</option>
+                    <option value="land">Land</option>
+                    <option value="villa-bali">Villa (Bali)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="purpose">Purpose <span class="required">*</span></label>
+                  <select id="purpose" name="purpose" required>
+                    <option value="">Select purpose</option>
+                    <option value="owner-occupier">Owner Occupier (My Home)</option>
+                    <option value="investment">Investment Property</option>
+                    <option value="both">Both (Live In Then Rent Out)</option>
+                    <option value="holiday-home">Holiday Home</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="timeline">Timeline <span class="required">*</span></label>
+                  <select id="timeline" name="timeline" required>
+                    <option value="">Select timeline</option>
+                    <option value="immediate">Immediate (0-3 months)</option>
+                    <option value="3-6-months">3-6 Months</option>
+                    <option value="6-12-months">6-12 Months</option>
+                    <option value="exploring">Just Exploring</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="financeStatus">Finance Status <span class="required">*</span></label>
+                  <select id="financeStatus" name="financeStatus" required>
+                    <option value="">Select finance status</option>
+                    <option value="pre-approved">Pre-Approved (Ready to Buy Now)</option>
+                    <option value="in-progress">Finance Application in Progress</option>
+                    <option value="not-started">Haven't Started Finance Process</option>
+                    <option value="cash-buyer">Cash Buyer</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="situation">Your Situation <span class="required">*</span></label>
+                  <select id="situation" name="situation" required>
+                    <option value="">Select your situation</option>
+                    <option value="first-home-buyer">First Home Buyer</option>
+                    <option value="upgrading">Upgrading</option>
+                    <option value="downsizing">Downsizing</option>
+                    <option value="investor">Property Investor</option>
+                    <option value="interstate">Interstate Buyer</option>
+                    <option value="relocating">Relocating for Work</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="bedrooms">Minimum Bedrooms</label>
+                  <select id="bedrooms" name="bedrooms">
+                    <option value="">Any</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="3">3+</option>
+                    <option value="4">4+</option>
+                    <option value="5">5+</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="referralSource">How did you hear about us?</label>
+                  <select id="referralSource" name="referralSource">
+                    <option value="">Select an option</option>
+                    <option value="google">Google Search</option>
+                    <option value="ai-chatgpt">AI / ChatGPT</option>
+                    <option value="social-media">Social Media (Instagram/Facebook)</option>
+                    <option value="friend-referral">Friend/Family Referral</option>
+                    <option value="afl-connection">AFL Connection</option>
+                    <option value="previous-client">Previous Client</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="additionalInfo">Additional Requirements or Questions</label>
+                  <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Tell us about any specific requirements, must-haves, or questions you have..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="button-primary button-large">Submit Consultation Request</button>
+                </div>
+
+                <p class="form-disclaimer">By submitting this form, you consent to Edwards & Smith contacting you regarding your property requirements. We respect your privacy and will never share your information with third parties.</p>
+              </form>
             </div>
           </div>
 
-          <div class="form-group">
-            <label>Purpose of Purchase <span class="required">*</span></label>
-            <div class="radio-group">
-              <label class="radio-label">
-                <input type="radio" name="purpose" value="owner-occupier" required />
-                Owner Occupier (My Home)
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="purpose" value="investment" />
-                Investment Property
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="purpose" value="both" />
-                Both (Live In Then Rent Out)
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="purpose" value="holiday-home" />
-                Holiday Home
-              </label>
-            </div>
-          </div>
-
-          <!-- Buyer Situation -->
-          <div class="form-section-header">
-            <h3>Your Situation</h3>
-          </div>
-
-          <div class="form-group">
-            <label>Current Situation <span class="required">*</span></label>
-            <div class="radio-group">
-              <label class="radio-label">
-                <input type="radio" name="situation" value="first-home-buyer" required />
-                First Home Buyer
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="situation" value="upgrading" />
-                Upgrading
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="situation" value="downsizing" />
-                Downsizing
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="situation" value="investor" />
-                Property Investor
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="situation" value="interstate" />
-                Interstate Buyer
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="situation" value="relocating" />
-                Relocating for Work
-              </label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="bedrooms">Minimum Bedrooms</label>
-            <select id="bedrooms" name="bedrooms">
-              <option value="">Any</option>
-              <option value="1">1+</option>
-              <option value="2">2+</option>
-              <option value="3">3+</option>
-              <option value="4">4+</option>
-              <option value="5">5+</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="additionalInfo">Additional Requirements or Questions</label>
-            <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Tell us about any specific requirements, must-haves, or questions you have..."></textarea>
-          </div>
-
-          <!-- How Did You Hear -->
-          <div class="form-group">
-            <label for="referralSource">How did you hear about us?</label>
-            <select id="referralSource" name="referralSource">
-              <option value="">Select an option</option>
-              <option value="google">Google Search</option>
-              <option value="social-media">Social Media</option>
-              <option value="friend-referral">Friend/Family Referral</option>
-              <option value="afl-connection">AFL Connection</option>
-              <option value="previous-client">Previous Client</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="button-primary">Submit Consultation Request</button>
-          </div>
-
-          <p class="form-disclaimer">By submitting this form, you consent to Edwards & Smith contacting you regarding your property requirements. We respect your privacy and will never share your information with third parties.</p>
-        </form>
-      </div>
-    </section>
-
-    <!-- Why Work With Us -->
-    <section class="why-us-section section">
-      <div class="container">
-        <h2>Why Work With Edwards & Smith?</h2>
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <h3>No Timeframe Pressure</h3>
-            <p>Whether it takes 3 weeks or 3 months, we'll find you the perfect property. We don't rush—we get it right.</p>
-          </div>
-          <div class="benefit-card">
-            <h3>Transparent Flat Fees</h3>
-            <p>Our fees are based on purchase price—typically 2-3% in QLD, under 5% in Bali. No hidden costs, complete transparency.</p>
-          </div>
-          <div class="benefit-card">
-            <h3>Off-Market Access</h3>
-            <p>We source properties before they hit the market, giving you first access to opportunities others never see.</p>
-          </div>
-          <div class="benefit-card">
-            <h3>Full-Service Support</h3>
-            <p>From initial brief to settlement, we handle everything: research, inspections, negotiations, and paperwork.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -298,7 +257,7 @@ import Footer from '../components/Footer.astro';
     background: linear-gradient(135deg, var(--primary-green), var(--olive-green));
     color: var(--white);
     text-align: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
   }
 
   .consultation-hero h1 {
@@ -310,96 +269,184 @@ import Footer from '../components/Footer.astro';
     font-family: var(--font-heading);
     font-size: 18px;
     max-width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
   }
 
-  .testimonials-section {
+  .fee-banner {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--text-heading);
+    padding: 20px 30px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .fee-banner p {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 16px;
+  }
+
+  .fee-banner strong {
+    color: var(--primary-green);
+  }
+
+  .fee-subtext {
+    font-size: 13px !important;
+    color: var(--text-light);
+    margin-top: 8px !important;
+  }
+
+  .form-section {
     background-color: #f9f9f9;
   }
 
-  .testimonials-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .testimonials-grid {
+  .two-column-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: 400px 1fr;
+    gap: 60px;
+    align-items: start;
   }
 
-  .testimonial-card {
+  /* Left Column: Social Proof */
+  .social-proof-column {
+    position: relative;
+  }
+
+  .sticky-content {
+    position: sticky;
+    top: 100px;
+  }
+
+  .stats-box,
+  .testimonials-box,
+  .benefits-box {
     background-color: var(--white);
     padding: 30px;
     border-radius: var(--border-radius-small);
     box-shadow: var(--box-shadow-subtle);
+    margin-bottom: 25px;
+  }
+
+  .stats-box h3,
+  .testimonials-box h3,
+  .benefits-box h3 {
+    color: var(--primary-green);
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .stat-number {
+    font-size: 28px;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--primary-green);
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .testimonial {
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .testimonial:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .testimonial:first-of-type {
+    padding-top: 0;
   }
 
   .stars {
     color: #FFB800;
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
   }
 
-  .testimonial-text {
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: var(--text-primary);
-  }
-
-  .testimonial-author {
-    font-family: var(--font-heading);
+  .testimonial p {
     font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+
+  .testimonial .author {
+    font-family: var(--font-heading);
+    font-size: 13px;
     color: var(--primary-green);
     font-weight: 600;
+    font-style: normal;
+    margin: 0;
   }
 
-  .form-section {
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .benefits-list li {
+    padding: 12px 0 12px 28px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.5;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .benefits-list li:last-child {
+    border-bottom: none;
+  }
+
+  .benefits-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  /* Right Column: Form */
+  .form-column {
     background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--box-shadow-subtle);
   }
 
-  .container-narrow {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
+  .form-container h2 {
+    margin-bottom: 10px;
+    color: var(--primary-green);
   }
 
   .form-intro {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .form-intro h2 {
-    margin-bottom: 15px;
-  }
-
-  .form-intro p {
-    font-size: var(--body-large);
+    font-size: 16px;
     color: var(--text-light);
+    margin-bottom: 30px;
   }
 
   .consultation-form {
-    background-color: #f9f9f9;
-    padding: 40px;
-    border-radius: var(--border-radius-small);
-  }
-
-  .form-section-header {
-    margin-top: 40px;
-    margin-bottom: 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--primary-green);
-  }
-
-  .form-section-header:first-child {
-    margin-top: 0;
-  }
-
-  .form-section-header h3 {
-    color: var(--primary-green);
-    font-size: 20px;
-    margin: 0;
+    max-width: 600px;
   }
 
   .form-row {
@@ -409,7 +456,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   .form-group label {
@@ -439,6 +486,11 @@ import Footer from '../components/Footer.astro';
     transition: border-color 0.3s ease;
   }
 
+  .form-group select {
+    cursor: pointer;
+    background-color: var(--white);
+  }
+
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus {
@@ -446,85 +498,52 @@ import Footer from '../components/Footer.astro';
     border-color: var(--primary-green);
   }
 
-  .radio-group {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .radio-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: normal;
-    cursor: pointer;
-  }
-
-  .radio-label input[type="radio"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-  }
-
   .hidden {
     display: none;
   }
 
   .form-actions {
-    margin-top: 40px;
-    text-align: center;
+    margin-top: 30px;
+  }
+
+  .button-large {
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 15px;
   }
 
   .form-disclaimer {
     margin-top: 20px;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-light);
-    text-align: center;
     line-height: 1.5;
   }
 
-  .why-us-section {
-    background-color: #f9f9f9;
-  }
-
-  .why-us-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-  }
-
-  .benefit-card {
-    background-color: var(--white);
-    padding: 30px;
-    border-radius: var(--border-radius-small);
-    text-align: center;
-  }
-
-  .benefit-card h3 {
-    color: var(--primary-green);
-    font-size: 18px;
-    margin-bottom: 15px;
-  }
-
-  .benefit-card p {
-    line-height: 1.6;
-    font-size: 15px;
+  @media (max-width: 1200px) {
+    .two-column-layout {
+      grid-template-columns: 350px 1fr;
+      gap: 40px;
+    }
   }
 
   @media (max-width: 1024px) {
-    .testimonials-grid {
+    .two-column-layout {
       grid-template-columns: 1fr;
+      gap: 30px;
     }
 
-    .benefits-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .sticky-content {
+      position: static;
+    }
+
+    .stats-box,
+    .testimonials-box,
+    .benefits-box {
+      margin-bottom: 20px;
+    }
+
+    .form-column {
+      padding: 30px;
     }
   }
 
@@ -533,12 +552,16 @@ import Footer from '../components/Footer.astro';
       grid-template-columns: 1fr;
     }
 
-    .consultation-form {
-      padding: 30px 20px;
+    .consultation-hero {
+      padding: 40px 20px;
     }
 
-    .benefits-grid {
-      grid-template-columns: 1fr;
+    .fee-banner {
+      padding: 15px 20px;
+    }
+
+    .form-column {
+      padding: 25px 20px;
     }
   }
 </style>
