@@ -24,11 +24,11 @@ import Footer from '../components/Footer.astro';
         <div class="mission-content">
           <h2>Our Mission</h2>
           <p class="mission-statement">
-            Our mission is to bridge the gap between you as the buyer and the property market providing
+            Our mission is to bridge the gap between you as the buyer and the property market, providing
             consistent transparency and authenticity. Whether you're purchasing an investment property or
-            your future home. We're here to assist you in navigating through your property journey. Our
+            your future home, we're here to assist you in navigating through your property journey. Our
             distinctive approach empowers you with dual expertise and personalised guidance every step of
-            your journey.
+            the way.
           </p>
         </div>
       </div>
@@ -81,53 +81,6 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- Why Choose Edwards & Smith -->
-    <section class="why-choose section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Why Choose Edwards & Smith</h2>
-        </div>
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <h3>Expert Knowledge & Personalized Attention</h3>
-            <p>
-              We empower you with not only expert knowledge but also personalized attention tailored to your unique needs and aspirations. Our distinctive approach ensures every client receives the guidance they deserve.
-            </p>
-          </div>
-          <div class="benefit-card">
-            <h3>Access to Off-Market Properties</h3>
-            <p>
-              With strong relationships with local real estate agents across Queensland and South Australia, we provide access to off-market properties you won't find anywhere else, giving you a competitive edge.
-            </p>
-          </div>
-          <div class="benefit-card">
-            <h3>No Rushed Timeframes</h3>
-            <p>
-              We don't operate within strict timeframes. Whether the search takes three weeks or three months, our commitment remains unwavering—we will tirelessly pursue the perfect property for you.
-            </p>
-          </div>
-          <div class="benefit-card">
-            <h3>Transparent Flat Fee Structure</h3>
-            <p>
-              Transparency is paramount. We offer a flat fee structure with no hidden costs. Our fees are determined by the overall purchase price of the property, ensuring fairness and clarity.
-            </p>
-          </div>
-          <div class="benefit-card">
-            <h3>Full-Service Support</h3>
-            <p>
-              From initial research and property sourcing to due diligence, negotiation, and settlement, we handle the entire process. We make property purchasing enjoyable and stress-free.
-            </p>
-          </div>
-          <div class="benefit-card">
-            <h3>Proven Track Record</h3>
-            <p>
-              Trusted by AFL players, musicians, and families across Australia, we've successfully helped clients secure dream homes, investment properties, and even international villas in Bali.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Testimonials Section -->
     <section class="testimonials-section section">
       <div class="container">
@@ -166,7 +119,7 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .about-hero {
-    background-image: url('/assets/images/K3A0522-1-scaled-e1752455696919.jpg');
+    background-image: url('/assets/images/JakeandEly.webp');
     background-size: cover;
     background-position: center;
     color: var(--white);
@@ -304,34 +257,6 @@ import Footer from '../components/Footer.astro';
     opacity: 0.8;
   }
 
-  .why-choose {
-    background-color: var(--white);
-  }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-
-  .benefit-card {
-    background-color: #f9f9f9;
-    padding: 30px;
-    border-radius: var(--border-radius-small);
-    border-top: 3px solid var(--primary-green);
-  }
-
-  .benefit-card h3 {
-    color: var(--primary-green);
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-
-  .benefit-card p {
-    line-height: 1.6;
-    font-size: var(--body-base);
-  }
-
   .testimonials-section {
     background-color: #f9f9f9;
   }
@@ -388,7 +313,6 @@ import Footer from '../components/Footer.astro';
   }
 
   @media (max-width: 1024px) {
-    .benefits-grid,
     .testimonials-grid {
       grid-template-columns: 1fr;
     }
@@ -401,12 +325,6 @@ import Footer from '../components/Footer.astro';
 
     .founder-story.reverse {
       direction: ltr;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .benefits-grid {
-      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>
