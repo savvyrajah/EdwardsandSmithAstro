@@ -40,16 +40,43 @@ import Footer from '../components/Footer.astro';
         <div class="section-header">
           <h2>Our Story</h2>
         </div>
-        <div class="story-content">
-          <p>
-            Edwards & Smith Buyers Agents was founded by former AFL players Jake Edwards and Ely Smith, who discovered their shared passion for property while playing professional football. During their careers, both Jake and Ely invested heavily in property, recognizing it as a path to long-term financial security. This early experience gave them deep insights into market trends, property valuation, and the challenges buyers face.
-          </p>
-          <p>
-            After transitioning from professional sport, they combined their discipline, strategic thinking, and team-first mentality with their property expertise to create Edwards & Smith. What started as two mates helping fellow AFL players find homes has grown into a trusted buyers agency serving families, investors, and professionals across Queensland, South Australia, and Bali.
-          </p>
-          <p>
-            Today, our team of expert buyers agents brings decades of combined experience, helping clients navigate the property market with transparency, authenticity, and proven results. <a href="/team" class="text-link">Meet our full team →</a>
-          </p>
+
+        <!-- Jake Edwards -->
+        <div class="founder-story">
+          <div class="founder-image">
+            <img src="/assets/images/K3A0326-2-scaled.jpg" alt="Jake Edwards" loading="lazy" />
+          </div>
+          <div class="founder-content">
+            <h3>Jake Edwards</h3>
+            <p class="founder-role">Co-Owner & Buyers Agent</p>
+            <p>
+              With over 11 years of experience navigating the property market, Jake has developed deep, behind-the-scenes insight into the buying and selling process. Having personally bought land, built homes, and sold properties both privately and at auction, he brings firsthand knowledge of the complexities buyers face.
+            </p>
+            <p>
+              His background directing a premier mental health charity has shaped his empathetic, community-focused approach. Jake's vision is to empower people in achieving their property ambitions through expert guidance and transparent support.
+            </p>
+          </div>
+        </div>
+
+        <!-- Ely Smith -->
+        <div class="founder-story reverse">
+          <div class="founder-image">
+            <img src="/assets/images/dt3t5dyE-scaled.jpeg" alt="Ely Smith" loading="lazy" />
+          </div>
+          <div class="founder-content">
+            <h3>Ely Smith</h3>
+            <p class="founder-role">Co-Owner & Buyers Agent</p>
+            <p>
+              Originally from Yarrawonga in country Victoria, Ely moved to Brisbane seven years ago to pursue his career in AFL. In November 2018, he was drafted to the Brisbane Lions. While training alongside Jake Edwards, Ely developed a passion for property and purchased his first investment property in 2020.
+            </p>
+            <p>
+              His professional skills and attributes as a respected team player in AFL have proven invaluable in supporting his clients. Ely brings the same dedication and team-first mentality from his football career to Edwards & Smith, ensuring clients receive personalized attention and expert guidance throughout their property journey.
+            </p>
+          </div>
+        </div>
+
+        <div class="team-link">
+          <a href="/team" class="text-link">Meet our full team →</a>
         </div>
       </div>
     </section>
@@ -207,22 +234,63 @@ import Footer from '../components/Footer.astro';
 
   .section-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 
   .section-header h2 {
     margin-bottom: 20px;
   }
 
-  .story-content {
-    max-width: 800px;
-    margin: 0 auto;
+  .founder-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
   }
 
-  .story-content p {
+  .founder-story.reverse {
+    direction: rtl;
+  }
+
+  .founder-story.reverse > * {
+    direction: ltr;
+  }
+
+  .founder-image {
+    width: 100%;
+  }
+
+  .founder-image img {
+    width: 100%;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--box-shadow-subtle);
+  }
+
+  .founder-content h3 {
+    color: var(--primary-green);
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .founder-role {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+
+  .founder-content p {
     font-size: var(--body-large);
     line-height: var(--line-height-body);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+  }
+
+  .team-link {
+    text-align: center;
+    margin-top: 40px;
   }
 
   .text-link {
@@ -230,6 +298,7 @@ import Footer from '../components/Footer.astro';
     font-weight: 600;
     text-decoration: none;
     border-bottom: 1px solid var(--primary-green);
+    font-size: 18px;
   }
 
   .text-link:hover {
@@ -323,6 +392,16 @@ import Footer from '../components/Footer.astro';
     .benefits-grid,
     .testimonials-grid {
       grid-template-columns: 1fr;
+    }
+
+    .founder-story {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .founder-story.reverse {
+      direction: ltr;
     }
   }
 
