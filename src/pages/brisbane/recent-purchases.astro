@@ -1,0 +1,271 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const brisbaneProperties = [
+  {
+    location: "Carina Heights, QLD",
+    beds: 5, baths: 3, cars: 2,
+    image: "/assets/images/outdoor-carina.jpg",
+    story: "After moving from Melbourne for work, our clients wanted to call Brisbane home"
+  },
+  {
+    location: "Bridgeman Downs, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg"
+  },
+  {
+    location: "Carina, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Wakerley, QLD",
+    beds: 5, baths: 3, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg",
+    story: "Located in the fast-growing southeast of Brisbane, well within budget"
+  },
+  {
+    location: "Clayfield, QLD",
+    beds: 5, baths: 3, cars: 2,
+    image: "/assets/images/recent-purchase-3.jpg"
+  },
+  {
+    location: "Camp Hill, QLD",
+    beds: 3, baths: 2, cars: 1,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Caboolture, QLD",
+    beds: 3, baths: 1, cars: 1,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Griffin, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg"
+  },
+  {
+    location: "Hemmant, QLD",
+    beds: 3, baths: 2, cars: 1,
+    image: "/assets/images/recent-purchase-1.jpg"
+  },
+  {
+    location: "Eatons Hill, QLD",
+    beds: 4, baths: 2, cars: 2,
+    image: "/assets/images/recent-purchase-2.jpg"
+  }
+];
+---
+
+<Layout
+  title="Recent Purchases Brisbane | Edwards & Smith Buyers Agents"
+  description="See properties we've recently secured for clients across Brisbane and surrounding suburbs. Expert buyers agents helping you find your dream home."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section">
+      <div class="container">
+        <h1>Recent Purchases - Brisbane</h1>
+        <p class="hero-subtitle">Properties we've secured for clients across Greater Brisbane</p>
+      </div>
+    </section>
+
+    <!-- Brisbane Properties -->
+    <section class="properties-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Brisbane & Surrounds</h2>
+          <p>From inner-city gems to family-friendly suburbs</p>
+        </div>
+        <div class="properties-grid">
+          {brisbaneProperties.map(property => (
+            <div class="property-card">
+              <div class="property-image">
+                <img src={property.image} alt={property.location} loading="lazy" />
+              </div>
+              <div class="property-details">
+                <h3>{property.location}</h3>
+                <div class="property-features">
+                  <span>{property.beds} bed</span>
+                  <span>{property.baths} bath</span>
+                  <span>{property.cars} car</span>
+                </div>
+                {property.story && (
+                  <p class="property-story">{property.story}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+      <div class="container">
+        <h2>Looking to Buy in Brisbane?</h2>
+        <p>Let our local experts help you secure your dream Brisbane property</p>
+        <a href="/book-free-consultation" class="button-primary">Book Free Consultation</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--primary-green), var(--olive-green));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 18px;
+  }
+
+  .properties-section {
+    background-color: var(--white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: var(--body-large);
+    color: var(--text-light);
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .property-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .property-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .property-card:hover .property-image img {
+    transform: scale(1.05);
+  }
+
+  .property-details {
+    padding: 25px;
+  }
+
+  .property-details h3 {
+    color: var(--primary-green);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .property-features {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .property-features span {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .property-story {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  .cta-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    margin-bottom: 25px;
+    font-size: var(--body-large);
+  }
+
+  @media (max-width: 1024px) {
+    .properties-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .properties-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Brisbane Recent Property Purchases",
+  "description": "Properties recently purchased by Edwards & Smith Buyers Agents in Brisbane",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Place",
+        "name": "Brisbane Properties",
+        "description": "Recent purchases across Greater Brisbane"
+      }
+    }
+  ]
+}
+</script>

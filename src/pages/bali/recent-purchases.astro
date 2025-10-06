@@ -1,0 +1,369 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const baliProperties = [
+  {
+    location: "Canggu, Bali",
+    beds: 2, baths: 2.5, cars: 0,
+    image: "/assets/images/recent-purchase-2.jpg",
+    story: "Rice Field Villa with 13-15% annual ROI for Australian investors",
+    roi: "13-15% annual ROI"
+  },
+  {
+    location: "Canggu, Bali",
+    beds: 3, baths: 3, cars: 0,
+    image: "/assets/images/recent-purchase-3.jpg",
+    story: "Investment villa with pool - strong rental returns",
+    roi: "8-10% capital growth"
+  },
+  {
+    location: "Seminyak, Bali",
+    beds: 2, baths: 2, cars: 0,
+    image: "/assets/images/recent-purchase-1.jpg",
+    story: "Beachside investment property in prime location"
+  }
+];
+---
+
+<Layout
+  title="Recent Purchases Bali | Edwards & Smith Buyers Agents"
+  description="See investment villas we've secured for clients in Bali. 13-15% ROI and 8-10% annual capital growth opportunities."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section">
+      <div class="container">
+        <h1>Recent Purchases - Bali</h1>
+        <p class="hero-subtitle">Investment villas securing 13-15% ROI for Australian investors</p>
+      </div>
+    </section>
+
+    <!-- Bali Properties -->
+    <section class="properties-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Bali Investment Villas</h2>
+          <p>Premium properties across Canggu, Seminyak, and Uluwatu</p>
+        </div>
+
+        <!-- ROI Stats -->
+        <div class="roi-stats">
+          <div class="stat-card">
+            <h3>13-15%</h3>
+            <p>Annual Rental ROI</p>
+          </div>
+          <div class="stat-card">
+            <h3>8-10%</h3>
+            <p>Annual Capital Growth</p>
+          </div>
+          <div class="stat-card">
+            <h3>&lt;5%</h3>
+            <p>Our Service Fee</p>
+          </div>
+        </div>
+
+        <div class="properties-grid">
+          {baliProperties.map(property => (
+            <div class="property-card">
+              <div class="property-image">
+                <img src={property.image} alt={property.location} loading="lazy" />
+              </div>
+              <div class="property-details">
+                <h3>{property.location}</h3>
+                <div class="property-features">
+                  <span>{property.beds} bed</span>
+                  <span>{property.baths} bath</span>
+                </div>
+                {property.roi && (
+                  <div class="roi-badge">{property.roi}</div>
+                )}
+                {property.story && (
+                  <p class="property-story">{property.story}</p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Bali -->
+    <section class="why-bali section alt-bg">
+      <div class="container">
+        <h2>Why Invest in Bali?</h2>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <h3>High Returns</h3>
+            <p>13-15% annual rental ROI from short-term holiday rentals</p>
+          </div>
+          <div class="benefit">
+            <h3>Capital Growth</h3>
+            <p>8-10% annual property value increase in prime locations</p>
+          </div>
+          <div class="benefit">
+            <h3>Lifestyle Benefits</h3>
+            <p>Use your villa for holidays while earning passive income</p>
+          </div>
+          <div class="benefit">
+            <h3>Expert Management</h3>
+            <p>We connect you with trusted property managers for hassle-free ownership</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section section">
+      <div class="container">
+        <h2>Ready to Invest in Bali?</h2>
+        <p>Let our Bali property specialists guide you through your investment journey</p>
+        <a href="/book-free-consultation" class="button-primary">Book Free Consultation</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, var(--primary-green), var(--olive-green));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 18px;
+  }
+
+  .properties-section {
+    background-color: var(--white);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    margin-bottom: 10px;
+  }
+
+  .section-header p {
+    font-size: var(--body-large);
+    color: var(--text-light);
+  }
+
+  .roi-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .stat-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+    border-top: 4px solid var(--primary-green);
+  }
+
+  .stat-card h3 {
+    color: var(--primary-green);
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .stat-card p {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .property-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .property-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .property-card:hover .property-image img {
+    transform: scale(1.05);
+  }
+
+  .property-details {
+    padding: 25px;
+  }
+
+  .property-details h3 {
+    color: var(--primary-green);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .property-features {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .property-features span {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .roi-badge {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: var(--primary-green);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .property-story {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+
+  .why-bali {
+    background-color: #f9f9f9;
+  }
+
+  .why-bali h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .benefit {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--box-shadow-subtle);
+  }
+
+  .benefit h3 {
+    color: var(--primary-green);
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .benefit p {
+    line-height: 1.6;
+    color: var(--text-primary);
+  }
+
+  .cta-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    margin-bottom: 25px;
+    font-size: var(--body-large);
+  }
+
+  @media (max-width: 1024px) {
+    .roi-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .properties-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .roi-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .properties-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Bali Investment Villa Purchases",
+  "description": "Investment villas recently purchased by Edwards & Smith Buyers Agents in Bali",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Place",
+        "name": "Bali Investment Villas",
+        "description": "High ROI investment properties across Bali"
+      }
+    }
+  ]
+}
+</script>
