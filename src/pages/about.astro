@@ -119,21 +119,13 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .about-hero {
-    background-image: url('/assets/images/JakeandEly.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/images/JakeandEly.png');
     background-size: cover;
     background-position: center;
     color: var(--white);
     text-align: center;
     padding: 120px 20px;
     position: relative;
-  }
-
-  .about-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
   }
 
   .about-hero .container {
