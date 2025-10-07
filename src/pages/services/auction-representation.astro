@@ -238,6 +238,43 @@ import LastUpdated from '../../components/LastUpdated.astro';
       </div>
     </section>
 
+    <!-- Track Record Section -->
+    <section class="track-record-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Track Record Speaks for Itself</h2>
+          <p class="section-intro">Real results from actual client purchases</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Properties Purchased</div>
+            <div class="stat-detail">48 in 2024 | 30 in 2025 YTD</div>
+          </div>
+          <div class="stat-card highlight">
+            <div class="stat-number">$65,000</div>
+            <div class="stat-label">Average Client Savings</div>
+            <div class="stat-detail">Through expert negotiation</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4 Weeks</div>
+            <div class="stat-label">Average Time to Purchase</div>
+            <div class="stat-detail">Fastest: 2 days | Range: 4-12 weeks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Success Rate</div>
+            <div class="stat-detail">Every client secures their property</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">60%</div>
+            <div class="stat-label">Off-Market Purchases</div>
+            <div class="stat-detail">Access to exclusive opportunities</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="faq-section section">
       <div class="container">
@@ -557,12 +594,81 @@ import LastUpdated from '../../components/LastUpdated.astro';
     opacity: 0.9;
   }
 
+  .track-record-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+  }
+
+  .track-record-section h2 {
+    color: var(--white);
+  }
+
+  .track-record-section .section-intro {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .stat-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
+  }
+
+  .stat-card.highlight {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--white);
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+
+  .stat-label {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .stat-detail {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.4;
+  }
+
   @media (max-width: 1024px) {
     .included-grid,
     .psychology-grid,
     .strategies-grid,
     .faq-grid {
       grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -573,6 +679,11 @@ import LastUpdated from '../../components/LastUpdated.astro';
 
     th, td {
       padding: 10px;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
   }
 </style>

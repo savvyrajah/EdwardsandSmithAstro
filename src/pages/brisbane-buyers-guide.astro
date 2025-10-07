@@ -186,8 +186,42 @@ import LastUpdated from '../components/LastUpdated.astro';
     <section class="suburbs-section section alt-bg">
       <div class="container">
         <div class="section-header">
-          <h2>Top 5 Brisbane Suburbs in Numbers</h2>
-          <p class="section-intro">Market data and insights for Brisbane's most sought-after suburbs</p>
+          <h2>Our Top Performing Brisbane Suburbs</h2>
+          <p class="section-intro">We've successfully helped clients purchase properties in these high-demand Brisbane locations</p>
+        </div>
+
+        <!-- Top Performers Grid -->
+        <div class="top-performers-grid">
+          <a href="/recent-purchases#hawthorne" class="performer-card">
+            <h3>Hawthorne</h3>
+            <p class="performer-label">Top Performing Suburb</p>
+            <p class="performer-description">Premium riverside properties with strong capital growth</p>
+          </a>
+          <a href="/recent-purchases#ascot" class="performer-card">
+            <h3>Ascot</h3>
+            <p class="performer-label">Top Performing Suburb</p>
+            <p class="performer-description">Prestigious homes near racecourses and quality schools</p>
+          </a>
+          <a href="/recent-purchases#hamilton" class="performer-card">
+            <h3>Hamilton</h3>
+            <p class="performer-label">Top Performing Suburb</p>
+            <p class="performer-description">Inner-city lifestyle with excellent amenities</p>
+          </a>
+          <a href="/recent-purchases#clayfield" class="performer-card">
+            <h3>Clayfield</h3>
+            <p class="performer-label">Top Performing Suburb</p>
+            <p class="performer-description">Character homes and family-friendly atmosphere</p>
+          </a>
+          <a href="/recent-purchases#new-farm" class="performer-card">
+            <h3>New Farm</h3>
+            <p class="performer-label">Top Performing Suburb</p>
+            <p class="performer-description">Art deco architecture and riverside living</p>
+          </a>
+        </div>
+
+        <div class="section-header" style="margin-top: 60px;">
+          <h2>Brisbane Suburb Market Data</h2>
+          <p class="section-intro">Detailed market insights for popular Brisbane suburbs</p>
         </div>
 
         <div class="suburbs-grid">
@@ -632,6 +666,52 @@ import LastUpdated from '../components/LastUpdated.astro';
     background-color: #f9f9f9;
   }
 
+  .top-performers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+
+  .performer-card {
+    background: var(--primary-green);
+    color: var(--white);
+    padding: 25px 20px;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-green);
+  }
+
+  .performer-card:hover {
+    background: var(--white);
+    color: var(--primary-green);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .performer-card h3 {
+    color: inherit;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .performer-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .performer-description {
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: 0.95;
+  }
+
   .suburbs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -814,6 +894,23 @@ import LastUpdated from '../components/LastUpdated.astro';
   .choice-btn:hover {
     background: var(--primary-green);
     color: var(--white);
+  }
+
+  @media (max-width: 1024px) {
+    .top-performers-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .top-performers-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .performer-card {
+      padding: 20px 15px;
+    }
   }
 
   .form-group {
