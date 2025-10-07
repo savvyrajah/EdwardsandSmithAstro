@@ -2,6 +2,8 @@
 import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import LastUpdated from '../../../components/LastUpdated.astro';
 ---
 
 <Layout
@@ -16,9 +18,8 @@ import Footer from '../../../components/Footer.astro';
         <img src="/assets/images/villa-pulang-pererenan-80351.webp" alt="Villa Pulang Pererenan 80351 purchased by Edwards & Smith" />
       </div>
       <div class="container">
-        <div class="breadcrumb">
-          <a href="/">Home</a> / <a href="/recent-purchases">Recent Purchases</a> / <a href="/bali/recent-purchases">Bali</a> / <span>Villa Pulang, Pererenan</span>
-        </div>
+        <Breadcrumbs items={[{name: "Bali", url: "/bali/recent-purchases"}, {name: "Villa Pulang, Pererenan", url: "/recent-purchases/bali/villa-pulang-pererenan-80351"}]} />
+        <LastUpdated date="2025-01-15" />
         <h1>Villa Pulang, Pererenan, 80351 - Bali</h1>
         <p class="property-subtitle">Strategic yet serene location in vibrant Pererenan</p>
       </div>

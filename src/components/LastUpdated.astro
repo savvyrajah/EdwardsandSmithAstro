@@ -1,0 +1,55 @@
+---
+interface Props {
+  date: string; // Format: YYYY-MM-DD
+}
+
+const { date } = Astro.props;
+
+// Format date for display
+const formatDate = (dateString: string) => {
+  const dateObj = new Date(dateString);
+  return dateObj.toLocaleDateString('en-AU', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+---
+
+<div class="last-updated">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <polyline points="12 6 12 12 16 14"></polyline>
+  </svg>
+  <span>Last Updated: <time datetime={date}>{formatDate(date)}</time></span>
+</div>
+
+<style>
+  .last-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--text-light);
+    margin: 10px 0;
+    padding: 8px 12px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+
+  .last-updated svg {
+    flex-shrink: 0;
+    color: var(--primary-green);
+  }
+
+  .last-updated time {
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .last-updated {
+      font-size: 13px;
+    }
+  }
+</style>

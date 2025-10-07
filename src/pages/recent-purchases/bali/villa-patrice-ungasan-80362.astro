@@ -2,6 +2,8 @@
 import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import LastUpdated from '../../../components/LastUpdated.astro';
 ---
 
 <Layout
@@ -16,9 +18,8 @@ import Footer from '../../../components/Footer.astro';
         <img src="/assets/images/villa-patrice-ungasan-80362.webp" alt="Villa Patrice Ungasan 80362 purchased by Edwards & Smith" />
       </div>
       <div class="container">
-        <div class="breadcrumb">
-          <a href="/">Home</a> / <a href="/recent-purchases">Recent Purchases</a> / <a href="/bali/recent-purchases">Bali</a> / <span>Villa Patrice, Ungasan</span>
-        </div>
+        <Breadcrumbs items={[{name: "Bali", url: "/bali/recent-purchases"}, {name: "Villa Patrice, Ungasan", url: "/recent-purchases/bali/villa-patrice-ungasan-80362"}]} />
+        <LastUpdated date="2025-01-15" />
         <h1>Villa Patrice, Ungasan, 80362 - Bali</h1>
         <p class="property-subtitle">Modern opulence meets tropical serenity near golf course</p>
       </div>
@@ -112,21 +113,6 @@ import Footer from '../../../components/Footer.astro';
 
   .property-hero .container {
     padding-top: 30px;
-  }
-
-  .breadcrumb {
-    font-size: 14px;
-    color: var(--text-light);
-    margin-bottom: 15px;
-  }
-
-  .breadcrumb a {
-    color: var(--primary-green);
-    text-decoration: none;
-  }
-
-  .breadcrumb a:hover {
-    text-decoration: underline;
   }
 
   .property-hero h1 {
