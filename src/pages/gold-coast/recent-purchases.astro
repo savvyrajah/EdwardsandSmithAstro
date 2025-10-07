@@ -130,10 +130,27 @@ const goldCoastProperties = [
 
 <style>
   .hero {
-    background: linear-gradient(135deg, var(--primary-green), var(--olive-green));
+    background-image: url('/assets/images/palm-beach-4221-new.jpg'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
     color: var(--white);
     text-align: center;
     padding: 80px 20px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(90, 91, 84, 0.7), rgba(137, 139, 122, 0.7));
+    z-index: 0;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 1;
   }
 
   .hero h1 {
