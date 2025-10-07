@@ -1,0 +1,92 @@
+---
+export interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/" itemprop="item">
+        <span itemprop="name">Home</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    {items.map((item, index) => (
+      <>
+        <li class="separator" aria-hidden="true">/</li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          {index === items.length - 1 ? (
+            <span itemprop="name" class="current">{item.name}</span>
+          ) : (
+            <a href={item.url} itemprop="item">
+              <span itemprop="name">{item.name}</span>
+            </a>
+          )}
+          <meta itemprop="position" content={String(index + 2)} />
+        </li>
+      </>
+    ))}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs {
+    padding: 20px 0 10px;
+    font-size: 14px;
+  }
+
+  .breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .breadcrumbs a {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--olive-green);
+    text-decoration: underline;
+  }
+
+  .breadcrumbs .separator {
+    color: var(--text-light);
+    user-select: none;
+  }
+
+  .breadcrumbs .current {
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumbs {
+      font-size: 13px;
+      padding: 15px 0 8px;
+    }
+
+    .breadcrumbs ol {
+      gap: 6px;
+    }
+  }
+</style>
