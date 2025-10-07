@@ -70,6 +70,16 @@ const brisbaneProperties = [
     story: "First-time investors, take note! Our client was looking for their first investment property to meet key criteria."
   }
 ];
+
+// Helper function to convert location to URL slug
+function locationToSlug(location: string): string {
+  return location
+    .toLowerCase()
+    .replace(/,?\s+nsw\s+/i, '-')
+    .replace(/,\s*/g, '-')
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '');
+}
 ---
 
 <Layout
@@ -95,7 +105,7 @@ const brisbaneProperties = [
         </div>
         <div class="properties-grid">
           {brisbaneProperties.map(property => (
-            <div class="property-card">
+            <a href={`/recent-purchases/brisbane/${locationToSlug(property.location)}`} class="property-card">
               <div class="property-image">
                 <img src={property.image} alt={property.location} loading="lazy" />
               </div>
@@ -105,7 +115,7 @@ const brisbaneProperties = [
                   <p class="property-story">{property.story}</p>
                 )}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -188,11 +198,15 @@ const brisbaneProperties = [
     overflow: hidden;
     box-shadow: var(--box-shadow-subtle);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
 
   .property-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
   }
 
   .property-image {

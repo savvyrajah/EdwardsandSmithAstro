@@ -158,6 +158,16 @@ const otherProperties = [
 ];
 
 const baliProperties = [];
+
+// Helper function to convert location to URL slug
+function locationToSlug(location: string): string {
+  return location
+    .toLowerCase()
+    .replace(/,?\s+nsw\s+/i, '-') // Handle "NSW" in Kingscliff
+    .replace(/,\s*/g, '-') // Replace commas with hyphens
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/[^a-z0-9-]/g, ''); // Remove special characters
+}
 ---
 
 <Layout
@@ -183,7 +193,7 @@ const baliProperties = [];
         </div>
         <div class="properties-grid">
           {brisbaneProperties.map(property => (
-            <div class="property-card">
+            <a href={`/recent-purchases/brisbane/${locationToSlug(property.location)}`} class="property-card">
               <div class="property-image">
                 <img src={property.image} alt={property.location} loading="lazy" />
               </div>
@@ -193,7 +203,7 @@ const baliProperties = [];
                   <p class="property-story">{property.story}</p>
                 )}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -208,7 +218,7 @@ const baliProperties = [];
         </div>
         <div class="properties-grid">
           {goldCoastProperties.map(property => (
-            <div class="property-card">
+            <a href={`/recent-purchases/gold-coast/${locationToSlug(property.location)}`} class="property-card">
               <div class="property-image">
                 <img src={property.image} alt={property.location} loading="lazy" />
               </div>
@@ -218,7 +228,7 @@ const baliProperties = [];
                   <p class="property-story">{property.story}</p>
                 )}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
@@ -234,7 +244,7 @@ const baliProperties = [];
           </div>
           <div class="properties-grid">
             {otherProperties.map(property => (
-              <div class="property-card">
+              <a href={`/recent-purchases/other/${locationToSlug(property.location)}`} class="property-card">
                 <div class="property-image">
                   <img src={property.image} alt={property.location} loading="lazy" />
                 </div>
@@ -244,7 +254,7 @@ const baliProperties = [];
                     <p class="property-story">{property.story}</p>
                   )}
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -332,6 +342,9 @@ const baliProperties = [];
     overflow: hidden;
     box-shadow: var(--box-shadow-subtle);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
   }
 
   .alt-bg .property-card {
@@ -341,6 +354,7 @@ const baliProperties = [];
   .property-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
   }
 
   .property-image {
