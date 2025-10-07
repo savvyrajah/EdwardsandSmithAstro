@@ -1,0 +1,325 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<Layout
+  title="Villa Pulang Pererenan Purchase | Edwards & Smith Success Story"
+  description="See how Edwards & Smith secured this villa in the vibrant heart of Pererenan, Bali. Expert buyers agent service for Australians investing in Bali property."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="property-hero section">
+      <div class="hero-image">
+        <img src="/assets/images/villa-pulang-pererenan-80351.webp" alt="Villa Pulang Pererenan 80351 purchased by Edwards & Smith" />
+      </div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <a href="/recent-purchases">Recent Purchases</a> / <a href="/bali/recent-purchases">Bali</a> / <span>Villa Pulang, Pererenan</span>
+        </div>
+        <h1>Villa Pulang, Pererenan, 80351 - Bali</h1>
+        <p class="property-subtitle">Strategic yet serene location in vibrant Pererenan</p>
+      </div>
+    </section>
+
+    <!-- Property Overview -->
+    <section class="property-overview section">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-main">
+            <h2>The Success Story</h2>
+            <p class="lead-text">
+              Nestled in the vibrant heart of Pererenan, this property enjoys a strategic yet serene location, tucked away from the bustling main street.
+            </p>
+
+            <h3>What We Did</h3>
+            <ul class="success-points">
+              <li>Conducted comprehensive market analysis of Pererenan villa opportunities</li>
+              <li>Identified properties matching client requirements in prime Bali locations</li>
+              <li>Performed detailed due diligence including PT PMA requirements and legal structures</li>
+              <li>Navigated Indonesian property law and ownership regulations</li>
+              <li>Managed the entire settlement process for a smooth transaction</li>
+            </ul>
+
+            <h3>Why Pererenan?</h3>
+            <p>
+              Pererenan offers an excellent balance between vibrant lifestyle and peaceful living. The area is strategically positioned away from the main hustle whilst remaining connected to Bali's best amenities, beaches, and social scene.
+            </p>
+          </div>
+
+          <div class="overview-sidebar">
+            <div class="property-card">
+              <h3>Property Details</h3>
+              <div class="detail-item">
+                <span class="label">Location:</span>
+                <span class="value">Pererenan, Bali 80351</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Region:</span>
+                <span class="value">Bali, Indonesia</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Service Type:</span>
+                <span class="value">Full Buyers Agent Service</span>
+              </div>
+            </div>
+
+            <div class="cta-card">
+              <h4>Looking to Buy a Villa in Bali?</h4>
+              <p>Let us help you secure your dream villa like we did for this client.</p>
+              <a href="/book-free-consultation" class="button-primary">Book Free Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section section">
+      <div class="container">
+        <h2>Ready to Find Your Dream Villa in Bali?</h2>
+        <p>Let us help you secure your next Bali property investment</p>
+        <a href="/book-free-consultation" class="button-primary">Book Free Consultation</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .property-hero {
+    background-color: #f9f9f9;
+    padding-top: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .property-hero .container {
+    padding-top: 30px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+
+  .breadcrumb a {
+    color: var(--primary-green);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .property-hero h1 {
+    margin-bottom: 10px;
+  }
+
+  .property-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+  }
+
+  .property-overview {
+    background-color: var(--white);
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+  }
+
+  .lead-text {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+  }
+
+  .overview-main h2 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+  }
+
+  .overview-main h3 {
+    color: var(--primary-green);
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .success-points {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .success-points li {
+    padding: 12px 0 12px 30px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .success-points li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .overview-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .property-card {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .property-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+  }
+
+  .detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .detail-item:last-child {
+    border-bottom: none;
+  }
+
+  .detail-item .label {
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .detail-item .value {
+    color: var(--text-primary);
+  }
+
+  .cta-card {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .cta-card h4 {
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .cta-card p {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .cta-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    margin-bottom: 25px;
+    font-size: var(--body-large);
+  }
+
+  @media (max-width: 1024px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-image {
+      height: 250px;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateListing",
+  "name": "Villa Pulang Pererenan Purchase",
+  "url": "https://www.edwardsandsmith.com.au/recent-purchases/bali/villa-pulang-pererenan-80351",
+  "description": "Nestled in the vibrant heart of Pererenan, this property enjoys a strategic yet serene location, tucked away from the bustling main street.",
+  "image": "https://www.edwardsandsmith.com.au/assets/images/villa-pulang-pererenan-80351.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Pererenan",
+    "addressRegion": "Bali",
+    "postalCode": "80351",
+    "addressCountry": "ID"
+  },
+  "provider": {
+    "@type": "RealEstateAgent",
+    "name": "Edwards & Smith Buyers Agents",
+    "url": "https://www.edwardsandsmith.com.au"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.edwardsandsmith.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Recent Purchases",
+      "item": "https://www.edwardsandsmith.com.au/recent-purchases"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Bali",
+      "item": "https://www.edwardsandsmith.com.au/bali/recent-purchases"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Villa Pulang Pererenan 80351",
+      "item": "https://www.edwardsandsmith.com.au/recent-purchases/bali/villa-pulang-pererenan-80351"
+    }
+  ]
+}
+</script>

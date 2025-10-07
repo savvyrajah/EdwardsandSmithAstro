@@ -1,0 +1,329 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+---
+
+<Layout
+  title="Villa Patrice Ungasan Purchase | Edwards & Smith Success Story"
+  description="See how Edwards & Smith secured this stunning villa near the golf course complex in Ungasan, Bali. Modern opulence meets tropical serenity."
+>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="property-hero section">
+      <div class="hero-image">
+        <img src="/assets/images/villa-patrice-ungasan-80362.webp" alt="Villa Patrice Ungasan 80362 purchased by Edwards & Smith" />
+      </div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <a href="/recent-purchases">Recent Purchases</a> / <a href="/bali/recent-purchases">Bali</a> / <span>Villa Patrice, Ungasan</span>
+        </div>
+        <h1>Villa Patrice, Ungasan, 80362 - Bali</h1>
+        <p class="property-subtitle">Modern opulence meets tropical serenity near golf course</p>
+      </div>
+    </section>
+
+    <!-- Property Overview -->
+    <section class="property-overview section">
+      <div class="container">
+        <div class="overview-grid">
+          <div class="overview-main">
+            <h2>The Success Story</h2>
+            <p class="lead-text">
+              Situated in the lively core of Ungasan, close to the golf course complex, this stunning villa seamlessly combines modern opulence with tropical serenity.
+            </p>
+
+            <h3>What We Did</h3>
+            <ul class="success-points">
+              <li>Conducted comprehensive market analysis of Ungasan luxury villa opportunities</li>
+              <li>Identified premium properties near the prestigious golf course complex</li>
+              <li>Performed detailed due diligence including PT PMA requirements and legal structures</li>
+              <li>Navigated Indonesian property law and ownership regulations</li>
+              <li>Managed the entire settlement process for a smooth transaction</li>
+            </ul>
+
+            <h3>Why Ungasan?</h3>
+            <p>
+              Ungasan combines the best of Bali living with proximity to world-class amenities. The golf course complex attracts discerning buyers seeking upscale lifestyle, whilst the area's clifftop location offers stunning ocean views and easy access to exclusive beach clubs and resorts.
+            </p>
+          </div>
+
+          <div class="overview-sidebar">
+            <div class="property-card">
+              <h3>Property Details</h3>
+              <div class="detail-item">
+                <span class="label">Location:</span>
+                <span class="value">Ungasan, Bali 80362</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Nearby:</span>
+                <span class="value">Golf Course Complex</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Region:</span>
+                <span class="value">Bali, Indonesia</span>
+              </div>
+              <div class="detail-item">
+                <span class="label">Service Type:</span>
+                <span class="value">Full Buyers Agent Service</span>
+              </div>
+            </div>
+
+            <div class="cta-card">
+              <h4>Looking to Buy a Villa in Bali?</h4>
+              <p>Let us help you secure your dream villa like we did for this client.</p>
+              <a href="/book-free-consultation" class="button-primary">Book Free Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section section">
+      <div class="container">
+        <h2>Ready to Find Your Dream Villa in Bali?</h2>
+        <p>Let us help you secure your next Bali property investment</p>
+        <a href="/book-free-consultation" class="button-primary">Book Free Consultation</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .property-hero {
+    background-color: #f9f9f9;
+    padding-top: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .property-hero .container {
+    padding-top: 30px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+
+  .breadcrumb a {
+    color: var(--primary-green);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .property-hero h1 {
+    margin-bottom: 10px;
+  }
+
+  .property-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+  }
+
+  .property-overview {
+    background-color: var(--white);
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+  }
+
+  .lead-text {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+  }
+
+  .overview-main h2 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+  }
+
+  .overview-main h3 {
+    color: var(--primary-green);
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+
+  .success-points {
+    list-style: none;
+    margin: 20px 0;
+  }
+
+  .success-points li {
+    padding: 12px 0 12px 30px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .success-points li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-green);
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .overview-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .property-card {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .property-card h3 {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+  }
+
+  .detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .detail-item:last-child {
+    border-bottom: none;
+  }
+
+  .detail-item .label {
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .detail-item .value {
+    color: var(--text-primary);
+  }
+
+  .cta-card {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .cta-card h4 {
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .cta-card p {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .cta-section {
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .cta-section p {
+    margin-bottom: 25px;
+    font-size: var(--body-large);
+  }
+
+  @media (max-width: 1024px) {
+    .overview-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-image {
+      height: 250px;
+    }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateListing",
+  "name": "Villa Patrice Ungasan Purchase",
+  "url": "https://www.edwardsandsmith.com.au/recent-purchases/bali/villa-patrice-ungasan-80362",
+  "description": "Situated in the lively core of Ungasan, close to the golf course complex, this stunning villa seamlessly combines modern opulence with tropical serenity.",
+  "image": "https://www.edwardsandsmith.com.au/assets/images/villa-patrice-ungasan-80362.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ungasan",
+    "addressRegion": "Bali",
+    "postalCode": "80362",
+    "addressCountry": "ID"
+  },
+  "provider": {
+    "@type": "RealEstateAgent",
+    "name": "Edwards & Smith Buyers Agents",
+    "url": "https://www.edwardsandsmith.com.au"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.edwardsandsmith.com.au"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Recent Purchases",
+      "item": "https://www.edwardsandsmith.com.au/recent-purchases"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Bali",
+      "item": "https://www.edwardsandsmith.com.au/bali/recent-purchases"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Villa Patrice Ungasan 80362",
+      "item": "https://www.edwardsandsmith.com.au/recent-purchases/bali/villa-patrice-ungasan-80362"
+    }
+  ]
+}
+</script>
