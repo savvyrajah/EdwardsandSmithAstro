@@ -78,27 +78,28 @@ HERE ARE ALL THE TEAM MEMBERS https://edwardsandsmith.com.au/meet-the-team-2-2/ 
 Based on your actual purchases, what are your most successful suburbs?
 
 **Top 5 Brisbane suburbs you've purchased properties in:**
-1.
-2.
-3.
-4.
-5.
+1. HAWTHORNE
+2. ASCOT
+3. HAMILTON
+4.Clayfield and 
+5.New Farm
 
 **Top 5 Gold Coast suburbs you've purchased properties in:**
-1.
-2.
-3.
-4.
-5.
+1. PALM BEACH
+2. BURLEIGH WATERS
+3. BURLEIGH HEADS
+4. MERMAID Waters
+5. CURRUMBIN Waters
 
 **Top 3 Bali areas you've purchased properties in:**
-1.
-2.
-3.
+1. SEMINYAK
+2. ULAWATU
+3. CAANGU
+4. LEGIAN
 
 **Answer:**
 ```
-[Your answer here]
+[See answers in line above
 ```
 
 ---
@@ -110,13 +111,16 @@ Based on your actual purchases, what are your most successful suburbs?
 ### Question 3A: Total Properties Purchased
 How many properties have you successfully purchased for clients?
 
-**2024 Total:**
-**2025 Total (Year to Date):**
-**All Time Total (if known):**
+**2024 Total: 48
+**2025 Total (Year to Date): 30
+**All Time Total (if known):  100+
 
 **Answer:**
 ```
-[Your answer here]
+We have value of houses bought in 2024 and 2025 on the home page just below the hero
+**2024 Total: 48
+**2025 Total (Year to Date): 30
+**All Time Total (if known):  100+
 ```
 
 ---
@@ -130,7 +134,7 @@ When you negotiate on behalf of clients, what's the average amount you save them
 
 **Answer:**
 ```
-[Your answer here]
+average client savings is $65000 this is also in the area below the hero on the homepage.
 ```
 
 ---
@@ -144,7 +148,9 @@ From when a client engages you to when they successfully purchase a property:
 
 **Answer:**
 ```
-[Your answer here]
+4 WEEKS AVERAGE TIME TO PURCHASE
+Fastest is 2 days.
+range is 4-12 weeks 
 ```
 
 ---
@@ -157,7 +163,7 @@ What percentage of clients who engage you end up successfully purchasing a prope
 
 **Answer:**
 ```
-[Your answer here]
+100% succerss rate
 ```
 
 ---
@@ -187,7 +193,7 @@ How many off-market properties do you have access to or show clients?
 
 **Answer:**
 ```
-[Your answer here]
+Base this on now. all our offmarket property deals can be found on the site under offmarket deals. 
 ```
 
 ---
@@ -200,7 +206,7 @@ What percentage of your client purchases are off-market vs on-market?
 
 **Answer:**
 ```
-[Your answer here]
+60% off market 40% on market
 ```
 
 ---
@@ -288,7 +294,7 @@ I have your "Edwards & Smith Buyers Agents - Complete Google Reviews.md" file.
 
 **Answer:**
 ```
-[Your answer here - "Option A" or "Option B" with details]
+OPTION A
 ```
 
 ---
