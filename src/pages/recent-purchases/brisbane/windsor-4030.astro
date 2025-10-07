@@ -76,6 +76,22 @@ import Footer from '../../../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Client Testimonial -->
+    <section class="testimonial-section section">
+      <div class="container-narrow">
+        <div class="testimonial-feature">
+          <div class="quote-icon">"</div>
+          <blockquote>
+            <p>We worked with Emma to buy our first home and she was incredible! She listened to everything we wanted, took the time to find properties that ticked all of our boxes and never pressured us to make any decisions we weren't 100% on. When it finally came to signing contracts and finalising our purchase, Emma went above and beyond, explained contracts, and made the entire process so seamless. We are so grateful for her help as if it wasn't for Emma we would have never purchased!</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <p class="author-name">Shaw Build</p>
+            <p class="author-title">Verified Google Review</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="cta-section section">
       <div class="container">
@@ -237,6 +253,56 @@ import Footer from '../../../components/Footer.astro';
   .cta-card p {
     margin-bottom: 20px;
     font-size: 14px;
+  }
+
+  .testimonial-section {
+    background-color: var(--white);
+  }
+
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .testimonial-feature {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .quote-icon {
+    font-size: 60px;
+    color: var(--primary-green);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-feature blockquote {
+    margin: 0;
+  }
+
+  .testimonial-feature p {
+    font-size: 20px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+  }
+
+  .author-name {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+  }
+
+  .author-title {
+    font-size: 14px;
+    color: var(--text-light);
   }
 
   .cta-section {

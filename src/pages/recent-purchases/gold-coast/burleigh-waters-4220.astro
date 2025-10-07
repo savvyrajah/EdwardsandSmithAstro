@@ -76,6 +76,22 @@ import Footer from '../../../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Client Testimonial -->
+    <section class="testimonial-section section">
+      <div class="container-narrow">
+        <div class="testimonial-feature">
+          <div class="quote-icon">"</div>
+          <blockquote>
+            <p>Five-Star Buyer Agent Experience! Working with Jake and Kath was an absolute game-changer in our home-buying journey. From our very first meeting, it was clear that we were in the hands of a true professional—someone who not only knows the market inside and out, but also genuinely cares about their clients. They took the time to understand exactly what we were looking for, asked all the right questions, and offered expert advice. Their communication was flawless—always responsive, honest, and incredibly organised. They handled every step of the process and it felt entirely stress free. We had our perfect home just over a week from our first meeting and even under budget. We couldn't be happier and would wholeheartedly recommend them to anyone looking to buy a home. If you want someone who goes above and beyond, this is the buyer agent for you!</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <p class="author-name">Camilla Sjøthun</p>
+            <p class="author-title">Verified Google Review</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="cta-section section">
       <div class="container">
@@ -237,6 +253,56 @@ import Footer from '../../../components/Footer.astro';
   .cta-card p {
     margin-bottom: 20px;
     font-size: 14px;
+  }
+
+  .testimonial-section {
+    background-color: var(--white);
+  }
+
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .testimonial-feature {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .quote-icon {
+    font-size: 60px;
+    color: var(--primary-green);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-feature blockquote {
+    margin: 0;
+  }
+
+  .testimonial-feature p {
+    font-size: 20px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+  }
+
+  .author-name {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+  }
+
+  .author-title {
+    font-size: 14px;
+    color: var(--text-light);
   }
 
   .cta-section {

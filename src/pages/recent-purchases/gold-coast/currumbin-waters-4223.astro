@@ -76,6 +76,23 @@ import Footer from '../../../components/Footer.astro';
       </div>
     </section>
 
+
+    <!-- Client Testimonial -->
+    <section class="testimonial-section section">
+      <div class="container-narrow">
+        <div class="testimonial-feature">
+          <div class="quote-icon">"</div>
+          <blockquote>
+            <p>Working with Jake to purchase our first home was an absolute pleasure. He guided us through the entire process with ease, making what could have been stressful feel seamless. Thanks to his expertise, we found a home that ticked every box on our brief - and even came in well under budget. We couldn't be happier. You're the man, Jake!</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <p class="author-name">Trent Nattrass</p>
+            <p class="author-title">Verified Google Review</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="cta-section section">
       <div class="container">
@@ -237,6 +254,57 @@ import Footer from '../../../components/Footer.astro';
   .cta-card p {
     margin-bottom: 20px;
     font-size: 14px;
+  }
+
+
+  .testimonial-section {
+    background-color: var(--white);
+  }
+
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .testimonial-feature {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .quote-icon {
+    font-size: 60px;
+    color: var(--primary-green);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-feature blockquote {
+    margin: 0;
+  }
+
+  .testimonial-feature p {
+    font-size: 20px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+  }
+
+  .author-name {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+  }
+
+  .author-title {
+    font-size: 14px;
+    color: var(--text-light);
   }
 
   .cta-section {

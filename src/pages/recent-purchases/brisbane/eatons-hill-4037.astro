@@ -76,6 +76,22 @@ import Footer from '../../../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Client Testimonial -->
+    <section class="testimonial-section section">
+      <div class="container-narrow">
+        <div class="testimonial-feature">
+          <div class="quote-icon">"</div>
+          <blockquote>
+            <p>Jake was my first point of contact at Edwards & Smith, and from the start, he was professional, efficient, and incredibly understanding of my inexperience as a first-time buyer. He quickly connected me with Mackenzie, who guided me through every step of the process with patience and expertise. No question was too small—Mackenzie was always available, providing clear answers and reassurance whenever I needed it. From my first call with Jake to my loan approval, the entire process took just over four weeks. I couldn't have asked for a better team to help me secure my first home! Highly recommend</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <p class="author-name">Molly Brown</p>
+            <p class="author-title">Verified Google Review</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="cta-section section">
       <div class="container">
@@ -237,6 +253,56 @@ import Footer from '../../../components/Footer.astro';
   .cta-card p {
     margin-bottom: 20px;
     font-size: 14px;
+  }
+
+  .testimonial-section {
+    background-color: var(--white);
+  }
+
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .testimonial-feature {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .quote-icon {
+    font-size: 60px;
+    color: var(--primary-green);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-feature blockquote {
+    margin: 0;
+  }
+
+  .testimonial-feature p {
+    font-size: 20px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+  }
+
+  .author-name {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+  }
+
+  .author-title {
+    font-size: 14px;
+    color: var(--text-light);
   }
 
   .cta-section {

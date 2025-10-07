@@ -76,6 +76,22 @@ import Footer from '../../../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Client Testimonial -->
+    <section class="testimonial-section section">
+      <div class="container-narrow">
+        <div class="testimonial-feature">
+          <div class="quote-icon">"</div>
+          <blockquote>
+            <p>From the moment I met Ely and Emma there was a connection. I was searching for a property on my own but when having endless grief with agents not returning calls or communicating...perhaps because the market is so active they didn't need me! Ely and Emma took all that grief away. After providing a brief on what we wanted, they swiftly moved into action. A property was located quickly, best of all at a price I couldn't have negotiated myself with agents, competing with the queues of people viewing similar homes. I believe we potentially saved $40k to $50k off market purchase price using Ely and Emma's services. To give Emma took the pain out of the experience. Time is valuable for me being a busy working mum running my own business and using the services of Edwards & Smith Buyers Agents without a doubt took away the world of hurt dealing with Real Estate agents. The continued arrangements of ESP and any other property access requirements were all handled by Ely and Emma, so I didn't have to locate these other services. They handled all the steps from finding property to settlement. The professionalism, integrity and communication displayed during the process was awesome... I was always kept updated. I wasn't chasing, which was refreshing.</p>
+          </blockquote>
+          <div class="testimonial-author">
+            <p class="author-name">Veronica Cook</p>
+            <p class="author-title">Verified Google Review</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Final CTA -->
     <section class="cta-section section">
       <div class="container">
@@ -237,6 +253,56 @@ import Footer from '../../../components/Footer.astro';
   .cta-card p {
     margin-bottom: 20px;
     font-size: 14px;
+  }
+
+  .testimonial-section {
+    background-color: var(--white);
+  }
+
+  .container-narrow {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .testimonial-feature {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+  }
+
+  .quote-icon {
+    font-size: 60px;
+    color: var(--primary-green);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-feature blockquote {
+    margin: 0;
+  }
+
+  .testimonial-feature p {
+    font-size: 20px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+  }
+
+  .author-name {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+  }
+
+  .author-title {
+    font-size: 14px;
+    color: var(--text-light);
   }
 
   .cta-section {
