@@ -158,6 +158,37 @@ const lastUpdated = "January 2025";
           <h2>Your Consent</h2>
           <p>By using our website and services, you acknowledge that you have read, understood, and agree to this Privacy Policy and the collection, use, and disclosure of your personal information as described herein.</p>
         </div>
+
+        <!-- Privacy FAQ -->
+        <div class="policy-section faq-section">
+          <h2>Privacy Policy FAQs</h2>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <h3>What personal information do you collect?</h3>
+              <p>We collect personal identification information (name, email, phone, address), professional details, website usage data, and communication records when you interact with our services or website.</p>
+            </div>
+            <div class="faq-item">
+              <h3>How do you use my personal information?</h3>
+              <p>We use your information to provide our buyers agent services, respond to inquiries, send property updates and newsletters (with opt-out options), analyze website usage, and comply with legal obligations.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Do you share my information with third parties?</h3>
+              <p>We only share information with trusted service providers who help operate our business, in the event of business transfers, or when legally required. We never sell or trade your personal information for marketing purposes.</p>
+            </div>
+            <div class="faq-item">
+              <h3>How can I access or update my personal information?</h3>
+              <p>Under the Privacy Act 1988, you have the right to request access to, correction of, or deletion of your personal information. Contact us using the details below to exercise these rights.</p>
+            </div>
+            <div class="faq-item">
+              <h3>How long do you keep my information?</h3>
+              <p>We retain your personal information only as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law. When no longer needed, we securely delete or anonymize it.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Is my information secure?</h3>
+              <p>Yes. We implement appropriate technical and organizational security measures including secure servers, encryption technologies, restricted access controls, and regular security assessments to protect your personal information.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -286,7 +317,51 @@ const lastUpdated = "January 2025";
     margin-top: 0;
   }
 
+  .faq-section {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-top: 60px;
+  }
+
+  .faq-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .faq-item {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+    box-shadow: var(--box-shadow-subtle);
+  }
+
+  .faq-item h3 {
+    color: var(--primary-green);
+    font-size: 18px;
+    margin-bottom: 12px;
+    margin-top: 0;
+  }
+
+  .faq-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 0;
+  }
+
   @media (max-width: 768px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
     .hero {
       padding: 40px 20px;
     }
@@ -326,5 +401,62 @@ const lastUpdated = "January 2025";
     "telephone": "+61413245022",
     "email": "info@edwardsandsmith.com.au"
   }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What personal information do you collect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We collect personal identification information (name, email, phone, address), professional details, website usage data, and communication records when you interact with our services or website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you use my personal information?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We use your information to provide our buyers agent services, respond to inquiries, send property updates and newsletters (with opt-out options), analyze website usage, and comply with legal obligations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you share my information with third parties?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We only share information with trusted service providers who help operate our business, in the event of business transfers, or when legally required. We never sell or trade your personal information for marketing purposes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I access or update my personal information?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the Privacy Act 1988, you have the right to request access to, correction of, or deletion of your personal information. Contact us using the details below to exercise these rights."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do you keep my information?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We retain your personal information only as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law. When no longer needed, we securely delete or anonymize it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my information secure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We implement appropriate technical and organizational security measures including secure servers, encryption technologies, restricted access controls, and regular security assessments to protect your personal information."
+      }
+    }
+  ]
 }
 </script>
