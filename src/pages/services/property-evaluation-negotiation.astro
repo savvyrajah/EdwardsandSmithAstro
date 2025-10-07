@@ -23,7 +23,7 @@ import Footer from '../../components/Footer.astro';
       <div class="container-wide">
         <div class="section-header">
           <h2>What's Included in Our Property Evaluation & Negotiation Service?</h2>
-          <p class="section-intro">You've found a property you love—now get expert validation and professional negotiation to ensure you're paying the right price. Perfect for buyers who've found a property themselves but want independent evaluation, comprehensive due diligence, and strategic negotiation to secure the best possible deal.</p>
+          <p class="section-intro">You've found a property you love—now get expert validation and professional negotiation to ensure you're paying the right price. Perfect for buyers who've found a property themselves but want independent evaluation, comprehensive due diligence, and strategic negotiation to secure the best possible deal. Need help finding your property? Our <a href="/services/full-buyers-agent-service">Full Premium Support Package</a> includes complete property search and off-market access.</p>
         </div>
         <div class="included-grid">
           <div class="included-item">
@@ -203,9 +203,9 @@ import Footer from '../../components/Footer.astro';
             <thead>
               <tr>
                 <th>Service Component</th>
-                <th>Full Premium Support</th>
+                <th><a href="/services/full-buyers-agent-service" class="service-link">Full Premium Support</a></th>
                 <th>Partial Service</th>
-                <th>Auction Only</th>
+                <th><a href="/services/auction-representation" class="service-link">Auction Only</a></th>
               </tr>
             </thead>
             <tbody>
@@ -536,6 +536,17 @@ import Footer from '../../components/Footer.astro';
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 0.5px;
+  }
+
+  .service-link {
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
   }
 
   tbody tr:hover {

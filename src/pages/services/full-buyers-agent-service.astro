@@ -67,7 +67,7 @@ import Footer from '../../components/Footer.astro';
             <h3>5. Expert Negotiation & Auction Bidding</h3>
             <ul>
               <li>Strategic negotiation on your behalf</li>
-              <li>Professional auction representation if required</li>
+              <li>Professional <a href="/services/auction-representation">auction representation</a> if required</li>
               <li>Customized bidding strategy for auctions</li>
               <li>Post-auction negotiation if property is passed in</li>
             </ul>
@@ -98,8 +98,8 @@ import Footer from '../../components/Footer.astro';
               <tr>
                 <th>Service Component</th>
                 <th>Full Premium Support</th>
-                <th>Partial Service</th>
-                <th>Auction Only</th>
+                <th><a href="/services/property-evaluation-negotiation" class="service-link">Partial Service</a></th>
+                <th><a href="/services/auction-representation" class="service-link">Auction Only</a></th>
               </tr>
             </thead>
             <tbody>
@@ -196,7 +196,7 @@ import Footer from '../../components/Footer.astro';
             <h3>Expert Negotiation Saves Money</h3>
             <p>
               Our clients save an average of $65,000 through professional negotiation. We remove the emotion
-              from the process and negotiate based on data, market knowledge, and proven strategies. Our fee
+              from the process and negotiate based on data, market knowledge, and proven strategies. Already found a property and just need <a href="/services/property-evaluation-negotiation">expert evaluation and negotiation support</a>? Our fee
               often pays for itself through better pricing alone.
             </p>
           </div>
@@ -425,6 +425,17 @@ import Footer from '../../components/Footer.astro';
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 0.5px;
+  }
+
+  .service-link {
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
   }
 
   tbody tr:hover {

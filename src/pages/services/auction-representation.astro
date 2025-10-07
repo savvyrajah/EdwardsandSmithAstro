@@ -23,7 +23,7 @@ import Footer from '../../components/Footer.astro';
       <div class="container-wide">
         <div class="section-header">
           <h2>What's Included in Our Auction Representation Service?</h2>
-          <p class="section-intro">Remove the emotion and stress from auction day with professional representation. We've attended hundreds of auctions across Queensland and execute strategic bidding plans designed to secure your property at the best possible price—replacing emotion with strategy, experience, and discipline.</p>
+          <p class="section-intro">Remove the emotion and stress from auction day with professional representation. We've attended hundreds of auctions across Queensland and execute strategic bidding plans designed to secure your property at the best possible price—replacing emotion with strategy, experience, and discipline. Need full end-to-end support including property search? Check out our <a href="/services/full-buyers-agent-service">Full Premium Support Package</a>.</p>
         </div>
         <div class="included-grid">
           <div class="included-item">
@@ -162,8 +162,8 @@ import Footer from '../../components/Footer.astro';
             <thead>
               <tr>
                 <th>Service Component</th>
-                <th>Full Premium Support</th>
-                <th>Partial Service</th>
+                <th><a href="/services/full-buyers-agent-service" class="service-link">Full Premium Support</a></th>
+                <th><a href="/services/property-evaluation-negotiation" class="service-link">Partial Service</a></th>
                 <th>Auction Only</th>
               </tr>
             </thead>
@@ -476,6 +476,17 @@ import Footer from '../../components/Footer.astro';
     text-transform: uppercase;
     font-size: 14px;
     letter-spacing: 0.5px;
+  }
+
+  .service-link {
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
   }
 
   tbody tr:hover {
