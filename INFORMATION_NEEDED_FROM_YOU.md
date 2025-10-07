@@ -11,16 +11,22 @@ Which suburbs/regions does Jake specialize in or have the most experience with?
 
 **Brisbane suburbs Jake specializes in:**
 - [ ] List suburbs here (e.g., New Farm, Teneriffe, Hamilton, etc.)
+ 
 
 **Gold Coast suburbs Jake specializes in:**
 - [ ] List suburbs here
 
+
 **Bali areas Jake specializes in:**
 - [ ] List areas here
+   
+
 
 **Answer:**
 ```
-[Your answer here]
+- JAKE DOES NOT SPECIALISE IN BRISBANE HIS IS GOLD COAST AND BALI
+- GOLD COAST: SPECIALISES IN ALL SUBURBS IN GOLD COAST FROM COOLANGATA to Broadbeach
+- BALI: SPECIALISES IN ALL LOCATIONS IN BALI WE HAVE LISTED SUCH AS SEMINYAK, CANGUU, AND OTHER ON THE SITE.
 ```
 
 ---
@@ -31,6 +37,7 @@ Which suburbs/regions does Ely specialize in or have the most experience with?
 **Brisbane suburbs Ely specializes in:**
 - [ ] List suburbs here
 
+
 **Gold Coast suburbs Ely specializes in:**
 - [ ] List suburbs here
 
@@ -39,6 +46,9 @@ Which suburbs/regions does Ely specialize in or have the most experience with?
 
 **Answer:**
 ```
+- SPECIALISES IN ALL SUBURBS IN BRISBANE THAT WE HAVE LISTED ON THE SITE 
+ - ELY DOES NOT SPECIALISE IN GOLD COAST
+  - ELY SPECIALISES IN BALI ALL THE SUBURBS THAT WE HAVE LISTED 
 [Your answer here]
 ```
 
@@ -53,9 +63,11 @@ Do you have any other buyers agents on the team?
 - Specialization areas:
 - Bio/credentials:
 
+
+
 **Answer:**
 ```
-[Your answer here, or write "No other team members"]
+HERE ARE ALL THE TEAM MEMBERS https://edwardsandsmith.com.au/meet-the-team-2-2/ WE ALREADY HAVE A MEET THE TEAM PAGE BUT WE SHOULD INCLUDE THEIR INSTAGRAM HANDLES AND EMAILS WHICH ARE ON THAT PAGE. JAKE, KATH, BREIGE ARE ALL GOLD COAST SPECIALISTS, THE REMAINDER ARE BRISBANE. JAKE AND ELY ARE ALSO GOLD COAST. 
 ```
 
 ---

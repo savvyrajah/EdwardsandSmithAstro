@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import LastUpdated from '../components/LastUpdated.astro';
 ---
 
 <Layout
@@ -13,6 +15,8 @@ import Footer from '../components/Footer.astro';
     <!-- Hero Section -->
     <section class="team-hero section">
       <div class="container">
+        <Breadcrumbs items={[{name: "Meet the Team", url: "/team"}]} />
+        <LastUpdated date="2025-01-15" />
         <h1>Meet the Team</h1>
         <p class="hero-subtitle">Expert buyers agents committed to your property success</p>
       </div>
@@ -30,8 +34,13 @@ import Footer from '../components/Footer.astro';
             <div class="team-info">
               <h3>Jake Edwards</h3>
               <p class="team-role">Co-Owner & Buyers Agent</p>
+              <p class="team-specialization"><strong>Specializes in:</strong> <a href="/gold-coast-buyers-guide">Gold Coast</a> (Coolangatta to Broadbeach) & <a href="/bali-buyers-guide">Bali</a></p>
               <p class="team-bio">
                 With over 11 years of experience navigating the property market, Jake has developed deep, behind-the-scenes insight into the buying and selling process. Having personally bought land, built homes, and sold properties both privately and at auction, he brings firsthand knowledge of the complexities buyers face. His background directing a premier mental health charity has shaped his empathetic, community-focused approach. Jake's vision is to empower people in achieving their property ambitions through expert guidance and transparent support.
+              </p>
+              <p class="team-contact">
+                <a href="mailto:jake@edwardsandsmith.com.au">jake@edwardsandsmith.com.au</a> |
+                <a href="https://instagram.com/jake_edwards_official" target="_blank" rel="noopener">@jake_edwards_official</a>
               </p>
             </div>
           </div>
@@ -44,8 +53,13 @@ import Footer from '../components/Footer.astro';
             <div class="team-info">
               <h3>Ely Smith</h3>
               <p class="team-role">Co-Owner & Buyers Agent</p>
+              <p class="team-specialization"><strong>Specializes in:</strong> <a href="/brisbane-buyers-guide">Brisbane</a> & <a href="/bali-buyers-guide">Bali</a></p>
               <p class="team-bio">
                 Originally from Yarrawonga in country Victoria, Ely moved to Brisbane seven years ago to pursue his career in AFL. In November 2018, he was drafted to the Brisbane Lions. While training alongside Jake Edwards, Ely developed a passion for property and purchased his first investment property in 2020. His professional skills and attributes as a respected team player in AFL have proven invaluable in supporting his clients. Ely brings the same dedication and team-first mentality from his football career to Edwards & Smith, ensuring clients receive personalized attention and expert guidance throughout their property journey.
+              </p>
+              <p class="team-contact">
+                <a href="mailto:ely@edwardsandsmith.com.au">ely@edwardsandsmith.com.au</a> |
+                <a href="https://instagram.com/ely_smith" target="_blank" rel="noopener">@ely_smith</a>
               </p>
             </div>
           </div>
@@ -58,8 +72,13 @@ import Footer from '../components/Footer.astro';
             <div class="team-info">
               <h3>Emma Handley</h3>
               <p class="team-role">Operations Manager</p>
+              <p class="team-specialization"><strong>Specializes in:</strong> <a href="/brisbane-buyers-guide">Brisbane</a></p>
               <p class="team-bio">
                 With over 9 years of experience in the real estate industry, Emma brings a well-rounded background that spans from hands-on property management to high-level operational leadership. Originally from Perth, Emma has excelled in various roles including property management, business development, and sales. Her deep passion for property purchasing drives her to provide exceptional service and strategic guidance to clients. With a keen understanding of the Brisbane property market and dedication to meeting client needs, Emma ensures informed and confident decision-making for both first-time buyers and seasoned investors.
+              </p>
+              <p class="team-contact">
+                <a href="mailto:emma@edwardsandsmith.com.au">emma@edwardsandsmith.com.au</a> |
+                <a href="https://instagram.com/emmahandley.buyersagent" target="_blank" rel="noopener">@emmahandley.buyersagent</a>
               </p>
             </div>
           </div>
@@ -72,8 +91,13 @@ import Footer from '../components/Footer.astro';
             <div class="team-info">
               <h3>Glenn Price</h3>
               <p class="team-role">Buyers Agent</p>
+              <p class="team-specialization"><strong>Specializes in:</strong> <a href="/brisbane-buyers-guide">Brisbane</a></p>
               <p class="team-bio">
                 Glenn Price brings nearly two decades of elite sales, negotiation, and business leadership experience to the property market, offering discerning buyers a true advantage. After launching his own Buyers Agency in 2022, Glenn developed a reputation for expert market analysis, skilled negotiation, and client-first service. His strategic approach and extensive industry knowledge help clients navigate complex transactions with confidence, securing properties that align perfectly with their goals and investment strategies.
+              </p>
+              <p class="team-contact">
+                <a href="mailto:glenn@edwardsandsmith.com.au">glenn@edwardsandsmith.com.au</a> |
+                <a href="https://instagram.com/glenn__price" target="_blank" rel="noopener">@glenn__price</a>
               </p>
             </div>
           </div>
@@ -86,8 +110,13 @@ import Footer from '../components/Footer.astro';
             <div class="team-info">
               <h3>Kath Mackay</h3>
               <p class="team-role">Buyers Agent</p>
+              <p class="team-specialization"><strong>Specializes in:</strong> <a href="/gold-coast-buyers-guide">Gold Coast</a></p>
               <p class="team-bio">
                 With a background in nursing and a lifelong passion for property, Kath brings a unique blend of empathy, determination, and hands-on experience to the real estate industry. As both a property investor and industry professional, she has studied interior design, earned her real estate license, and gained invaluable experience managing properties and understanding market dynamics. Kath's caring approach and practical expertise ensure her clients receive personalized support throughout their property journey, from initial search to settlement.
+              </p>
+              <p class="team-contact">
+                <a href="mailto:kath@edwardsandsmith.com.au">kath@edwardsandsmith.com.au</a> |
+                <a href="https://instagram.com/kath_mackay" target="_blank" rel="noopener">@kath_mackay</a>
               </p>
             </div>
           </div>
@@ -100,8 +129,13 @@ import Footer from '../components/Footer.astro';
             <div class="team-info">
               <h3>Dylan Adkins</h3>
               <p class="team-role">Buyers Agent, Property Investor & Portfolio Strategist</p>
+              <p class="team-specialization"><strong>Specializes in:</strong> <a href="/brisbane-buyers-guide">Brisbane</a></p>
               <p class="team-bio">
                 Dylan helps everyday Aussies build multi-property portfolios through data-backed strategies. With a personal $6M+ property portfolio across multiple states, he understands the power of smart finance, strong capital growth, and high-yield investing. Based on the Gold Coast, Dylan leads the investment arm of Edwards & Smith, combining market insights with an investor-first approach. His proven track record and hands-on investment experience provide clients with the strategic guidance needed to build wealth through property.
+              </p>
+              <p class="team-contact">
+                <a href="mailto:dylan@edwardsandsmith.com.au">dylan@edwardsandsmith.com.au</a> |
+                <a href="https://instagram.com/property.with.dylan" target="_blank" rel="noopener">@property.with.dylan</a>
               </p>
             </div>
           </div>
@@ -114,8 +148,13 @@ import Footer from '../components/Footer.astro';
             <div class="team-info">
               <h3>William Fairman</h3>
               <p class="team-role">Buyers Agent</p>
+              <p class="team-specialization"><strong>Specializes in:</strong> <a href="/brisbane-buyers-guide">Brisbane</a></p>
               <p class="team-bio">
                 With 15 years in electrical manufacturing, William transitioned to real estate in early 2024, bringing a construction-trained perspective and detailed approach to property searches. Having personally bought, sold, and invested in property, he offers practical, personal support from the initial brief to the final negotiation. Based in Brisbane's southeast where he lives with his wife and cocker spaniel Scotch, William combines his technical background with genuine client care to deliver exceptional results.
+              </p>
+              <p class="team-contact">
+                <a href="mailto:william@edwardsandsmith.com.au">william@edwardsandsmith.com.au</a> |
+                <a href="https://instagram.com/william.edwardsandsmith" target="_blank" rel="noopener">@william.edwardsandsmith</a>
               </p>
             </div>
           </div>
@@ -128,8 +167,13 @@ import Footer from '../components/Footer.astro';
             <div class="team-info">
               <h3>Breige Quinn</h3>
               <p class="team-role">Buyers Agent</p>
+              <p class="team-specialization"><strong>Specializes in:</strong> <a href="/gold-coast-buyers-guide">Gold Coast</a></p>
               <p class="team-bio">
                 Breige brings unique insight from her background as a selling agent, understanding how sellers think and negotiate. She has bought, sold, and invested in property across London, Melbourne, and the Gold Coast. With a strategic approach and global perspective, she specialises in identifying property value and negotiating precisely for her clients. Her international experience and insider knowledge provide clients with a competitive advantage in any market.
+              </p>
+              <p class="team-contact">
+                <a href="mailto:breige@edwardsandsmith.com.au">breige@edwardsandsmith.com.au</a> |
+                <a href="https://instagram.com/breige_quinn" target="_blank" rel="noopener">@breige_quinn</a>
               </p>
             </div>
           </div>
@@ -228,13 +272,47 @@ import Footer from '../components/Footer.astro';
     color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+
+  .team-specialization {
+    font-size: 14px;
+    color: var(--text-secondary);
     margin-bottom: 12px;
+  }
+
+  .team-specialization a {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .team-specialization a:hover {
+    color: var(--olive-green);
+    text-decoration: underline;
   }
 
   .team-bio {
     line-height: 1.6;
     font-size: 15px;
     color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  .team-contact {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .team-contact a {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .team-contact a:hover {
+    color: var(--olive-green);
+    text-decoration: underline;
   }
 
   .cta-section {
@@ -281,55 +359,71 @@ import Footer from '../components/Footer.astro';
   "name": "Edwards & Smith Buyers Agents",
   "url": "https://www.edwardsandsmith.com.au",
   "logo": "/assets/images/Cream-Green-Minimalist-Fashion-Collection-Banner-e1736837350367.png",
-  "description": "Expert buyers agents team across Queensland, South Australia, and Bali",
+  "description": "Expert buyers agents team across Queensland and Bali",
   "employee": [
     {
       "@type": "Person",
       "name": "Jake Edwards",
       "jobTitle": "Co-Owner & Buyers Agent",
-      "description": "Over 11 years of property market experience"
+      "email": "jake@edwardsandsmith.com.au",
+      "sameAs": "https://instagram.com/jake_edwards_official",
+      "description": "Over 11 years of property market experience specializing in Gold Coast and Bali"
     },
     {
       "@type": "Person",
       "name": "Ely Smith",
       "jobTitle": "Co-Owner & Buyers Agent",
-      "description": "Former Brisbane Lions AFL player"
+      "email": "ely@edwardsandsmith.com.au",
+      "sameAs": "https://instagram.com/ely_smith",
+      "description": "Former Brisbane Lions AFL player specializing in Brisbane and Bali"
     },
     {
       "@type": "Person",
       "name": "Emma Handley",
       "jobTitle": "Operations Manager",
-      "description": "9+ years real estate experience"
+      "email": "emma@edwardsandsmith.com.au",
+      "sameAs": "https://instagram.com/emmahandley.buyersagent",
+      "description": "9+ years real estate experience specializing in Brisbane"
     },
     {
       "@type": "Person",
       "name": "Glenn Price",
       "jobTitle": "Buyers Agent",
-      "description": "Nearly two decades of sales and negotiation experience"
+      "email": "glenn@edwardsandsmith.com.au",
+      "sameAs": "https://instagram.com/glenn__price",
+      "description": "Nearly two decades of sales and negotiation experience specializing in Brisbane"
     },
     {
       "@type": "Person",
       "name": "Kath Mackay",
       "jobTitle": "Buyers Agent",
-      "description": "Property investor with nursing background"
+      "email": "kath@edwardsandsmith.com.au",
+      "sameAs": "https://instagram.com/kath_mackay",
+      "description": "Property investor with nursing background specializing in Gold Coast"
     },
     {
       "@type": "Person",
       "name": "Dylan Adkins",
       "jobTitle": "Buyers Agent & Portfolio Strategist",
-      "description": "$6M+ property portfolio investor"
+      "email": "dylan@edwardsandsmith.com.au",
+      "sameAs": "https://instagram.com/property.with.dylan",
+      "description": "$6M+ property portfolio investor specializing in Brisbane"
     },
     {
       "@type": "Person",
       "name": "William Fairman",
       "jobTitle": "Buyers Agent",
-      "description": "Construction-trained with 15 years electrical manufacturing experience"
+      "email": "william@edwardsandsmith.com.au",
+      "sameAs": "https://instagram.com/william.edwardsandsmith",
+      "description": "Construction-trained with 15 years electrical manufacturing experience specializing in Brisbane"
     },
     {
       "@type": "Person",
       "name": "Breige Quinn",
       "jobTitle": "Buyers Agent",
-      "description": "Former selling agent with international experience"
+      "email": "breige@edwardsandsmith.com.au",
+      "sameAs": "https://instagram.com/breige_quinn",
+      "description": "Former selling agent with international experience specializing in Gold Coast"
     }
   ]
 }
