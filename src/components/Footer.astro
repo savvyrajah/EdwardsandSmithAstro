@@ -5,31 +5,45 @@
   <div class="container-wide">
     <div class="footer-grid">
       <div class="footer-section">
-        <h4>ABOUT US</h4>
+        <h4>SERVICES</h4>
         <ul>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/team">Meet The Team</a></li>
-          <li><a href="/recent-purchases">Recent Purchases</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/services">Our Services</a></li>
+          <li><a href="/services/full-buyers-agent-service">Full Premium Support</a></li>
+          <li><a href="/services/property-evaluation-negotiation">Property Evaluation & Negotiation</a></li>
+          <li><a href="/services/auction-representation">Auction Representation</a></li>
+          <li><a href="/off-market-properties">Off-Market Properties</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>OFFICE HOURS</h4>
-        <p>Monday-Saturday: 9:00AM – 5:00PM</p>
-        <p>Sunday: Closed</p>
+        <h4>LOCATIONS</h4>
+        <ul>
+          <li><a href="/brisbane-buyers-guide">Brisbane Buyers Guide</a></li>
+          <li><a href="/brisbane/recent-purchases">Brisbane Recent Purchases</a></li>
+          <li><a href="/gold-coast-buyers-guide">Gold Coast Buyers Guide</a></li>
+          <li><a href="/gold-coast/recent-purchases">Gold Coast Recent Purchases</a></li>
+          <li><a href="/bali-buyers-guide">Bali Buyers Guide</a></li>
+          <li><a href="/bali/recent-purchases">Bali Recent Purchases</a></li>
+        </ul>
       </div>
       <div class="footer-section">
-        <h4>LOCATION</h4>
-        <p>668 Wynnum road, Morningside, 4170</p>
-        <p>1 Ern Harley Drive, Burleigh Heads, QLD 4220</p>
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/team">Meet The Team</a></li>
+          <li><a href="/recent-purchases">All Recent Purchases</a></li>
+          <li><a href="/book-free-consultation">Book Consultation</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
       </div>
-      <div class="footer-section">
-        <h4>CONTACT</h4>
+      <div class="footer-section contact-section">
+        <h4>CONTACT & LOCATION</h4>
         <p><a href="tel:0413245022">0413 245 022</a></p>
         <p><a href="mailto:info@edwardsandsmith.com.au">info@edwardsandsmith.com.au</a></p>
-      </div>
-      <div class="footer-section">
-        <h4>FOLLOW US</h4>
+        <p class="address">668 Wynnum Road, Morningside, 4170</p>
+        <p class="address">1 Ern Harley Drive, Burleigh Heads, QLD 4220</p>
+
+        <h4 class="social-heading">FOLLOW US</h4>
         <div class="social-links">
           <a href="https://www.instagram.com/edwardsandsmith/" target="_blank" rel="noopener noreferrer" aria-label="Instagram - Edwards & Smith">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -70,9 +84,19 @@
 
   .footer-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     margin-bottom: 40px;
+  }
+
+  .contact-section .address {
+    font-size: var(--body-small);
+    color: var(--text-primary);
+    margin-top: 5px;
+  }
+
+  .contact-section .social-heading {
+    margin-top: 25px;
   }
 
   .social-links {
@@ -88,16 +112,16 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--primary-green);
+    background-color: #a8aba4;
     color: var(--white);
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
   .social-links a:hover {
-    background-color: var(--olive-green);
+    background-color: var(--primary-green);
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 
   .social-links svg {
@@ -151,13 +175,13 @@
 
   @media (max-width: 1024px) {
     .footer-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media (max-width: 768px) {
     .footer-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr;
     }
   }
 

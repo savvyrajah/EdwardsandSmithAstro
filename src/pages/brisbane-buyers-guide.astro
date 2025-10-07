@@ -363,13 +363,11 @@ import Footer from '../components/Footer.astro';
           <div class="fee-structure">
             <h4>How Our Fees Are Structured</h4>
             <p>
-              At Edwards & Smith, transparency is paramount, which is why we offer a flat fee structure with no hidden costs. Our fees are determined by the overall purchase price of the property, ensuring fairness and clarity for our clients.
+              At Edwards & Smith, transparency is paramount. Our fee ranges from 2-3% of the purchase price depending on property value and complexity. We provide a clear quote upfront before you engage our services.
             </p>
-            <ul>
-              <li>Properties under $1 million: Fees start from $15,000</li>
-              <li>Properties between $1 million and $2 million: Fees start from $20,000</li>
-              <li>Properties exceeding $2 million: Fees start from 2% of the purchase price</li>
-            </ul>
+            <p>
+              For example, on a $1M property, our fee would typically be $20,000-$30,000. Our fee is success-based—you only pay when you successfully purchase a property through our service.
+            </p>
             <p>
               Unlike other services, we don't operate within strict timeframes. Whether the search takes three weeks or three months, our commitment remains unwavering. We will tirelessly pursue the perfect property for each and every client, ensuring their satisfaction and peace of mind throughout the process.
             </p>
@@ -475,10 +473,27 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .guide-hero {
-    background: linear-gradient(135deg, var(--primary-green), var(--olive-green));
+    background-image: url('/assets/images/newmarket-4051.jpg'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
     color: var(--white);
     text-align: center;
     padding: 80px 20px;
+    position: relative;
+  }
+
+  .guide-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(90, 91, 84, 0.7), rgba(137, 139, 122, 0.7));
+    z-index: 0;
+  }
+
+  .guide-hero .container {
+    position: relative;
+    z-index: 1;
   }
 
   .guide-hero h1 {

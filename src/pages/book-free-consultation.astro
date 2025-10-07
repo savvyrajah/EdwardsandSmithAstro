@@ -17,7 +17,7 @@ import Footer from '../components/Footer.astro';
         <p class="hero-subtitle">Let's discuss your property goals and create a tailored strategy.</p>
         <div class="fee-banner">
           <p><strong>Our Fees:</strong> 2-3% in Queensland | Under 5% in Bali</p>
-          <p class="fee-subtext">Registration is free - fees only apply when we start actively searching for your property</p>
+          <p class="fee-subtext">First consultation is free. Charges only apply when a client agreement is signed.</p>
         </div>
       </div>
     </section>
@@ -57,18 +57,18 @@ import Footer from '../components/Footer.astro';
                 <h3>What Clients Say</h3>
                 <div class="testimonial">
                   <div class="stars">★★★★★</div>
-                  <p>"The team swiftly secured a highly sought after property with multiple interested buyers. Couldn't be happier!"</p>
-                  <p class="author">— Brisbane Client</p>
+                  <p>"Jake & Jess sent through numerous properties both on the market and off market opportunities. After finding the right property they swiftly secured the in demand property with multiple interested buyers. Couldn't be happier"</p>
+                  <p class="author">— Shaun G</p>
                 </div>
                 <div class="testimonial">
                   <div class="stars">★★★★★</div>
-                  <p>"I would highly recommend Edwards and Smith to anyone looking to get into the market!"</p>
-                  <p class="author">— First Home Buyer</p>
+                  <p>"Ely helped my wife and I buy our first home. The process was made so easy through the help of Ely and we were able to find exactly what we were looking for, for a price we wouldn't have been able to get by ourselves."</p>
+                  <p class="author">— Sam Skinner</p>
                 </div>
                 <div class="testimonial">
                   <div class="stars">★★★★★</div>
-                  <p>"The team are reliable, contactable, and I would recommend them to anyone!"</p>
-                  <p class="author">— Investor Client</p>
+                  <p>"Ely helped me in every single step of helping me buy my house. He was very reliable and contactable. I would recommend him to anyone and for sure will use his services again."</p>
+                  <p class="author">— Javaria Mofazzal</p>
                 </div>
               </div>
 
@@ -254,10 +254,27 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .consultation-hero {
-    background: linear-gradient(135deg, var(--primary-green), var(--olive-green));
+    background-image: url('/assets/images/burleigh-heads-4220-4.webp'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
     color: var(--white);
     text-align: center;
     padding: 60px 20px;
+    position: relative;
+  }
+
+  .consultation-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(90, 91, 84, 0.7), rgba(137, 139, 122, 0.7));
+    z-index: 0;
+  }
+
+  .consultation-hero .container {
+    position: relative;
+    z-index: 1;
   }
 
   .consultation-hero h1 {
