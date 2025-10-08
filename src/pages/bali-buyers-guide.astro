@@ -872,6 +872,13 @@ import Footer from '../components/Footer.astro';
     const formDataObj = new FormData(contactForm);
     const fields = {};
 
+    // Debug: Log form data values
+    console.log('FormData values:', {
+      purchase_purpose: formDataObj.get('purchase_purpose'),
+      budget: formDataObj.get('budget'),
+      purchase_timeline: formDataObj.get('purchase_timeline')
+    });
+
     fields.firstname = formDataObj.get('firstName');
     fields.lastname = formDataObj.get('lastName');
     fields.email = formDataObj.get('email');
