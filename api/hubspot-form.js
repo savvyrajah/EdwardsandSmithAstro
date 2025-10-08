@@ -72,6 +72,8 @@ export default async function handler(req, res) {
     // Submit to HubSpot Forms API
     const hubspotUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
 
+    console.log('Submitting to HubSpot:', JSON.stringify(hubspotPayload, null, 2));
+
     const hubspotResponse = await fetch(hubspotUrl, {
       method: 'POST',
       headers: {
@@ -82,6 +84,8 @@ export default async function handler(req, res) {
     });
 
     const responseData = await hubspotResponse.json();
+
+    console.log('HubSpot response:', JSON.stringify(responseData, null, 2));
 
     if (!hubspotResponse.ok) {
       console.error('HubSpot API error:', responseData);
