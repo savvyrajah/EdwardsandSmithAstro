@@ -105,28 +105,44 @@ import PropertyCard from '../components/PropertyCard.astro';
       <div class="container">
         <div class="section-header">
           <h2>How It Works</h2>
-          <p class="section-intro">Our simple 4-step process to finding your dream Gold Coast property</p>
+          <p class="section-intro">Our proven 6-step process to finding your dream Gold Coast property</p>
         </div>
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
-            <h3>Book a Consultation</h3>
-            <p>We discuss your property goals, budget, preferred suburbs, and must-haves</p>
+            <h3>Free Consultation</h3>
+            <p>We learn about your needs, budget, and timeline through a detailed property brief</p>
+            <p class="step-note">No obligation, no pressure</p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
-            <h3>Sign Up With Us</h3>
-            <p>Sign our buyers agent agreement and we immediately start searching for properties that match your criteria</p>
+            <h3>Define Your Criteria</h3>
+            <p>Budget, location, property type, and must-haves</p>
+            <p class="step-note">We create your customised property brief</p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
-            <h3>Expert Property Advice</h3>
-            <p>We share off-market opportunities and provide expert analysis on properties aligned to your preferences</p>
+            <h3>Diligent Research & Sourcing</h3>
+            <p>We search on-market AND off-market properties across Queensland</p>
+            <p class="step-note">Access to exclusive deals you won't find online - we review 40+ properties weekly</p>
           </div>
           <div class="step">
             <div class="step-number">4</div>
-            <h3>Buy Your Dream Home</h3>
-            <p>Secure your property faster and at a better price than buying solo</p>
+            <h3>Inspections & Due Diligence</h3>
+            <p>We meticulously shortlist properties and attend inspections on your behalf</p>
+            <p class="step-note">Complete due diligence: building & pest inspections, flood reports, council regulations</p>
+          </div>
+          <div class="step">
+            <div class="step-number">5</div>
+            <h3>Strategic Negotiation</h3>
+            <p>We negotiate on your behalf using our deep agent relationships</p>
+            <p class="step-note">Real estate agents give our clients preference because they know deals won't fall through</p>
+          </div>
+          <div class="step">
+            <div class="step-number">6</div>
+            <h3>Settlement Support</h3>
+            <p>We provide unwavering support through settlement proceedings</p>
+            <p class="step-note">Final inspection, seamless handover, and you move into your dream property</p>
           </div>
         </div>
       </div>
@@ -410,7 +426,7 @@ import PropertyCard from '../components/PropertyCard.astro';
 
   .steps {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     margin-top: 20px;
   }
@@ -435,6 +451,20 @@ import PropertyCard from '../components/PropertyCard.astro';
 
   .step h3 {
     margin-bottom: 10px;
+  }
+
+  .step p {
+    margin-bottom: 10px;
+  }
+
+  .step-note {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-light);
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
   }
 
   .cta-section {
@@ -472,9 +502,13 @@ import PropertyCard from '../components/PropertyCard.astro';
   @media (max-width: 768px) {
     .properties-grid,
     .suburbs-grid,
-    .stories-grid,
+    .stories-grid {
+      grid-template-columns: 1fr;
+    }
+
     .steps {
       grid-template-columns: 1fr;
+      gap: 30px;
     }
   }
 </style>
