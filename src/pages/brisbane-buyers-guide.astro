@@ -92,7 +92,7 @@ import Footer from '../components/Footer.astro';
         <div class="cta-box">
           <h3>📥 Download This Guide + Get Brisbane Off-Market Alerts</h3>
           <p>Get the complete PDF guide and be first to know about off-market properties in Brisbane</p>
-          <button class="button-primary open-form-btn">Get My Free Guide</button>
+          <button class="button-primary open-form-btn" data-form-type="guide">Get My Free Guide</button>
         </div>
       </div>
     </section>
@@ -361,7 +361,7 @@ import Footer from '../components/Footer.astro';
         <div class="cta-box">
           <h3>🏠 Want Off-Market Alerts for These Suburbs?</h3>
           <p>Get notified when properties become available in Bulimba, Ascot, New Farm, Manly, and Coorparoo</p>
-          <button class="button-primary open-form-btn">Get Off-Market Alerts</button>
+          <button class="button-primary open-form-btn" data-form-type="alerts">Get Off-Market Alerts</button>
         </div>
       </div>
     </section>
@@ -475,16 +475,22 @@ import Footer from '../components/Footer.astro';
 
         <!-- Step 4: Contact Info -->
         <div class="form-step" data-step="4">
-          <h3>Almost there! Where should we send your guide?</h3>
-          <form id="contact-form" name="brisbane-guide-download" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="brisbane-guide-download">
-            <input type="hidden" name="property-goal" id="goal-value">
-            <input type="hidden" name="budget" id="budget-value">
-            <input type="hidden" name="timeline" id="timeline-value">
+          <h3 id="modal-heading">Almost there! Where should we send your guide?</h3>
+          <form id="contact-form" name="brisbane-guide-download">
+            <input type="hidden" id="formId" value="4ff9ce78-bd18-4bb5-9ad7-7b77debadb70">
+            <input type="hidden" id="pageUri" value="/brisbane-buyers-guide">
+            <input type="hidden" id="leadSource" value="Brisbane Guide Download">
+            <input type="hidden" id="location" value="brisbane">
+            <input type="hidden" id="formType" value="guide">
 
             <div class="form-group">
               <label for="first-name">First Name *</label>
-              <input type="text" id="first-name" name="first-name" required>
+              <input type="text" id="first-name" name="firstName" required>
+            </div>
+
+            <div class="form-group">
+              <label for="last-name">Last Name *</label>
+              <input type="text" id="last-name" name="lastName" required>
             </div>
 
             <div class="form-group">
@@ -493,16 +499,17 @@ import Footer from '../components/Footer.astro';
             </div>
 
             <div class="form-group">
-              <label for="phone">Phone *</label>
-              <input type="tel" id="phone" name="phone" required>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
             </div>
 
             <div class="checkbox-group">
-              <input type="checkbox" id="alerts" name="off-market-alerts" checked>
+              <input type="checkbox" id="alerts" name="offMarketAlerts" checked>
               <label for="alerts">I want Brisbane off-market property alerts</label>
             </div>
 
-            <button type="submit" class="button-primary">Get My Brisbane Guide →</button>
+            <button type="submit" class="button-primary" id="guideSubmitButton">Get My Brisbane Guide →</button>
+            <div id="guideFormMessage" class="form-message hidden"></div>
           </form>
         </div>
 
@@ -1050,6 +1057,10 @@ import Footer from '../components/Footer.astro';
   const closeBtns = document.querySelectorAll('.modal-close');
   const choiceBtns = document.querySelectorAll('.choice-btn');
   const contactForm = document.getElementById('contact-form');
+  const modalHeading = document.getElementById('modal-heading');
+  const submitButton = document.getElementById('guideSubmitButton');
+  const formTypeInput = document.getElementById('formType');
+  const leadSourceInput = document.getElementById('leadSource');
 
   let formData = {
     goal: '',
@@ -1060,6 +1071,20 @@ import Footer from '../components/Footer.astro';
   // Open modal
   openBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      const formType = btn.dataset.formType || 'guide';
+      formTypeInput.value = formType;
+
+      // Update modal content based on form type
+      if (formType === 'alerts') {
+        modalHeading.textContent = 'Get Notified About Brisbane Properties';
+        submitButton.textContent = 'Get Brisbane Property Alerts →';
+        leadSourceInput.value = 'Brisbane Off-Market Alerts';
+      } else {
+        modalHeading.textContent = 'Almost there! Where should we send your guide?';
+        submitButton.textContent = 'Get My Brisbane Guide →';
+        leadSourceInput.value = 'Brisbane Guide Download';
+      }
+
       modal.classList.add('active');
       showStep(1);
     });
@@ -1105,20 +1130,57 @@ import Footer from '../components/Footer.astro';
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const submitButton = document.getElementById('guideSubmitButton');
+    const formMessage = document.getElementById('guideFormMessage');
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    formMessage.classList.add('hidden');
+
     const formDataObj = new FormData(contactForm);
+    const fields = {};
+
+    fields.firstname = formDataObj.get('firstName');
+    fields.lastname = formDataObj.get('lastName');
+    fields.email = formDataObj.get('email');
+    fields.phone = formDataObj.get('phone') || '';
+    fields.wants_agent_call = formDataObj.get('offMarketAlerts') ? 'true' : 'false';
+    fields.preferred_location = 'brisbane';
+    fields.lead_source = document.getElementById('leadSource').value;
+
+    const payload = {
+      formId: document.getElementById('formId').value,
+      fields: fields,
+      context: {
+        pageUri: window.location.href,
+        pageName: 'Brisbane Buyers Guide',
+        leadSource: 'Brisbane Guide Download'
+      }
+    };
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/api/hubspot-form', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataObj).toString()
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         showStep(5);
+      } else {
+        formMessage.textContent = 'There was an error. Please try again or call us at 0468 479 696.';
+        formMessage.className = 'form-message error';
+        formMessage.classList.remove('hidden');
       }
     } catch (error) {
-      alert('There was an error submitting the form. Please try again.');
+      formMessage.textContent = 'There was an error. Please try again or call us at 0468 479 696.';
+      formMessage.className = 'form-message error';
+      formMessage.classList.remove('hidden');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Get My Brisbane Guide →';
     }
   });
 

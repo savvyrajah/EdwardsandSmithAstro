@@ -90,7 +90,7 @@ import Footer from '../components/Footer.astro';
         <div class="cta-box">
           <h3>Download This Guide + Get Bali Off-Market Alerts</h3>
           <p>Get the complete PDF guide and be first to know about off-market villas in Bali</p>
-          <button class="button-primary open-form-btn">Get My Free Guide</button>
+          <button class="button-primary open-form-btn" data-form-type="guide">Get My Free Guide</button>
         </div>
       </div>
     </section>
@@ -254,7 +254,7 @@ import Footer from '../components/Footer.astro';
         <div class="cta-box">
           <h3>Ready to Explore Bali Villa Opportunities?</h3>
           <p>Get notified when new villa opportunities become available in Bali</p>
-          <button class="button-primary open-form-btn">Get Bali Villa Alerts</button>
+          <button class="button-primary open-form-btn" data-form-type="alerts">Get Bali Villa Alerts</button>
         </div>
       </div>
     </section>
@@ -308,16 +308,22 @@ import Footer from '../components/Footer.astro';
 
         <!-- Step 4: Contact Info -->
         <div class="form-step" data-step="4">
-          <h3>Almost there! Where should we send your guide?</h3>
-          <form id="contact-form" name="bali-guide-download" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="bali-guide-download">
-            <input type="hidden" name="property-goal" id="goal-value">
-            <input type="hidden" name="budget" id="budget-value">
-            <input type="hidden" name="timeline" id="timeline-value">
+          <h3 id="modal-heading">Almost there! Where should we send your guide?</h3>
+          <form id="contact-form" name="bali-guide-download">
+            <input type="hidden" id="formId" value="ca10e16f-6931-40a3-96c5-d69087bdd5f1">
+            <input type="hidden" id="pageUri" value="/bali-buyers-guide">
+            <input type="hidden" id="leadSource" value="Bali Guide Download">
+            <input type="hidden" id="location" value="bali">
+            <input type="hidden" id="formType" value="guide">
 
             <div class="form-group">
               <label for="first-name">First Name *</label>
-              <input type="text" id="first-name" name="first-name" required>
+              <input type="text" id="first-name" name="firstName" required>
+            </div>
+
+            <div class="form-group">
+              <label for="last-name">Last Name *</label>
+              <input type="text" id="last-name" name="lastName" required>
             </div>
 
             <div class="form-group">
@@ -326,16 +332,17 @@ import Footer from '../components/Footer.astro';
             </div>
 
             <div class="form-group">
-              <label for="phone">Phone *</label>
-              <input type="tel" id="phone" name="phone" required>
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
             </div>
 
             <div class="checkbox-group">
-              <input type="checkbox" id="alerts" name="off-market-alerts" checked>
+              <input type="checkbox" id="alerts" name="offMarketAlerts" checked>
               <label for="alerts">I want Bali off-market villa alerts</label>
             </div>
 
-            <button type="submit" class="button-primary">Get My Bali Guide →</button>
+            <button type="submit" class="button-primary" id="guideSubmitButton">Get My Bali Guide →</button>
+            <div id="guideFormMessage" class="form-message hidden"></div>
           </form>
         </div>
 
@@ -771,6 +778,10 @@ import Footer from '../components/Footer.astro';
   const closeBtns = document.querySelectorAll('.modal-close');
   const choiceBtns = document.querySelectorAll('.choice-btn');
   const contactForm = document.getElementById('contact-form');
+  const modalHeading = document.getElementById('modal-heading');
+  const submitButton = document.getElementById('guideSubmitButton');
+  const formTypeInput = document.getElementById('formType');
+  const leadSourceInput = document.getElementById('leadSource');
 
   let formData = {
     goal: '',
@@ -781,6 +792,20 @@ import Footer from '../components/Footer.astro';
   // Open modal
   openBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      const formType = btn.dataset.formType || 'guide';
+      formTypeInput.value = formType;
+
+      // Update modal content based on form type
+      if (formType === 'alerts') {
+        modalHeading.textContent = 'Get Notified About Bali Villa Opportunities';
+        submitButton.textContent = 'Get Bali Villa Alerts →';
+        leadSourceInput.value = 'Bali Off-Market Alerts';
+      } else {
+        modalHeading.textContent = 'Almost there! Where should we send your guide?';
+        submitButton.textContent = 'Get My Bali Guide →';
+        leadSourceInput.value = 'Bali Guide Download';
+      }
+
       modal.classList.add('active');
       showStep(1);
     });
@@ -826,20 +851,57 @@ import Footer from '../components/Footer.astro';
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    const submitButton = document.getElementById('guideSubmitButton');
+    const formMessage = document.getElementById('guideFormMessage');
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    formMessage.classList.add('hidden');
+
     const formDataObj = new FormData(contactForm);
+    const fields = {};
+
+    fields.firstname = formDataObj.get('firstName');
+    fields.lastname = formDataObj.get('lastName');
+    fields.email = formDataObj.get('email');
+    fields.phone = formDataObj.get('phone') || '';
+    fields.wants_agent_call = formDataObj.get('offMarketAlerts') ? 'true' : 'false';
+    fields.preferred_location = 'bali';
+    fields.lead_source = document.getElementById('leadSource').value;
+
+    const payload = {
+      formId: document.getElementById('formId').value,
+      fields: fields,
+      context: {
+        pageUri: window.location.href,
+        pageName: 'Bali Buyers Guide',
+        leadSource: 'Bali Guide Download'
+      }
+    };
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('/api/hubspot-form', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataObj).toString()
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (response.ok && result.success) {
         showStep(5);
+      } else {
+        formMessage.textContent = 'There was an error. Please try again or email info@edwardsandsmith.com.au';
+        formMessage.className = 'form-message error';
+        formMessage.classList.remove('hidden');
       }
     } catch (error) {
-      alert('There was an error submitting the form. Please try again.');
+      formMessage.textContent = 'There was an error. Please try again or email info@edwardsandsmith.com.au';
+      formMessage.className = 'form-message error';
+      formMessage.classList.remove('hidden');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Get My Bali Guide →';
     }
   });
 
