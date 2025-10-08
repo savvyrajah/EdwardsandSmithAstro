@@ -319,9 +319,8 @@ import Footer from '../../components/Footer.astro';
           <div class="faq-item">
             <h3>How does your fee work with the purchase price?</h3>
             <p>
-              Our fee ranges from 2-3% of the purchase price depending on property value and complexity.
-              For example, on a $1M property, our fee would typically be $20,000-$30,000. We provide a
-              clear quote upfront before you engage our services.
+              Our fee ranges from 2-3% of the purchase price in Queensland (less than 5% in Bali) depending on property value and complexity.
+              For example, on a $1.5M property, our fee would typically be $37,500 (2.5%). Given our clients save an average of $65,000 through expert negotiation, our fee often pays for itself while securing you the right property. We provide a clear quote upfront before you engage our services.
             </p>
           </div>
           <div class="faq-item">
@@ -336,13 +335,68 @@ import Footer from '../../components/Footer.astro';
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section section">
+    <!-- Contact Form Section -->
+    <section class="contact-section section" id="contact">
       <div class="container">
-        <h2>Ready to Start Your Property Search?</h2>
-        <p>Book a free consultation to discuss your requirements and receive a transparent quote for our full service.</p>
-        <a href="#contact" class="button-primary">Book Free Consultation</a>
-        <p class="cta-note">No obligation | Clear pricing | Expert guidance</p>
+        <div class="section-header">
+          <h2>Ready to Start Your Property Search?</h2>
+          <p class="section-intro">Book a free consultation to discuss your requirements and receive a transparent quote for our full service.</p>
+        </div>
+
+        <div class="form-container">
+          <form class="service-enquiry-form" id="serviceEnquiryForm">
+            <input type="hidden" id="formId" value="3576aeec-7d25-4a89-b648-689efe7f5ee6" />
+            <input type="hidden" id="pageUri" value="/services/full-buyers-agent-service" />
+            <input type="hidden" id="leadSource" value="Service Page Enquiry - Full Service" />
+            <p class="hidden">
+              <label>Don't fill this out if you're human: <input name="bot-field" id="botField" /></label>
+            </p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Preferred Location <span class="required">*</span></label>
+              <select id="location" name="location" required>
+                <option value="">Select location</option>
+                <option value="brisbane">Brisbane</option>
+                <option value="gold_coast">Gold Coast</option>
+                <option value="bali">Bali</option>
+                <option value="multiple">Multiple Locations</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us about your property requirements</label>
+              <textarea id="message" name="message" rows="4" placeholder="What type of property are you looking for? Budget? Timeline? Any specific requirements?"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="button-primary button-large" id="submitButton">Request Free Consultation</button>
+            </div>
+
+            <div id="formMessage" class="form-message hidden"></div>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -687,6 +741,96 @@ import Footer from '../../components/Footer.astro';
     opacity: 0.9;
   }
 
+  .contact-section {
+    background-color: #f9f9f9;
+  }
+
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--box-shadow-subtle);
+  }
+
+  .service-enquiry-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .service-enquiry-form .form-group {
+    margin-bottom: 20px;
+  }
+
+  .service-enquiry-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .service-enquiry-form .required {
+    color: #d32f2f;
+  }
+
+  .service-enquiry-form input,
+  .service-enquiry-form select,
+  .service-enquiry-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-small);
+    font-size: 15px;
+    font-family: var(--font-body);
+  }
+
+  .service-enquiry-form textarea {
+    resize: vertical;
+  }
+
+  .service-enquiry-form input:focus,
+  .service-enquiry-form select:focus,
+  .service-enquiry-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+  }
+
+  .form-actions {
+    margin-top: 30px;
+  }
+
+  .button-large {
+    width: 100%;
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+
+  .form-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+  }
+
+  .form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  .form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   @media (max-width: 1024px) {
     .included-grid,
     .why-grid,
@@ -703,8 +847,87 @@ import Footer from '../../components/Footer.astro';
     th, td {
       padding: 10px;
     }
+
+    .service-enquiry-form .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .form-container {
+      padding: 25px;
+    }
   }
 </style>
+
+<script>
+  const form = document.getElementById('serviceEnquiryForm');
+  const submitButton = document.getElementById('submitButton');
+  const formMessage = document.getElementById('formMessage');
+  const botField = document.getElementById('botField');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Check honeypot
+    if (botField?.value) {
+      return;
+    }
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+
+    const formData = new FormData(form);
+    const formId = document.getElementById('formId').value;
+    const pageUri = document.getElementById('pageUri').value;
+    const leadSource = document.getElementById('leadSource').value;
+
+    const fields = {
+      firstname: formData.get('firstName'),
+      lastname: formData.get('lastName'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      preferred_location: formData.get('location'),
+      message: formData.get('message') || '',
+      lead_source: leadSource
+    };
+
+    const hutk = document.cookie.match(/hubspotutk=([^;]+)/)?.[1] || '';
+    const context = {
+      hutk,
+      pageUri,
+      pageName: document.title
+    };
+
+    try {
+      const response = await fetch('/api/hubspot-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          formId,
+          fields,
+          context
+        })
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        formMessage.textContent = '✓ Thank you! We\'ll be in touch within 24 hours to discuss your requirements.';
+        formMessage.className = 'form-message success';
+        form.reset();
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (error) {
+      formMessage.textContent = 'Sorry, something went wrong. Please email us at info@edwardsandsmith.com.au or call 0413 245 025.';
+      formMessage.className = 'form-message error';
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Request Free Consultation';
+    }
+  });
+</script>
 
 <script type="application/ld+json">
 {
