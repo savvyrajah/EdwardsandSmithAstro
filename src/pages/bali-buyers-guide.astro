@@ -12,12 +12,19 @@ import Footer from '../components/Footer.astro';
   <main>
     <!-- Hero Section -->
     <section class="guide-hero section">
+    </section>
+
+    <!-- Breadcrumbs and Title -->
+    <section class="page-header">
       <div class="container">
-        <div class="breadcrumb">
-          <a href="/">Home</a> / <a href="#">Bali</a> / <span>Buyers Guide</span>
+        <div class="breadcrumb-row">
+          <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="#">Bali</a> / <span>Buyers Guide</span>
+          </div>
+          <div class="last-updated">Last Updated: 8 October 2025</div>
         </div>
         <h1>Bali Buyers Guide 2025</h1>
-        <p class="hero-subtitle">Your complete guide to buying villas in Bali</p>
+        <p class="page-subtitle">Your complete guide to buying villas in Bali</p>
       </div>
     </section>
 
@@ -351,55 +358,60 @@ import Footer from '../components/Footer.astro';
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    color: var(--white);
+    height: 400px;
+    position: relative;
+  }
+
+  .page-header {
+    background-color: var(--white);
+    padding: 30px 0 40px 0;
     text-align: center;
-    padding: 80px 20px;
-    position: relative;
   }
 
-  .guide-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(90, 91, 84, 0.7), rgba(137, 139, 122, 0.7));
-    z-index: 0;
-  }
-
-  .guide-hero .container {
-    position: relative;
-    z-index: 1;
+  .breadcrumb-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
   }
 
   .breadcrumb {
     font-size: 14px;
-    margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
   }
 
   .breadcrumb a {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.2s ease;
   }
 
   .breadcrumb a:hover {
-    color: var(--white);
+    color: var(--primary-green);
     text-decoration: underline;
   }
 
   .breadcrumb span {
-    color: var(--white);
+    color: var(--text-primary);
     font-weight: 500;
   }
 
-  .guide-hero h1 {
-    color: var(--white);
+  .last-updated {
+    font-size: 14px;
+    color: var(--text-light);
+  }
+
+  .page-header h1 {
+    color: var(--primary-green);
     margin-bottom: 15px;
   }
 
-  .hero-subtitle {
+  .page-subtitle {
     font-family: var(--font-heading);
     font-size: 20px;
+    color: var(--text-secondary);
   }
 
   .content-section {

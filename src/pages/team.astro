@@ -12,12 +12,19 @@ import Footer from '../components/Footer.astro';
   <main>
     <!-- Hero Section -->
     <section class="team-hero section">
+    </section>
+
+    <!-- Breadcrumbs and Title -->
+    <section class="page-header">
       <div class="container">
-        <div class="breadcrumb">
-          <a href="/">Home</a> / <a href="#">Why Us</a> / <span>Meet the Team</span>
+        <div class="breadcrumb-row">
+          <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="#">Why Us</a> / <span>Meet the Team</span>
+          </div>
+          <div class="last-updated">Last Updated: 8 October 2025</div>
         </div>
         <h1>Meet the Team</h1>
-        <p class="hero-subtitle">Expert buyers agents committed to your property success</p>
+        <p class="page-subtitle">Expert buyers agents committed to your property success</p>
       </div>
     </section>
 
@@ -198,9 +205,7 @@ import Footer from '../components/Footer.astro';
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    color: var(--white);
-    text-align: center;
-    padding: 120px 20px;
+    height: 400px;
     position: relative;
   }
 
@@ -212,42 +217,51 @@ import Footer from '../components/Footer.astro';
     z-index: 0;
   }
 
-  .team-hero .container {
-    position: relative;
-    z-index: 1;
+  .page-header {
+    background-color: var(--white);
+    padding: 30px 0 40px 0;
+    text-align: center;
   }
 
-  .breadcrumb {
-    font-size: 14px;
+  .breadcrumb-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    color: var(--text-secondary);
   }
 
   .breadcrumb a {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.2s ease;
   }
 
   .breadcrumb a:hover {
-    color: var(--white);
+    color: var(--primary-green);
     text-decoration: underline;
   }
 
   .breadcrumb span {
-    color: var(--white);
+    color: var(--text-primary);
     font-weight: 500;
   }
 
-  .team-hero h1 {
-    color: var(--white);
+  .last-updated {
+    font-size: 14px;
+    color: var(--text-light);
+  }
+
+  .page-header h1 {
+    color: var(--primary-green);
     margin-bottom: 15px;
   }
 
-  .hero-subtitle {
+  .page-subtitle {
     font-family: var(--font-heading);
     font-size: 18px;
-    opacity: 0.95;
+    color: var(--text-secondary);
   }
 
   .team-section {
