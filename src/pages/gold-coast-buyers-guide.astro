@@ -1206,9 +1206,15 @@ import Footer from '../components/Footer.astro';
   }
 
   function populateHiddenFields() {
+    console.log('Populating hidden fields with:', formData);
     document.getElementById('goal-value').value = formData.goal;
     document.getElementById('budget-value').value = formData.budget;
     document.getElementById('timeline-value').value = formData.timeline;
+    console.log('Hidden fields populated:', {
+      goal: document.getElementById('goal-value').value,
+      budget: document.getElementById('budget-value').value,
+      timeline: document.getElementById('timeline-value').value
+    });
   }
 
   function resetForm() {
