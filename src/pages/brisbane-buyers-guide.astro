@@ -2,8 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import LastUpdated from '../components/LastUpdated.astro';
 ---
 
 <Layout
@@ -12,17 +10,12 @@ import LastUpdated from '../components/LastUpdated.astro';
 >
   <Header />
   <main>
-    <!-- Breadcrumbs -->
-    <div class="breadcrumb-container">
-      <div class="container">
-        <Breadcrumbs items={[{name: "Brisbane", url: "#"}, {name: "Buyers Guide", url: "/brisbane-buyers-guide"}]} />
-      </div>
-    </div>
-
     <!-- Hero Section -->
     <section class="guide-hero section">
       <div class="container">
-        <LastUpdated date="2025-01-15" />
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <a href="#">Brisbane</a> / <span>Buyers Guide</span>
+        </div>
         <h1>Brisbane Buyers Guide 2025</h1>
         <p class="hero-subtitle">Your complete guide to buying property in Brisbane</p>
       </div>
@@ -516,11 +509,6 @@ import LastUpdated from '../components/LastUpdated.astro';
 </Layout>
 
 <style>
-  .breadcrumb-container {
-    background-color: var(--white);
-    padding: 20px 0 0 0;
-  }
-
   .guide-hero {
     background-image: url('/assets/images/newmarket-4051.jpg'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
     background-size: cover;
@@ -545,19 +533,26 @@ import LastUpdated from '../components/LastUpdated.astro';
     z-index: 1;
   }
 
-  /* Override last-updated styles for hero section */
-  .guide-hero :global(.last-updated) {
-    background-color: rgba(255, 255, 255, 0.1);
+  .breadcrumb {
+    font-size: 14px;
+    margin-bottom: 20px;
     color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 20px 0;
   }
 
-  .guide-hero :global(.last-updated svg) {
-    color: var(--white);
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
   }
 
-  .guide-hero :global(.last-updated time) {
+  .breadcrumb a:hover {
     color: var(--white);
+    text-decoration: underline;
+  }
+
+  .breadcrumb span {
+    color: var(--white);
+    font-weight: 500;
   }
 
   .guide-hero h1 {

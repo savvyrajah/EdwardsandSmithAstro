@@ -2,8 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
-import LastUpdated from '../components/LastUpdated.astro';
 ---
 
 <Layout
@@ -12,17 +10,12 @@ import LastUpdated from '../components/LastUpdated.astro';
 >
   <Header />
   <main>
-    <!-- Breadcrumbs -->
-    <div class="breadcrumb-container">
-      <div class="container">
-        <Breadcrumbs items={[{name: "Why Us", url: "#"}, {name: "Meet the Team", url: "/team"}]} />
-      </div>
-    </div>
-
     <!-- Hero Section -->
     <section class="team-hero section">
       <div class="container">
-        <LastUpdated date="2025-01-15" />
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <a href="#">Why Us</a> / <span>Meet the Team</span>
+        </div>
         <h1>Meet the Team</h1>
         <p class="hero-subtitle">Expert buyers agents committed to your property success</p>
       </div>
@@ -200,11 +193,6 @@ import LastUpdated from '../components/LastUpdated.astro';
 </Layout>
 
 <style>
-  .breadcrumb-container {
-    background-color: var(--white);
-    padding: 20px 0 0 0;
-  }
-
   .team-hero {
     background-image: url('/assets/images/Team Photo Outdoor.jpg'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
     background-size: cover;
@@ -229,19 +217,26 @@ import LastUpdated from '../components/LastUpdated.astro';
     z-index: 1;
   }
 
-  /* Override last-updated styles for hero section */
-  .team-hero :global(.last-updated) {
-    background-color: rgba(255, 255, 255, 0.1);
+  .breadcrumb {
+    font-size: 14px;
+    margin-bottom: 20px;
     color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 20px 0;
   }
 
-  .team-hero :global(.last-updated svg) {
-    color: var(--white);
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
   }
 
-  .team-hero :global(.last-updated time) {
+  .breadcrumb a:hover {
     color: var(--white);
+    text-decoration: underline;
+  }
+
+  .breadcrumb span {
+    color: var(--white);
+    font-weight: 500;
   }
 
   .team-hero h1 {
