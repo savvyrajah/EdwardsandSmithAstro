@@ -1112,6 +1112,7 @@ import Footer from '../../components/Footer.astro';
 
 <script>
   // Progressive Profiling Form Logic
+  console.log(\'Initializing form...\');
   const modal = document.getElementById('lead-form-modal');
   const openBtns = document.querySelectorAll('.open-form-btn');
   const closeBtns = document.querySelectorAll('.modal-close');
@@ -1120,6 +1121,13 @@ import Footer from '../../components/Footer.astro';
   const modalHeading = document.getElementById('modal-heading');
   const submitButton = document.getElementById('guideSubmitButton');
   const leadSourceInput = document.getElementById('leadSource');
+
+  console.log(\'Elements found:\', {
+    modal: !!modal,
+    openBtns: openBtns.length,
+    contactForm: !!contactForm,
+    submitButton: !!submitButton
+  });
 
   let formData = {
     goal: '',
@@ -1172,8 +1180,9 @@ import Footer from '../../components/Footer.astro';
   });
 
   // Handle form submission
-  contactForm.addEventListener('submit', async (e) => {
+  contactForm.addEventListener(\'submit\', async (e) => {
     e.preventDefault();
+    console.log(\'Form submission started\');
 
     const submitButton = document.getElementById('guideSubmitButton');
     const formMessage = document.getElementById('guideFormMessage');
@@ -1207,13 +1216,20 @@ import Footer from '../../components/Footer.astro';
     };
 
     try {
+      console.log(\'Sending to HubSpot:\', payload);
       const response = await fetch('/api/hubspot-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
 
+      console.log(\'Response status:\', response.status);
+
+
       const result = await response.json();
+
+
+      console.log(\'Response data:\', result);
 
       if (response.ok && result.success) {
         showStep(5);
@@ -1223,6 +1239,7 @@ import Footer from '../../components/Footer.astro';
         formMessage.classList.remove('hidden');
       }
     } catch (error) {
+      console.error(\'Form submission error:\', error);
       formMessage.textContent = 'There was an error. Please try again or email info@edwardsandsmith.com.au';
       formMessage.className = 'form-message error';
       formMessage.classList.remove('hidden');
