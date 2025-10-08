@@ -1127,6 +1127,9 @@ import Footer from '../components/Footer.astro';
     fields.wants_agent_call = formDataObj.get('offMarketAlerts') ? 'true' : 'false';
     fields.preferred_location = 'gold_coast';
     fields.lead_source = document.getElementById('leadSource').value;
+    fields.property_goal = formDataObj.get('goal') || '';
+    fields.budget_range = formDataObj.get('budget') || '';
+    fields.timeline = formDataObj.get('timeline') || '';
 
     const payload = {
       formId: document.getElementById('formId').value,
