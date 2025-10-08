@@ -248,6 +248,48 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Recent Purchases in Bali Section -->
+    <section class="recent-purchases-section section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Recent Purchases in Bali</h2>
+          <p class="section-intro">Villas we've secured for Australian clients across Bali</p>
+        </div>
+        <div class="villas-grid">
+          <a href="/recent-purchases/bali/villa-pulang-pererenan-80351" class="villa-card">
+            <div class="villa-image">
+              <img src="/assets/images/villa-pulang-pererenan-80351.webp" alt="Villa Pulang, Pererenan" loading="lazy" />
+            </div>
+            <div class="villa-details">
+              <h3>Villa Pulang, Pererenan</h3>
+              <p class="villa-story">Nestled in the vibrant heart of Pererenan, this property enjoys a strategic yet serene location, tucked away from the bustling main street.</p>
+            </div>
+          </a>
+          <a href="/recent-purchases/bali/villa-une-escale-ungasan-80362" class="villa-card">
+            <div class="villa-image">
+              <img src="/assets/images/villa-une-escale-ungasan-80362.webp" alt="Villa Une Escale, Ungasan" loading="lazy" />
+            </div>
+            <div class="villa-details">
+              <h3>Villa Une Escale, Ungasan</h3>
+              <p class="villa-story">Boasting three bedrooms, three bathrooms, and an additional guest toilet, this spacious retreat provides ample space for relaxation and entertainment.</p>
+            </div>
+          </a>
+          <a href="/recent-purchases/bali/villa-patrice-ungasan-80362" class="villa-card">
+            <div class="villa-image">
+              <img src="/assets/images/villa-patrice-ungasan-80362.webp" alt="Villa Patrice, Ungasan" loading="lazy" />
+            </div>
+            <div class="villa-details">
+              <h3>Villa Patrice, Ungasan</h3>
+              <p class="villa-story">Situated in the lively core of Ungasan, close to the golf course complex, this stunning villa seamlessly combines modern opulence with tropical serenity.</p>
+            </div>
+          </a>
+        </div>
+        <div class="cta-center" style="margin-top: 40px;">
+          <a href="/bali/recent-purchases" class="button-text">View All Bali Recent Purchases →</a>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA 2: Second Lead Capture -->
     <section class="cta-inline section">
       <div class="container">
@@ -587,6 +629,83 @@ import Footer from '../components/Footer.astro';
     font-size: 18px;
   }
 
+  .recent-purchases-section {
+    background-color: var(--white);
+  }
+
+  .villas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .villa-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius-small);
+    overflow: hidden;
+    box-shadow: var(--box-shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .villa-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .villa-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .villa-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .villa-card:hover .villa-image img {
+    transform: scale(1.05);
+  }
+
+  .villa-details {
+    padding: 25px;
+  }
+
+  .villa-details h3 {
+    color: var(--primary-green);
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .villa-story {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  .button-text {
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .button-text:hover {
+    opacity: 0.7;
+  }
+
+  .cta-center {
+    text-align: center;
+  }
+
   .cta-section {
     background-color: var(--primary-green);
     color: var(--white);
@@ -751,6 +870,10 @@ import Footer from '../components/Footer.astro';
     }
 
     .button-group {
+      grid-template-columns: 1fr;
+    }
+
+    .villas-grid {
       grid-template-columns: 1fr;
     }
 
