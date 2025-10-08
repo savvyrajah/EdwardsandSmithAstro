@@ -444,10 +444,10 @@ import Footer from '../components/Footer.astro';
         <div class="form-step active" data-step="1">
           <h3>What's your property goal?</h3>
           <div class="button-group">
-            <button class="choice-btn" data-value="First Home">First Home</button>
-            <button class="choice-btn" data-value="Investment">Investment</button>
-            <button class="choice-btn" data-value="Upgrade">Upgrade</button>
-            <button class="choice-btn" data-value="Downsize">Downsize</button>
+            <button class="choice-btn" data-value="owner_occupier">First Home</button>
+            <button class="choice-btn" data-value="investment">Investment</button>
+            <button class="choice-btn" data-value="both">Upgrade</button>
+            <button class="choice-btn" data-value="owner_occupier">Downsize</button>
           </div>
         </div>
 
@@ -466,10 +466,10 @@ import Footer from '../components/Footer.astro';
         <div class="form-step" data-step="3">
           <h3>When are you looking to buy?</h3>
           <div class="button-group">
-            <button class="choice-btn" data-value="0-3 months">0-3 months</button>
-            <button class="choice-btn" data-value="3-6 months">3-6 months</button>
-            <button class="choice-btn" data-value="6-12 months">6-12 months</button>
-            <button class="choice-btn" data-value="12+ months">12+ months</button>
+            <button class="choice-btn" data-value="immediate">0-3 months</button>
+            <button class="choice-btn" data-value="3_6_months">3-6 months</button>
+            <button class="choice-btn" data-value="6_12_months">6-12 months</button>
+            <button class="choice-btn" data-value="exploring">12+ months</button>
           </div>
         </div>
 
@@ -482,9 +482,9 @@ import Footer from '../components/Footer.astro';
             <input type="hidden" id="leadSource" value="Brisbane Guide Download">
             <input type="hidden" id="location" value="brisbane">
             <input type="hidden" id="formType" value="guide">
-            <input type="hidden" id="goal-value" name="goal" value="">
+            <input type="hidden" id="goal-value" name="purchase_purpose" value="">
             <input type="hidden" id="budget-value" name="budget" value="">
-            <input type="hidden" id="timeline-value" name="timeline" value="">
+            <input type="hidden" id="timeline-value" name="purchase_timeline" value="">
 
             <div class="form-group">
               <label for="first-name">First Name *</label>
@@ -1150,9 +1150,9 @@ import Footer from '../components/Footer.astro';
     fields.wants_agent_call = formDataObj.get('offMarketAlerts') ? 'true' : 'false';
     fields.preferred_location = 'brisbane';
     fields.lead_source = document.getElementById('leadSource').value;
-    fields.property_goal = formDataObj.get('goal') || '';
+    fields.purchase_purpose = formDataObj.get('purchase_purpose') || '';
     fields.budget_range = formDataObj.get('budget') || '';
-    fields.timeline = formDataObj.get('timeline') || '';
+    fields.purchase_timeline = formDataObj.get('purchase_timeline') || '';
 
     const payload = {
       formId: document.getElementById('formId').value,
