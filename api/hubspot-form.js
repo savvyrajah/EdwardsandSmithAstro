@@ -72,8 +72,6 @@ export default async function handler(req, res) {
     // Submit to HubSpot Forms API
     const hubspotUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
 
-    console.log('Submitting to HubSpot:', JSON.stringify(hubspotPayload, null, 2));
-
     const hubspotResponse = await fetch(hubspotUrl, {
       method: 'POST',
       headers: {
@@ -84,8 +82,6 @@ export default async function handler(req, res) {
     });
 
     const responseData = await hubspotResponse.json();
-
-    console.log('HubSpot response:', JSON.stringify(responseData, null, 2));
 
     if (!hubspotResponse.ok) {
       console.error('HubSpot API error:', responseData);
@@ -125,8 +121,6 @@ export default async function handler(req, res) {
           properties: contactProperties
         };
 
-        console.log('Creating/updating contact with properties:', contactUpdatePayload);
-
         // Use "Create or Update by email" endpoint - creates if doesn't exist, updates if exists
         const contactUpdateResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(fields.email)}?idProperty=email`, {
           method: 'PATCH',
@@ -137,16 +131,11 @@ export default async function handler(req, res) {
           body: JSON.stringify(contactUpdatePayload)
         });
 
-        if (contactUpdateResponse.ok) {
-          const contactUpdateData = await contactUpdateResponse.json();
-          console.log('Contact properties updated successfully:', contactUpdateData.id);
-        } else {
+        if (!contactUpdateResponse.ok) {
           const errorData = await contactUpdateResponse.json();
-          console.error('Failed to update contact properties (will retry after delay):', errorData);
 
           // If contact not found, wait 2 seconds for HubSpot to create it, then retry
           if (errorData.status === 'error' && errorData.message === 'resource not found') {
-            console.log('Contact not yet created by form submission, waiting 2 seconds...');
             await new Promise(resolve => setTimeout(resolve, 2000));
 
             const retryResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(fields.email)}?idProperty=email`, {
@@ -158,13 +147,12 @@ export default async function handler(req, res) {
               body: JSON.stringify(contactUpdatePayload)
             });
 
-            if (retryResponse.ok) {
-              const retryData = await retryResponse.json();
-              console.log('Contact properties updated successfully on retry:', retryData.id);
-            } else {
+            if (!retryResponse.ok) {
               const retryError = await retryResponse.json();
               console.error('Failed to update contact properties on retry:', retryError);
             }
+          } else {
+            console.error('Failed to update contact properties:', errorData);
           }
         }
       } catch (contactError) {

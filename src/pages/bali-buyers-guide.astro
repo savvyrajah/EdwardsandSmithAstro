@@ -842,22 +842,16 @@ import Footer from '../components/Footer.astro';
     btn.addEventListener('click', () => {
       const step = btn.closest('.form-step').dataset.step;
       const value = btn.dataset.value;
-      console.log('Choice button clicked:', { step, value });
 
       if (step === '1') {
         formData.goal = value;
-        console.log('Step 1 complete - goal set to:', formData.goal);
         showStep(2);
       } else if (step === '2') {
         formData.budget = value;
-        console.log('Step 2 complete - budget set to:', formData.budget);
         showStep(3);
       } else if (step === '3') {
         formData.timeline = value;
-        console.log('Step 3 complete - timeline set to:', formData.timeline);
-        console.log('About to call populateHiddenFields()');
         populateHiddenFields();
-        console.log('After populateHiddenFields() call');
         showStep(4);
       }
     });
@@ -957,15 +951,9 @@ import Footer from '../components/Footer.astro';
   }
 
   function populateHiddenFields() {
-    console.log('Populating hidden fields with:', formData);
     document.getElementById('goal-value').value = formData.goal;
     document.getElementById('budget-value').value = formData.budget;
     document.getElementById('timeline-value').value = formData.timeline;
-    console.log('Hidden fields populated:', {
-      goal: document.getElementById('goal-value').value,
-      budget: document.getElementById('budget-value').value,
-      timeline: document.getElementById('timeline-value').value
-    });
   }
 
   function resetForm() {
