@@ -218,6 +218,43 @@ import LastUpdated from '../components/LastUpdated.astro';
     z-index: 1;
   }
 
+  /* Override breadcrumb styles for hero section */
+  .team-hero :global(.breadcrumbs) {
+    padding: 0 0 15px 0;
+  }
+
+  .team-hero :global(.breadcrumbs a) {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .team-hero :global(.breadcrumbs a:hover) {
+    color: var(--white);
+  }
+
+  .team-hero :global(.breadcrumbs .separator) {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .team-hero :global(.breadcrumbs .current) {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* Override last-updated styles for hero section */
+  .team-hero :global(.last-updated) {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 20px 0;
+  }
+
+  .team-hero :global(.last-updated svg) {
+    color: var(--white);
+  }
+
+  .team-hero :global(.last-updated time) {
+    color: var(--white);
+  }
+
   .team-hero h1 {
     color: var(--white);
     margin-bottom: 15px;
