@@ -2,8 +2,6 @@
 import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import LastUpdated from '../../../components/LastUpdated.astro';
 ---
 
 <Layout
@@ -18,10 +16,20 @@ import LastUpdated from '../../../components/LastUpdated.astro';
         <img src="/assets/images/villa-patrice-ungasan-80362.webp" alt="Villa Patrice Ungasan 80362 purchased by Edwards & Smith" />
       </div>
       <div class="container">
-        <Breadcrumbs items={[{name: "Bali", url: "/bali/recent-purchases"}, {name: "Villa Patrice, Ungasan", url: "/recent-purchases/bali/villa-patrice-ungasan-80362"}]} />
-        <LastUpdated date="2025-01-15" />
         <h1>Villa Patrice, Ungasan, 80362 - Bali</h1>
         <p class="property-subtitle">Modern opulence meets tropical serenity near golf course</p>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb-row">
+          <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="/recent-purchases">Recent Purchases</a> / <a href="/bali/recent-purchases">Bali</a> / <span>Villa Patrice, Ungasan</span>
+          </div>
+          <div class="last-updated">Last Updated: 8 October 2025</div>
+        </div>
       </div>
     </section>
 
@@ -112,17 +120,57 @@ import LastUpdated from '../../../components/LastUpdated.astro';
   }
 
   .property-hero .container {
-    padding-top: 30px;
+    padding: 30px 20px;
+    text-align: center;
   }
 
   .property-hero h1 {
     margin-bottom: 10px;
+    color: var(--primary-green);
   }
 
   .property-subtitle {
     font-size: 18px;
     color: var(--text-secondary);
     font-family: var(--font-heading);
+  }
+
+  .page-header {
+    background-color: var(--white);
+    padding: 20px 0;
+  }
+
+  .breadcrumb-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .breadcrumb a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--primary-green);
+    text-decoration: underline;
+  }
+
+  .breadcrumb span {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .last-updated {
+    font-size: 14px;
+    color: var(--text-light);
   }
 
   .property-overview {
