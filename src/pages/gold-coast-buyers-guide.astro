@@ -12,10 +12,16 @@ import LastUpdated from '../components/LastUpdated.astro';
 >
   <Header />
   <main>
+    <!-- Breadcrumbs -->
+    <div class="breadcrumb-container">
+      <div class="container">
+        <Breadcrumbs items={[{name: "Gold Coast", url: "#"}, {name: "Buyers Guide", url: "/gold-coast-buyers-guide"}]} />
+      </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="guide-hero section">
       <div class="container">
-        <Breadcrumbs items={[{name: "Gold Coast Buyers Guide", url: "/gold-coast-buyers-guide"}]} />
         <LastUpdated date="2025-01-15" />
         <h1>Gold Coast Buyers Guide 2025</h1>
         <p class="hero-subtitle">Your complete guide to buying property on the Gold Coast</p>
@@ -487,6 +493,11 @@ import LastUpdated from '../components/LastUpdated.astro';
 </Layout>
 
 <style>
+  .breadcrumb-container {
+    background-color: var(--white);
+    padding: 20px 0 0 0;
+  }
+
   .guide-hero {
     background-image: url('/assets/images/burleigh-waters-4220.jpg'), linear-gradient(135deg, rgba(90, 91, 84, 0.85), rgba(137, 139, 122, 0.85));
     background-size: cover;
@@ -509,28 +520,6 @@ import LastUpdated from '../components/LastUpdated.astro';
   .guide-hero .container {
     position: relative;
     z-index: 1;
-  }
-
-  /* Override breadcrumb styles for hero section */
-  .guide-hero :global(.breadcrumbs) {
-    padding: 0 0 15px 0;
-  }
-
-  .guide-hero :global(.breadcrumbs a) {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .guide-hero :global(.breadcrumbs a:hover) {
-    color: var(--white);
-  }
-
-  .guide-hero :global(.breadcrumbs .separator) {
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  .guide-hero :global(.breadcrumbs .current) {
-    color: var(--white);
-    font-weight: 500;
   }
 
   /* Override last-updated styles for hero section */
