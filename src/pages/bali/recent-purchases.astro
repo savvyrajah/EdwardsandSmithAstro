@@ -46,6 +46,18 @@ function locationToSlug(location: string): string {
       </div>
     </section>
 
+    <!-- Breadcrumbs -->
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb-row">
+          <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="/bali">Bali</a> / <span>Recent Purchases</span>
+          </div>
+          <div class="last-updated">Last Updated: 8 October 2025</div>
+        </div>
+      </div>
+    </section>
+
     <!-- Bali Properties -->
     <section class="properties-section section">
       <div class="container">
@@ -116,6 +128,44 @@ function locationToSlug(location: string): string {
   .hero-subtitle {
     font-family: var(--font-heading);
     font-size: 20px;
+  }
+
+  .page-header {
+    background-color: var(--white);
+    padding: 20px 0;
+  }
+
+  .breadcrumb-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .breadcrumb a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--primary-green);
+    text-decoration: underline;
+  }
+
+  .breadcrumb span {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .last-updated {
+    font-size: 14px;
+    color: var(--text-light);
   }
 
   .properties-section {
