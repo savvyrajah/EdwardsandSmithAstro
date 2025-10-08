@@ -335,70 +335,105 @@ import Footer from '../../components/Footer.astro';
       </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Contact CTA Section -->
     <section class="contact-section section" id="contact">
       <div class="container">
         <div class="section-header">
           <h2>Ready to Start Your Property Search?</h2>
           <p class="section-intro">Book a free consultation to discuss your requirements and receive a transparent quote for our full service.</p>
         </div>
-
-        <div class="form-container">
-          <form class="service-enquiry-form" id="serviceEnquiryForm">
-            <input type="hidden" id="formId" value="3576aeec-7d25-4a89-b648-689efe7f5ee6" />
-            <input type="hidden" id="pageUri" value="/services/full-buyers-agent-service" />
-            <input type="hidden" id="leadSource" value="Service Page Enquiry - Full Service" />
-            <p class="hidden">
-              <label>Don't fill this out if you're human: <input name="bot-field" id="botField" /></label>
-            </p>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name <span class="required">*</span></label>
-                <input type="text" id="firstName" name="firstName" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name <span class="required">*</span></label>
-                <input type="text" id="lastName" name="lastName" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone <span class="required">*</span></label>
-                <input type="tel" id="phone" name="phone" required />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="location">Preferred Location <span class="required">*</span></label>
-              <select id="location" name="location" required>
-                <option value="">Select location</option>
-                <option value="brisbane">Brisbane</option>
-                <option value="gold_coast">Gold Coast</option>
-                <option value="bali">Bali</option>
-                <option value="multiple">Multiple Locations</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Tell us about your property requirements</label>
-              <textarea id="message" name="message" rows="4" placeholder="What type of property are you looking for? Budget? Timeline? Any specific requirements?"></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="button-primary button-large" id="submitButton">Request Free Consultation</button>
-            </div>
-
-            <div id="formMessage" class="form-message hidden"></div>
-          </form>
+        <div style="text-align: center;">
+          <button class="button-primary open-form-btn">Book Free Consultation</button>
         </div>
       </div>
     </section>
+
+    <!-- Progressive Profiling Modal -->
+    <div id="lead-form-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+
+        <!-- Step 1: Property Goal -->
+        <div class="form-step active" data-step="1">
+          <h3>What's your property goal?</h3>
+          <div class="button-group">
+            <button class="choice-btn" data-value="Investment">Investment</button>
+            <button class="choice-btn" data-value="Owner-Occupier">Owner-Occupier</button>
+            <button class="choice-btn" data-value="First Home">First Home</button>
+            <button class="choice-btn" data-value="Upgrading">Upgrading</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Budget -->
+        <div class="form-step" data-step="2">
+          <h3>What's your budget range?</h3>
+          <div class="button-group">
+            <button class="choice-btn" data-value="<$750k">&lt;$750k</button>
+            <button class="choice-btn" data-value="$750k-$1.5M">$750k-$1.5M</button>
+            <button class="choice-btn" data-value="$1.5M-$3M">$1.5M-$3M</button>
+            <button class="choice-btn" data-value="$3M+">$3M+</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Timeline -->
+        <div class="form-step" data-step="3">
+          <h3>When are you looking to buy?</h3>
+          <div class="button-group">
+            <button class="choice-btn" data-value="0-3 months">0-3 months</button>
+            <button class="choice-btn" data-value="3-6 months">3-6 months</button>
+            <button class="choice-btn" data-value="6-12 months">6-12 months</button>
+            <button class="choice-btn" data-value="12+ months">12+ months</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Contact Info -->
+        <div class="form-step" data-step="4">
+          <h3 id="modal-heading">Ready to work with a professional buyers agent?</h3>
+          <form id="contact-form" name="full-service-enquiry">
+            <input type="hidden" id="formId" value="3576aeec-7d25-4a89-b648-689efe7f5ee6">
+            <input type="hidden" id="pageUri" value="/services/full-buyers-agent-service">
+            <input type="hidden" id="leadSource" value="Service Page Enquiry - Full Service">
+            <input type="hidden" id="location" value="">
+            <input type="hidden" id="goal-value" name="goal" value="">
+            <input type="hidden" id="budget-value" name="budget" value="">
+            <input type="hidden" id="timeline-value" name="timeline" value="">
+
+            <div class="form-group">
+              <label for="first-name">First Name *</label>
+              <input type="text" id="first-name" name="firstName" required>
+            </div>
+
+            <div class="form-group">
+              <label for="last-name">Last Name *</label>
+              <input type="text" id="last-name" name="lastName" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+
+            <button type="submit" class="button-primary" id="guideSubmitButton">Book Free Consultation →</button>
+            <div id="guideFormMessage" class="form-message hidden"></div>
+          </form>
+        </div>
+
+        <!-- Step 5: Confirmation -->
+        <div class="form-step" data-step="5">
+          <div class="success-message">
+            <h3>Thank you!</h3>
+            <p>Your consultation request has been received.</p>
+            <p>We'll be in touch within 24 hours to discuss your requirements.</p>
+            <button class="button-secondary modal-close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <Footer />
 </Layout>
@@ -831,6 +866,129 @@ import Footer from '../../components/Footer.astro';
     display: none;
   }
 
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal.active {
+    display: flex;
+  }
+
+  .modal-content {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius-small);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
+  }
+
+  .modal-close:hover {
+    color: var(--text-primary);
+  }
+
+  .form-step {
+    display: none;
+  }
+
+  .form-step.active {
+    display: block;
+  }
+
+  .form-step h3 {
+    color: var(--primary-green);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .button-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .choice-btn {
+    padding: 20px;
+    border: 2px solid var(--primary-green);
+    background: var(--white);
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .choice-btn:hover {
+    background: var(--primary-green);
+    color: var(--white);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+  }
+
+  .success-message {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .success-message h3 {
+    color: var(--primary-green);
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .success-message p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
   @media (max-width: 1024px) {
     .included-grid,
     .why-grid,
@@ -855,78 +1013,157 @@ import Footer from '../../components/Footer.astro';
     .form-container {
       padding: 25px;
     }
+
+    .button-group {
+      grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+      padding: 30px 20px;
+    }
   }
 </style>
 
 <script>
-  const form = document.getElementById('serviceEnquiryForm');
-  const submitButton = document.getElementById('submitButton');
-  const formMessage = document.getElementById('formMessage');
-  const botField = document.getElementById('botField');
+  // Progressive Profiling Form Logic
+  const modal = document.getElementById('lead-form-modal');
+  const openBtns = document.querySelectorAll('.open-form-btn');
+  const closeBtns = document.querySelectorAll('.modal-close');
+  const choiceBtns = document.querySelectorAll('.choice-btn');
+  const contactForm = document.getElementById('contact-form');
+  const modalHeading = document.getElementById('modal-heading');
+  const submitButton = document.getElementById('guideSubmitButton');
+  const leadSourceInput = document.getElementById('leadSource');
 
-  form?.addEventListener('submit', async (e) => {
+  let formData = {
+    goal: '',
+    budget: '',
+    timeline: ''
+  };
+
+  // Open modal
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.classList.add('active');
+      showStep(1);
+    });
+  });
+
+  // Close modal
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      resetForm();
+    });
+  });
+
+  // Click outside modal to close
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      resetForm();
+    }
+  });
+
+  // Handle choice button clicks
+  choiceBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const step = btn.closest('.form-step').dataset.step;
+      const value = btn.dataset.value;
+
+      if (step === '1') {
+        formData.goal = value;
+        showStep(2);
+      } else if (step === '2') {
+        formData.budget = value;
+        showStep(3);
+      } else if (step === '3') {
+        formData.timeline = value;
+        populateHiddenFields();
+        showStep(4);
+      }
+    });
+  });
+
+  // Handle form submission
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Check honeypot
-    if (botField?.value) {
-      return;
-    }
+    const submitButton = document.getElementById('guideSubmitButton');
+    const formMessage = document.getElementById('guideFormMessage');
 
     submitButton.disabled = true;
-    submitButton.textContent = 'Submitting...';
+    submitButton.textContent = 'Sending...';
+    formMessage.classList.add('hidden');
 
-    const formData = new FormData(form);
-    const formId = document.getElementById('formId').value;
-    const pageUri = document.getElementById('pageUri').value;
-    const leadSource = document.getElementById('leadSource').value;
+    const formDataObj = new FormData(contactForm);
+    const fields = {};
 
-    const fields = {
-      firstname: formData.get('firstName'),
-      lastname: formData.get('lastName'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      preferred_location: formData.get('location'),
-      message: formData.get('message') || '',
-      lead_source: leadSource
-    };
+    fields.firstname = formDataObj.get('firstName');
+    fields.lastname = formDataObj.get('lastName');
+    fields.email = formDataObj.get('email');
+    fields.phone = formDataObj.get('phone') || '';
+    fields.wants_agent_call = 'true';
+    fields.preferred_location = '';
+    fields.lead_source = document.getElementById('leadSource').value;
+    fields.property_goal = formDataObj.get('goal') || '';
+    fields.budget_range = formDataObj.get('budget') || '';
+    fields.timeline = formDataObj.get('timeline') || '';
 
-    const hutk = document.cookie.match(/hubspotutk=([^;]+)/)?.[1] || '';
-    const context = {
-      hutk,
-      pageUri,
-      pageName: document.title
+    const payload = {
+      formId: document.getElementById('formId').value,
+      fields: fields,
+      context: {
+        pageUri: window.location.href,
+        pageName: 'Full Buyers Agent Service',
+        leadSource: 'Service Page Enquiry - Full Service'
+      }
     };
 
     try {
       const response = await fetch('/api/hubspot-form', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          formId,
-          fields,
-          context
-        })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       });
 
       const result = await response.json();
 
       if (response.ok && result.success) {
-        formMessage.textContent = '✓ Thank you! We\'ll be in touch within 24 hours to discuss your requirements.';
-        formMessage.className = 'form-message success';
-        form.reset();
+        showStep(5);
       } else {
-        throw new Error(result.message || 'Submission failed');
+        formMessage.textContent = 'There was an error. Please try again or email info@edwardsandsmith.com.au';
+        formMessage.className = 'form-message error';
+        formMessage.classList.remove('hidden');
       }
     } catch (error) {
-      formMessage.textContent = 'Sorry, something went wrong. Please email us at info@edwardsandsmith.com.au or call 0413 245 025.';
+      formMessage.textContent = 'There was an error. Please try again or email info@edwardsandsmith.com.au';
       formMessage.className = 'form-message error';
+      formMessage.classList.remove('hidden');
     } finally {
       submitButton.disabled = false;
-      submitButton.textContent = 'Request Free Consultation';
+      submitButton.textContent = 'Book Free Consultation →';
     }
   });
+
+  function showStep(stepNumber) {
+    document.querySelectorAll('.form-step').forEach(step => {
+      step.classList.remove('active');
+    });
+    document.querySelector(`[data-step="${stepNumber}"]`).classList.add('active');
+  }
+
+  function populateHiddenFields() {
+    document.getElementById('goal-value').value = formData.goal;
+    document.getElementById('budget-value').value = formData.budget;
+    document.getElementById('timeline-value').value = formData.timeline;
+  }
+
+  function resetForm() {
+    formData = { goal: '', budget: '', timeline: '' };
+    contactForm.reset();
+    showStep(1);
+  }
 </script>
 
 <script type="application/ld+json">
