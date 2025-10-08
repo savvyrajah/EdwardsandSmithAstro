@@ -1147,6 +1147,18 @@ import Footer from '../components/Footer.astro';
     fields.budget_range = formDataObj.get('budget_range') || '';
     fields.purchase_timeline = formDataObj.get('purchase_timeline') || '';
 
+    console.log('DEBUG: FormData values read:', {
+      purchase_purpose: formDataObj.get('purchase_purpose'),
+      budget_range: formDataObj.get('budget_range'),
+      purchase_timeline: formDataObj.get('purchase_timeline')
+    });
+
+    console.log('DEBUG: Fields object being sent:', {
+      purchase_purpose: fields.purchase_purpose,
+      budget_range: fields.budget_range,
+      purchase_timeline: fields.purchase_timeline
+    });
+
     const payload = {
       formId: document.getElementById('formId').value,
       fields: fields,
