@@ -204,31 +204,35 @@ import Footer from '../components/Footer.astro';
 
         <!-- Top Performers Grid -->
         <div class="top-performers-grid">
-          <a href="/recent-purchases#palm-beach" class="performer-card">
+          <div class="performer-card">
             <h3>Palm Beach</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Prestigious beachfront living and lifestyle</p>
-          </a>
-          <a href="/recent-purchases#burleigh-waters" class="performer-card">
+          </div>
+          <div class="performer-card">
             <h3>Burleigh Waters</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Family-friendly suburb with canal frontage</p>
-          </a>
-          <a href="/recent-purchases#burleigh-heads" class="performer-card">
+          </div>
+          <div class="performer-card">
             <h3>Burleigh Heads</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Iconic beach culture and dining precinct</p>
-          </a>
-          <a href="/recent-purchases#mermaid-waters" class="performer-card">
+          </div>
+          <div class="performer-card">
             <h3>Mermaid Waters</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Canal-side living with resort amenities</p>
-          </a>
-          <a href="/recent-purchases#currumbin-waters" class="performer-card">
+          </div>
+          <div class="performer-card">
             <h3>Currumbin Waters</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Waterfront properties in natural setting</p>
-          </a>
+          </div>
+        </div>
+
+        <div class="cta-center" style="margin-top: 40px;">
+          <a href="/gold-coast/recent-purchases" class="button-primary">View Gold Coast Recent Purchases</a>
         </div>
 
         <div class="section-header" style="margin-top: 60px;">
@@ -704,16 +708,7 @@ import Footer from '../components/Footer.astro';
     padding: 25px 20px;
     border-radius: var(--border-radius-small);
     text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
     border: 2px solid var(--primary-green);
-  }
-
-  .performer-card:hover {
-    background: var(--white);
-    color: var(--primary-green);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 
   .performer-card h3 {

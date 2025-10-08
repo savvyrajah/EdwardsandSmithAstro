@@ -200,31 +200,35 @@ import Footer from '../components/Footer.astro';
 
         <!-- Top Performers Grid -->
         <div class="top-performers-grid">
-          <a href="/recent-purchases#hawthorne" class="performer-card">
+          <div class="performer-card">
             <h3>Hawthorne</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Premium riverside properties with strong capital growth</p>
-          </a>
-          <a href="/recent-purchases#ascot" class="performer-card">
+          </div>
+          <div class="performer-card">
             <h3>Ascot</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Prestigious homes near racecourses and quality schools</p>
-          </a>
-          <a href="/recent-purchases#hamilton" class="performer-card">
+          </div>
+          <div class="performer-card">
             <h3>Hamilton</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Inner-city lifestyle with excellent amenities</p>
-          </a>
-          <a href="/recent-purchases#clayfield" class="performer-card">
+          </div>
+          <div class="performer-card">
             <h3>Clayfield</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Character homes and family-friendly atmosphere</p>
-          </a>
-          <a href="/recent-purchases#new-farm" class="performer-card">
+          </div>
+          <div class="performer-card">
             <h3>New Farm</h3>
             <p class="performer-label">Top Performing Suburb</p>
             <p class="performer-description">Art deco architecture and riverside living</p>
-          </a>
+          </div>
+        </div>
+
+        <div class="cta-center" style="margin-top: 40px;">
+          <a href="/brisbane/recent-purchases" class="button-primary">View Brisbane Recent Purchases</a>
         </div>
 
         <div class="section-header" style="margin-top: 60px;">
@@ -727,16 +731,7 @@ import Footer from '../components/Footer.astro';
     padding: 25px 20px;
     border-radius: var(--border-radius-small);
     text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
     border: 2px solid var(--primary-green);
-  }
-
-  .performer-card:hover {
-    background: var(--white);
-    color: var(--primary-green);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 
   .performer-card h3 {
