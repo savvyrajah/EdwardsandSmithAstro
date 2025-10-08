@@ -2,8 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import LastUpdated from '../../components/LastUpdated.astro';
 ---
 
 <Layout
@@ -15,10 +13,20 @@ import LastUpdated from '../../components/LastUpdated.astro';
     <!-- Hero Section -->
     <section class="service-hero section">
       <div class="container">
-        <Breadcrumbs items={[{name: "Services", url: "/services"}, {name: "Property Evaluation & Negotiation", url: "/services/property-evaluation-negotiation"}]} />
-        <LastUpdated date="2025-01-15" />
         <h1>Property Evaluation & Negotiation</h1>
         <p class="hero-subtitle">Expert assessment and strategic negotiation</p>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <section class="page-header">
+      <div class="container">
+        <div class="breadcrumb-row">
+          <div class="breadcrumb">
+            <a href="/">Home</a> / <a href="#">Why Us</a> / <a href="/services">Services</a> / <span>Property Evaluation & Negotiation</span>
+          </div>
+          <div class="last-updated">Last Updated: 8 October 2025</div>
+        </div>
       </div>
     </section>
 
@@ -423,6 +431,45 @@ import LastUpdated from '../../components/LastUpdated.astro';
     font-size: 20px;
     margin-bottom: 20px;
   }
+
+  .page-header {
+    background-color: var(--white);
+    padding: 20px 0;
+  }
+
+  .breadcrumb-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .breadcrumb {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .breadcrumb a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--primary-green);
+    text-decoration: underline;
+  }
+
+  .breadcrumb span {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .last-updated {
+    font-size: 14px;
+    color: var(--text-light);
+  }
+
 
   .included-section {
     background-color: var(--white);
