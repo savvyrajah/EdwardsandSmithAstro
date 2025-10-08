@@ -12,9 +12,13 @@ import Footer from '../components/Footer.astro';
   <main>
     <!-- Hero Section -->
     <section class="guide-hero section">
+      <div class="container">
+        <h1>Brisbane Buyers Guide 2025</h1>
+        <p class="page-subtitle">Your complete guide to buying property in Brisbane</p>
+      </div>
     </section>
 
-    <!-- Breadcrumbs and Title -->
+    <!-- Breadcrumbs -->
     <section class="page-header">
       <div class="container">
         <div class="breadcrumb-row">
@@ -23,8 +27,6 @@ import Footer from '../components/Footer.astro';
           </div>
           <div class="last-updated">Last Updated: 8 October 2025</div>
         </div>
-        <h1>Brisbane Buyers Guide 2025</h1>
-        <p class="page-subtitle">Your complete guide to buying property in Brisbane</p>
       </div>
     </section>
 
@@ -521,8 +523,10 @@ import Footer from '../components/Footer.astro';
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    height: 400px;
+    padding: 80px 20px;
     position: relative;
+    text-align: center;
+    color: var(--white);
   }
 
   .guide-hero::before {
@@ -533,17 +537,36 @@ import Footer from '../components/Footer.astro';
     z-index: 0;
   }
 
+  .guide-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .guide-hero h1 {
+    color: var(--white);
+    margin-bottom: 15px;
+  }
+
+  .guide-hero .page-subtitle {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--white);
+  }
+
   .page-header {
     background-color: var(--white);
-    padding: 30px 0 40px 0;
-    text-align: center;
+    padding: 20px 0;
   }
 
   .breadcrumb-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .breadcrumb {
     font-size: 14px;
     color: var(--text-secondary);
   }
@@ -567,17 +590,6 @@ import Footer from '../components/Footer.astro';
   .last-updated {
     font-size: 14px;
     color: var(--text-light);
-  }
-
-  .page-header h1 {
-    color: var(--primary-green);
-    margin-bottom: 15px;
-  }
-
-  .page-subtitle {
-    font-family: var(--font-heading);
-    font-size: 18px;
-    color: var(--text-secondary);
   }
 
   .content-section {
