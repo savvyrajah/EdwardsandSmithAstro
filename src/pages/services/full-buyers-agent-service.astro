@@ -285,81 +285,51 @@ import Footer from '../../components/Footer.astro';
         </div>
         <div class="faq-grid">
           <div class="faq-item">
-            <button class="faq-question">
-              <span>How long does the property search typically take?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                The timeline varies based on your requirements and market conditions. Some clients find their
-                property within 2-4 weeks, while others with very specific criteria may take 2-3 months. We
-                work at your pace and won't pressure you to purchase until you've found the right property.
-              </p>
-            </div>
+            <h3 class="faq-question">How long does the property search typically take?</h3>
+            <p class="faq-answer">
+              The timeline varies based on your requirements and market conditions. Some clients find their
+              property within 2-4 weeks, while others with very specific criteria may take 2-3 months. We
+              work at your pace and won't pressure you to purchase until you've found the right property.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>Do I pay your fee if we don't find a property?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Our fee is success-based. You only pay when you successfully purchase a property through our
-                service. If we don't find a suitable property or you choose not to proceed with a purchase,
-                you don't pay our buyers agent fee.
-              </p>
-            </div>
+            <h3 class="faq-question">Do I pay your fee if we don't find a property?</h3>
+            <p class="faq-answer">
+              Our fee is success-based. You only pay when you successfully purchase a property through our
+              service. If we don't find a suitable property or you choose not to proceed with a purchase,
+              you don't pay our buyers agent fee.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>Can you help with interstate purchases?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Absolutely. Many of our clients are interstate or even overseas buyers. We become your eyes
-                and ears on the ground, attending inspections, coordinating due diligence, and managing the
-                entire purchase process remotely on your behalf.
-              </p>
-            </div>
+            <h3 class="faq-question">Can you help with interstate purchases?</h3>
+            <p class="faq-answer">
+              Absolutely. Many of our clients are interstate or even overseas buyers. We become your eyes
+              and ears on the ground, attending inspections, coordinating due diligence, and managing the
+              entire purchase process remotely on your behalf.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>What areas do you cover in Queensland?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                We primarily service <a href="/brisbane-buyers-guide">Brisbane</a>, <a href="/gold-coast-buyers-guide">Gold Coast</a>, and Sunshine Coast regions. We also work in <a href="/bali-buyers-guide">Bali</a>
-                for property purchases. If you're looking in a specific area outside these regions, contact
-                us to discuss whether we can assist.
-              </p>
-            </div>
+            <h3 class="faq-question">What areas do you cover in Queensland?</h3>
+            <p class="faq-answer">
+              We primarily service <a href="/brisbane-buyers-guide">Brisbane</a>, <a href="/gold-coast-buyers-guide">Gold Coast</a>, and Sunshine Coast regions. We also work in <a href="/bali-buyers-guide">Bali</a>
+              for property purchases. If you're looking in a specific area outside these regions, contact
+              us to discuss whether we can assist.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>How does your fee work with the purchase price?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Our fee ranges from 2-3% of the purchase price in Queensland (less than 5% in Bali) depending on property value and complexity.
-                For example, on a $1.5M property, our fee would typically be $37,500 (2.5%). Given our clients save an average of $65,000 through expert negotiation, our fee often pays for itself while securing you the right property. We provide a clear quote upfront before you engage our services.
-              </p>
-            </div>
+            <h3 class="faq-question">How does your fee work with the purchase price?</h3>
+            <p class="faq-answer">
+              Our fee ranges from 2-3% of the purchase price in Queensland (less than 5% in Bali) depending on property value and complexity.
+              For example, on a $1.5M property, our fee would typically be $37,500 (2.5%). Given our clients save an average of $65,000 through expert negotiation, our fee often pays for itself while securing you the right property. We provide a clear quote upfront before you engage our services.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>Can I attend inspections with you?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Yes, you're welcome to attend inspections with us. However, one of the benefits of our service
-                is that we can attend on your behalf, saving you time. We provide detailed reports, photos,
-                and videos so you can make informed decisions without attending every inspection.
-              </p>
-            </div>
+            <h3 class="faq-question">Can I attend inspections with you?</h3>
+            <p class="faq-answer">
+              Yes, you're welcome to attend inspections with us. However, one of the benefits of our service
+              is that we can attend on your behalf, saving you time. We provide detailed reports, photos,
+              and videos so you can make informed decisions without attending every inspection.
+            </p>
           </div>
         </div>
       </div>
@@ -779,53 +749,21 @@ import Footer from '../../components/Footer.astro';
 
   .faq-item {
     border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .faq-question {
-    width: 100%;
-    text-align: left;
-    padding: 20px 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     color: var(--primary-green);
     font-family: var(--font-heading);
     font-size: 18px;
     font-weight: 600;
-    transition: color 0.3s ease;
-  }
-
-  .faq-question:hover {
-    color: var(--olive-green);
-  }
-
-  .faq-icon {
-    font-size: 24px;
-    font-weight: bold;
-    transition: transform 0.3s ease;
-  }
-
-  .faq-item.active .faq-icon {
-    transform: rotate(45deg);
+    margin-bottom: 10px;
   }
 
   .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .faq-item.active .faq-answer {
-    max-height: 500px;
-    padding-bottom: 20px;
-  }
-
-  .faq-answer p {
-    margin-bottom: 15px;
     line-height: 1.7;
+    color: var(--text-primary);
   }
 
   .cta-section {
@@ -1266,24 +1204,6 @@ import Footer from '../../components/Footer.astro';
     contactForm.reset();
     showStep(1);
   }
-
-  // FAQ Accordion
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.parentElement;
-      const isActive = faqItem.classList.contains('active');
-
-      // Close all FAQ items
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
-
-      // Open clicked item if it wasn't active
-      if (!isActive) {
-        faqItem.classList.add('active');
-      }
-    });
-  });
 </script>
 
 <script type="application/ld+json">

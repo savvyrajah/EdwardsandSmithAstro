@@ -291,79 +291,49 @@ import Footer from '../../components/Footer.astro';
         </div>
         <div class="faq-grid">
           <div class="faq-item">
-            <button class="faq-question">
-              <span>Can I still attend the auction if you're bidding?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Absolutely. Many clients prefer to attend and watch. However, it's important you don't
-                participate in the bidding. Only the appointed bidder should bid to avoid confusion. Some
-                clients prefer not to attend to avoid the stress entirely.
-              </p>
-            </div>
+            <h3 class="faq-question">Can I still attend the auction if you're bidding?</h3>
+            <p class="faq-answer">
+              Absolutely. Many clients prefer to attend and watch. However, it's important you don't
+              participate in the bidding. Only the appointed bidder should bid to avoid confusion. Some
+              clients prefer not to attend to avoid the stress entirely.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>What if the property doesn't sell at auction?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                If the property is passed in (doesn't meet the reserve), we immediately negotiate with
-                the selling agent on your behalf. Often the best deals happen post-auction when the
-                pressure is on the vendor to sell.
-              </p>
-            </div>
+            <h3 class="faq-question">What if the property doesn't sell at auction?</h3>
+            <p class="faq-answer">
+              If the property is passed in (doesn't meet the reserve), we immediately negotiate with
+              the selling agent on your behalf. Often the best deals happen post-auction when the
+              pressure is on the vendor to sell.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>How do you determine the maximum bid?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                We conduct independent market analysis, review comparable sales, and assess the property's
-                true value. We then recommend a maximum bid based on this data, which you approve before
-                auction day.
-              </p>
-            </div>
+            <h3 class="faq-question">How do you determine the maximum bid?</h3>
+            <p class="faq-answer">
+              We conduct independent market analysis, review comparable sales, and assess the property's
+              true value. We then recommend a maximum bid based on this data, which you approve before
+              auction day.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>Do you guarantee we'll win the auction?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                We can't guarantee you'll win. That depends on other bidders and how much they're willing
-                to pay. What we guarantee is strategic bidding that gives you the best chance of success
-                at the right price, and the discipline to walk away if bidding exceeds value.
-              </p>
-            </div>
+            <h3 class="faq-question">Do you guarantee we'll win the auction?</h3>
+            <p class="faq-answer">
+              We can't guarantee you'll win. That depends on other bidders and how much they're willing
+              to pay. What we guarantee is strategic bidding that gives you the best chance of success
+              at the right price, and the discipline to walk away if bidding exceeds value.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>How much does auction representation cost?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Our auction representation service is a fixed fee of $3,000. This includes pre-auction property analysis, strategic bidding plan, professional representation on auction day, and post-auction negotiation if required. There are no hidden costs or percentage-based fees.
-              </p>
-            </div>
+            <h3 class="faq-question">How much does auction representation cost?</h3>
+            <p class="faq-answer">
+              Our auction representation service is a fixed fee of $3,000. This includes pre-auction property analysis, strategic bidding plan, professional representation on auction day, and post-auction negotiation if required. There are no hidden costs or percentage-based fees.
+            </p>
           </div>
           <div class="faq-item">
-            <button class="faq-question">
-              <span>Can you bid on properties outside Queensland?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                Our primary service area is Queensland (<a href="/brisbane-buyers-guide">Brisbane</a>, <a href="/gold-coast-buyers-guide">Gold Coast</a>, Sunshine Coast). If you need
-                auction representation outside these areas, contact us to discuss options.
-              </p>
-            </div>
+            <h3 class="faq-question">Can you bid on properties outside Queensland?</h3>
+            <p class="faq-answer">
+              Our primary service area is Queensland (<a href="/brisbane-buyers-guide">Brisbane</a>, <a href="/gold-coast-buyers-guide">Gold Coast</a>, Sunshine Coast). If you need
+              auction representation outside these areas, contact us to discuss options.
+            </p>
           </div>
         </div>
       </div>
@@ -733,53 +703,21 @@ import Footer from '../../components/Footer.astro';
 
   .faq-item {
     border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .faq-question {
-    width: 100%;
-    text-align: left;
-    padding: 20px 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     color: var(--primary-green);
     font-family: var(--font-heading);
     font-size: 18px;
     font-weight: 600;
-    transition: color 0.3s ease;
-  }
-
-  .faq-question:hover {
-    color: var(--olive-green);
-  }
-
-  .faq-icon {
-    font-size: 24px;
-    font-weight: bold;
-    transition: transform 0.3s ease;
-  }
-
-  .faq-item.active .faq-icon {
-    transform: rotate(45deg);
+    margin-bottom: 10px;
   }
 
   .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .faq-item.active .faq-answer {
-    max-height: 500px;
-    padding-bottom: 20px;
-  }
-
-  .faq-answer p {
-    margin-bottom: 15px;
     line-height: 1.7;
+    color: var(--text-primary);
   }
 
   .cta-section {
@@ -1295,24 +1233,6 @@ import Footer from '../../components/Footer.astro';
     contactForm.reset();
     showStep(1);
   }
-
-  // FAQ Accordion
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.parentElement;
-      const isActive = faqItem.classList.contains('active');
-
-      // Close all FAQ items
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
-
-      // Open clicked item if it wasn't active
-      if (!isActive) {
-        faqItem.classList.add('active');
-      }
-    });
-  });
 </script>
 
 <script type="application/ld+json">
@@ -1377,7 +1297,15 @@ import Footer from '../../components/Footer.astro';
       "name": "How much does auction representation cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We charge a fixed fee for auction representation, which varies based on the property and complexity. Contact us for a transparent quote. There are no hidden costs."
+        "text": "Our auction representation service is a fixed fee of $3,000. This includes pre-auction property analysis, strategic bidding plan, professional representation on auction day, and post-auction negotiation if required. There are no hidden costs or percentage-based fees."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you bid on properties outside Queensland?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our primary service area is Queensland (Brisbane, Gold Coast, Sunshine Coast). If you need auction representation outside these areas, contact us to discuss options."
       }
     }
   ]
