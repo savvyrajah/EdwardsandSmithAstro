@@ -332,50 +332,80 @@ import Footer from '../../components/Footer.astro';
         </div>
         <div class="faq-grid">
           <div class="faq-item">
-            <h3>I've already made an offer. Can you still help?</h3>
-            <p>
-              Yes. Even if you've made an initial offer, we can step in to handle counter-negotiations
-              and contract terms. The earlier you engage us, the better, but we can add value at any
-              stage of the negotiation process.
-            </p>
+            <button class="faq-question">
+              <span>I've already made an offer. Can you still help?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. Even if you've made an initial offer, we can step in to handle counter-negotiations
+                and contract terms. The earlier you engage us, the better, but we can add value at any
+                stage of the negotiation process.
+              </p>
+            </div>
           </div>
           <div class="faq-item">
-            <h3>How much can you really save me?</h3>
-            <p>
-              Our clients typically save $30,000-$100,000 through professional negotiation. The exact
-              amount depends on the property, market conditions, and identified issues. Even conservative
-              negotiation usually saves more than our service fee.
-            </p>
+            <button class="faq-question">
+              <span>How much can you really save me?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Our clients typically save $30,000-$100,000 through professional negotiation. The exact
+                amount depends on the property, market conditions, and identified issues. Even conservative
+                negotiation usually saves more than our service fee.
+              </p>
+            </div>
           </div>
           <div class="faq-item">
-            <h3>What if I've already built rapport with the agent?</h3>
-            <p>
-              That's common, and it's exactly why you need professional representation. Your rapport
-              makes it harder to negotiate aggressively. We maintain professional relationships while
-              negotiating firmly on your behalf. It's what we do every day.
-            </p>
+            <button class="faq-question">
+              <span>What if I've already built rapport with the agent?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                That's common, and it's exactly why you need professional representation. Your rapport
+                makes it harder to negotiate aggressively. We maintain professional relationships while
+                negotiating firmly on your behalf. It's what we do every day.
+              </p>
+            </div>
           </div>
           <div class="faq-item">
-            <h3>Do you negotiate on all property types?</h3>
-            <p>
-              Yes. We negotiate on houses, apartments, townhouses, land, and commercial properties
-              across Queensland and Bali. Each property type requires different negotiation strategies, which
-              we tailor accordingly. See our <a href="/recent-purchases">recent successful negotiations</a> across different property types.
-            </p>
+            <button class="faq-question">
+              <span>Do you negotiate on all property types?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. We negotiate on houses, apartments, townhouses, land, and commercial properties
+                across Queensland and Bali. Each property type requires different negotiation strategies, which
+                we tailor accordingly. See our <a href="/recent-purchases">recent successful negotiations</a> across different property types.
+              </p>
+            </div>
           </div>
           <div class="faq-item">
-            <h3>What if the vendor won't negotiate?</h3>
-            <p>
-              Some vendors are firm on price. In these cases, we negotiate contract terms, settlement
-              dates, inclusions, or conditions to add value. If the vendor truly won't budge and the
-              price exceeds market value, we'll advise you to walk away and find a better opportunity.
-            </p>
+            <button class="faq-question">
+              <span>What if the vendor won't negotiate?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Some vendors are firm on price. In these cases, we negotiate contract terms, settlement
+                dates, inclusions, or conditions to add value. If the vendor truly won't budge and the
+                price exceeds market value, we'll advise you to walk away and find a better opportunity.
+              </p>
+            </div>
           </div>
           <div class="faq-item">
-            <h3>How is this service priced?</h3>
-            <p>
-              Our property evaluation and negotiation service typically ranges from 1-2% of the purchase price. For example, on a $1.5M property, our fee would be approximately $22,500 (1.5%). This service often pays for itself through better pricing—our clients typically save $30,000-$100,000 through professional negotiation. Pricing is transparent and agreed upfront before you engage our services.
-            </p>
+            <button class="faq-question">
+              <span>How is this service priced?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Our property evaluation and negotiation service typically ranges from 1-2% of the purchase price. For example, on a $1.5M property, our fee would be approximately $22,500 (1.5%). This service often pays for itself through better pricing—our clients typically save $30,000-$100,000 through professional negotiation. Pricing is transparent and agreed upfront before you engage our services.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -761,10 +791,55 @@ import Footer from '../../components/Footer.astro';
     gap: 30px;
   }
 
-  .faq-item h3 {
+  .faq-item {
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     color: var(--primary-green);
+    font-family: var(--font-heading);
     font-size: 18px;
-    margin-bottom: 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .faq-question:hover {
+    color: var(--olive-green);
+  }
+
+  .faq-icon {
+    font-size: 24px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+    padding-bottom: 20px;
+  }
+
+  .faq-answer p {
+    margin-bottom: 15px;
+    line-height: 1.7;
   }
 
   .cta-section {
@@ -855,7 +930,18 @@ import Footer from '../../components/Footer.astro';
   }
 
   .contact-section {
-    background-color: #f9f9f9;
+    background-color: var(--primary-green);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .contact-section h2 {
+    color: var(--white);
+  }
+
+  .contact-section .section-intro {
+    color: var(--white);
+    opacity: 0.95;
   }
 
   .form-container {
@@ -1252,6 +1338,24 @@ import Footer from '../../components/Footer.astro';
     contactForm.reset();
     showStep(1);
   }
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      const isActive = faqItem.classList.contains('active');
+
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    });
+  });
 </script>
 
 <script type="application/ld+json">

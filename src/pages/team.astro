@@ -43,8 +43,9 @@ import Footer from '../components/Footer.astro';
               <h3>Jake Edwards</h3>
               <p class="team-role">Co-Owner & Buyers Agent</p>
               <p class="team-specialization"><strong>Specializes in:</strong> <a href="/gold-coast-buyers-guide">Gold Coast</a> (Coolangatta to Broadbeach) & <a href="/bali-buyers-guide">Bali</a></p>
+              <p class="team-credentials"><strong>Credentials:</strong> Real Estate License #4553613 | 18 years in real estate | 4 years as buyers agent | Former Carlton AFL player | Top 3 buyers agent on the Gold Coast | Media personality and regular contributor to realestate.com.au</p>
               <p class="team-bio">
-                With over 11 years of experience navigating the property market, Jake has developed deep, behind-the-scenes insight into the buying and selling process. Having personally bought land, built homes, and sold properties both privately and at auction, he brings firsthand knowledge of the complexities buyers face. His background directing a premier mental health charity has shaped his empathetic, community-focused approach. Jake's vision is to empower people in achieving their property ambitions through expert guidance and transparent support.
+                With 18 years of experience navigating the property market, Jake has developed deep, behind-the-scenes insight into the buying and selling process. His background as a Carlton AFL player brings discipline, strategy, and competitive edge to every negotiation. Having personally bought land, built homes, and sold properties both privately and at auction, he brings firsthand knowledge of the complexities buyers face. As a media personality and regular contributor to realestate.com.au, Jake is recognised as one of the Top 3 buyers agents on the Gold Coast. His vision is to empower people in achieving their property ambitions through expert guidance and transparent support.
               </p>
               <p class="team-contact">
                 <a href="mailto:jake@edwardsandsmith.com.au">jake@edwardsandsmith.com.au</a> |
@@ -62,8 +63,9 @@ import Footer from '../components/Footer.astro';
               <h3>Ely Smith</h3>
               <p class="team-role">Co-Owner & Buyers Agent</p>
               <p class="team-specialization"><strong>Specializes in:</strong> <a href="/brisbane-buyers-guide">Brisbane</a> & <a href="/bali-buyers-guide">Bali</a></p>
+              <p class="team-credentials"><strong>Awards:</strong> Successful Business People 25 under 20 | Top 3 buyers agent in Brisbane | Award-winning buyers agent</p>
               <p class="team-bio">
-                Originally from Yarrawonga in country Victoria, Ely moved to Brisbane seven years ago to pursue his career in AFL. In November 2018, he was drafted to the Brisbane Lions. While training alongside Jake Edwards, Ely developed a passion for property and purchased his first investment property in 2020. His professional skills and attributes as a respected team player in AFL have proven invaluable in supporting his clients. Ely brings the same dedication and team-first mentality from his football career to Edwards & Smith, ensuring clients receive personalized attention and expert guidance throughout their property journey.
+                Originally from Yarrawonga in country Victoria, Ely moved to Brisbane seven years ago to pursue his career in AFL. In November 2018, he was drafted to the Brisbane Lions. While training alongside Jake Edwards, Ely developed a passion for property and purchased his first investment property in 2020. Recognised as one of the Top 3 buyers agents in Brisbane and featured in Successful Business People 25 under 20, Ely's professional skills and attributes as a respected team player in AFL have proven invaluable in supporting his clients. Ely brings the same dedication and team-first mentality from his football career to Edwards & Smith, ensuring clients receive personalized attention and expert guidance throughout their property journey.
               </p>
               <p class="team-contact">
                 <a href="mailto:ely@edwardsandsmith.com.au">ely@edwardsandsmith.com.au</a> |
@@ -194,7 +196,7 @@ import Footer from '../components/Footer.astro';
       <div class="container">
         <h2>Ready to Work With Our Expert Team?</h2>
         <p>Let's discuss your property goals and match you with the right buyers agent.</p>
-        <a href="#contact" class="button-primary">Book Free Consultation</a>
+        <a href="/book-free-consultation" class="button-primary">Book Free Consultation</a>
       </div>
     </section>
   </main>
@@ -337,6 +339,14 @@ import Footer from '../components/Footer.astro';
   .team-specialization a:hover {
     color: var(--olive-green);
     text-decoration: underline;
+  }
+
+  .team-credentials {
+    font-size: 13px;
+    color: var(--primary-green);
+    margin-bottom: 12px;
+    font-weight: 500;
+    line-height: 1.5;
   }
 
   .team-bio {
