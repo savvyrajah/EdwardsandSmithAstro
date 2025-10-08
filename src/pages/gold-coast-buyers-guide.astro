@@ -1167,6 +1167,19 @@ import Footer from '../components/Footer.astro';
       console.log(\'Response data:\', result);
 
       if (response.ok && result.success) {
+        // Update success message based on form type
+        const formType = formTypeInput.value;
+        const line1 = document.getElementById('success-message-line1');
+        const line2 = document.getElementById('success-message-line2');
+
+        if (formType === 'alerts') {
+          line1.textContent = 'You\'re all set!';
+          line2.textContent = 'We\'ll send you off-market property alerts matching your criteria.';
+        } else {
+          line1.textContent = 'Your Gold Coast Buyers Guide is on its way.';
+          line2.textContent = 'We\'ll also send you off-market property alerts matching your criteria.';
+        }
+
         showStep(5);
       } else {
         formMessage.textContent = 'There was an error. Please try again or call us at 0413 245 022.';

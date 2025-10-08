@@ -353,8 +353,8 @@ import Footer from '../components/Footer.astro';
         <div class="form-step" data-step="5">
           <div class="success-message">
             <h3>✅ Check your email!</h3>
-            <p>Your Bali Buyers Guide is on its way.</p>
-            <p>We'll also send you off-market villa alerts matching your criteria.</p>
+            <p id="success-message-line1">Your Bali Buyers Guide is on its way.</p>
+            <p id="success-message-line2">We'll also send you off-market villa alerts matching your criteria.</p>
             <button class="button-secondary modal-close">Close</button>
           </div>
         </div>
@@ -907,6 +907,19 @@ import Footer from '../components/Footer.astro';
       console.log('Response data:', result);
 
       if (response.ok && result.success) {
+        // Update success message based on form type
+        const formType = formTypeInput.value;
+        const line1 = document.getElementById('success-message-line1');
+        const line2 = document.getElementById('success-message-line2');
+
+        if (formType === 'alerts') {
+          line1.textContent = 'You\'re all set!';
+          line2.textContent = 'We\'ll send you off-market villa alerts matching your criteria.';
+        } else {
+          line1.textContent = 'Your Bali Buyers Guide is on its way.';
+          line2.textContent = 'We\'ll also send you off-market villa alerts matching your criteria.';
+        }
+
         showStep(5);
       } else {
         formMessage.textContent = 'There was an error. Please try again or email info@edwardsandsmith.com.au';
