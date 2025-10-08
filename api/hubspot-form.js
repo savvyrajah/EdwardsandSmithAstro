@@ -42,18 +42,31 @@ export default async function handler(req, res) {
     }
 
     // Prepare HubSpot form submission payload
+    // Only include allowed context fields (hutk, pageUri, pageName, ipAddress)
+    const allowedContextFields = ['hutk', 'pageUri', 'pageName', 'ipAddress'];
+    const cleanContext = {};
+
+    // Add standard context fields
+    cleanContext.pageUri = context.pageUri || req.headers.referer;
+    cleanContext.pageName = context.pageName || 'Form Submission';
+    cleanContext.ipAddress = req.headers['x-forwarded-for'] || req.connection?.remoteAddress;
+    if (req.cookies?.hubspotutk) {
+      cleanContext.hutk = req.cookies.hubspotutk;
+    }
+
+    // Add any other allowed context fields from the request
+    Object.keys(context).forEach(key => {
+      if (allowedContextFields.includes(key) && !cleanContext[key]) {
+        cleanContext[key] = context[key];
+      }
+    });
+
     const hubspotPayload = {
       fields: Object.keys(fields).map(key => ({
         name: key,
         value: fields[key]
       })),
-      context: {
-        hutk: req.cookies?.hubspotutk, // HubSpot tracking cookie
-        pageUri: context.pageUri || req.headers.referer,
-        pageName: context.pageName || 'Form Submission',
-        ipAddress: req.headers['x-forwarded-for'] || req.connection?.remoteAddress,
-        ...context
-      }
+      context: cleanContext
     };
 
     // Submit to HubSpot Forms API
