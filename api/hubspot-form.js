@@ -95,6 +95,42 @@ export default async function handler(req, res) {
       });
     }
 
+    // WORKAROUND: Also update contact properties directly via Contacts API
+    // This ensures purchase_purpose, budget_range, and purchase_timeline are saved
+    if (fields.email) {
+      try {
+        const contactUpdatePayload = {
+          properties: {
+            purchase_purpose: fields.purchase_purpose,
+            budget_range: fields.budget_range,
+            purchase_timeline: fields.purchase_timeline
+          }
+        };
+
+        console.log('Updating contact properties directly:', contactUpdatePayload);
+
+        const contactUpdateResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${fields.email}?idProperty=email`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+          },
+          body: JSON.stringify(contactUpdatePayload)
+        });
+
+        if (contactUpdateResponse.ok) {
+          const contactUpdateData = await contactUpdateResponse.json();
+          console.log('Contact properties updated successfully:', contactUpdateData.id);
+        } else {
+          const errorData = await contactUpdateResponse.json();
+          console.error('Failed to update contact properties:', errorData);
+        }
+      } catch (contactError) {
+        console.error('Error updating contact properties:', contactError.message);
+        // Don't fail the whole request if contact update fails
+      }
+    }
+
     // Success
     return res.status(200).json({
       success: true,
