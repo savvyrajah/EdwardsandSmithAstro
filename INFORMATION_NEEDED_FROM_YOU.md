@@ -336,6 +336,14 @@ Not provided - skipping
 - **Ely Smith Bio** (Question 5B): Years in RE, buyers agent experience, AFL details, license #, awards
 
 ### MEDIUM PRIORITY:
+- **Property Purchase Data** (Question 11 - NEW): Simple spreadsheet for suburb-specific pages
+  - **Columns needed:** Suburb | Price Range | Type | Month/Year | Agent | Notable (savings/speed)
+  - **Example row:** Hawthorne | $1.2-1.5M | House | Mar 2024 | Ely | $40k below asking
+  - **NO exact addresses needed** - suburb level only for client privacy
+  - **Only if:** Already tracked in CRM (easy export) OR <1 hour of work
+  - **Why:** Creates suburb-specific landing pages, agent portfolios, price-range filters
+  - **Alternative:** Skip this and use existing Google Review data (already captures timelines/savings)
+
 - **Blog Strategy** (Question 7): Author attribution, existing content to repurpose, buyer mistakes, market trends
 
 ### CLARIFICATIONS NEEDED:
