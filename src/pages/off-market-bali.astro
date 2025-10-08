@@ -306,66 +306,109 @@ import PropertyCard from '../components/PropertyCard.astro';
     <section class="contact-section section" id="contact">
       <div class="container">
         <div class="section-header">
-          <h2>Access Bali's Off-Market Villas</h2>
-          <p class="section-intro">Book a free consultation to get exclusive access to off-market villas in Bali before they hit the market.</p>
+          <h2>Get Notified About Bali Off-Market Villas</h2>
+          <p class="section-intro">Be first to know when new off-market villas become available in Bali. Complete your profile to receive exclusive alerts.</p>
         </div>
 
-        <div class="form-container">
-          <form class="service-enquiry-form" id="serviceEnquiryForm">
-            <input type="hidden" id="formId" value="3576aeec-7d25-4a89-b648-689efe7f5ee6" />
-            <input type="hidden" id="pageUri" value="/off-market-bali" />
-            <input type="hidden" id="leadSource" value="Off-Market Bali Enquiry" />
-            <p class="hidden">
-              <label>Don't fill this out if you're human: <input name="bot-field" id="botField" /></label>
-            </p>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="firstName">First Name <span class="required">*</span></label>
-                <input type="text" id="firstName" name="firstName" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name <span class="required">*</span></label>
-                <input type="text" id="lastName" name="lastName" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone <span class="required">*</span></label>
-                <input type="tel" id="phone" name="phone" required />
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="location">Preferred Location <span class="required">*</span></label>
-              <select id="location" name="location" required>
-                <option value="">Select location</option>
-                <option value="brisbane">Brisbane</option>
-                <option value="gold_coast">Gold Coast</option>
-                <option value="bali" selected>Bali</option>
-                <option value="multiple">Multiple Locations</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Tell us about your Bali property requirements</label>
-              <textarea id="message" name="message" rows="4" placeholder="Preferred region (Uluwatu, Canggu, Seminyak), property type, budget, timeline..."></textarea>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="button-primary button-large" id="submitButton">Request Free Consultation</button>
-            </div>
-
-            <div id="formMessage" class="form-message hidden"></div>
-          </form>
+        <div class="cta-box-inline">
+          <h3>Get Exclusive Bali Villa Alerts</h3>
+          <p>Access off-market villas before they're publicly listed</p>
+          <button class="button-primary open-form-btn">Get Off-Market Villa Alerts</button>
         </div>
       </div>
     </section>
+
+    <!-- Progressive Profiling Modal -->
+    <div id="lead-form-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+
+        <!-- Step 1: Property Goal -->
+        <div class="form-step active" data-step="1">
+          <h3>What's your Bali property goal?</h3>
+          <div class="button-group">
+            <button class="choice-btn" data-value="Investment">Investment</button>
+            <button class="choice-btn" data-value="Retirement">Retirement</button>
+            <button class="choice-btn" data-value="Part-time Living">Part-time Living</button>
+            <button class="choice-btn" data-value="Holiday Home">Holiday Home</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Budget -->
+        <div class="form-step" data-step="2">
+          <h3>What's your budget range?</h3>
+          <div class="button-group">
+            <button class="choice-btn" data-value="<$500k AUD">&lt;$500k AUD</button>
+            <button class="choice-btn" data-value="$500k-$1M AUD">$500k-$1M AUD</button>
+            <button class="choice-btn" data-value="$1M-$2M AUD">$1M-$2M AUD</button>
+            <button class="choice-btn" data-value="$2M+ AUD">$2M+ AUD</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Timeline -->
+        <div class="form-step" data-step="3">
+          <h3>When are you looking to buy?</h3>
+          <div class="button-group">
+            <button class="choice-btn" data-value="0-3 months">0-3 months</button>
+            <button class="choice-btn" data-value="3-6 months">3-6 months</button>
+            <button class="choice-btn" data-value="6-12 months">6-12 months</button>
+            <button class="choice-btn" data-value="12+ months">12+ months</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Contact Info -->
+        <div class="form-step" data-step="4">
+          <h3 id="modal-heading">Get Notified About Bali Off-Market Villas</h3>
+          <form id="contact-form" name="bali-offmarket-alerts">
+            <input type="hidden" id="formId" value="3576aeec-7d25-4a89-b648-689efe7f5ee6">
+            <input type="hidden" id="pageUri" value="/off-market-bali">
+            <input type="hidden" id="leadSource" value="Off-Market Bali Alerts">
+            <input type="hidden" id="location" value="bali">
+            <input type="hidden" id="goal-value" name="goal" value="">
+            <input type="hidden" id="budget-value" name="budget" value="">
+            <input type="hidden" id="timeline-value" name="timeline" value="">
+
+            <div class="form-group">
+              <label for="first-name">First Name *</label>
+              <input type="text" id="first-name" name="firstName" required>
+            </div>
+
+            <div class="form-group">
+              <label for="last-name">Last Name *</label>
+              <input type="text" id="last-name" name="lastName" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="alerts" name="offMarketAlerts" checked>
+              <label for="alerts">I want off-market villa alerts</label>
+            </div>
+
+            <button type="submit" class="button-primary" id="submitButton">Get Bali Villa Alerts →</button>
+            <div id="formMessage" class="form-message hidden"></div>
+          </form>
+        </div>
+
+        <!-- Step 5: Confirmation -->
+        <div class="form-step" data-step="5">
+          <div class="success-message">
+            <h3>Success! You're on the list</h3>
+            <p>We'll send you exclusive Bali off-market villa alerts matching your criteria.</p>
+            <p>You'll be first to know when new villa opportunities become available.</p>
+            <button class="button-secondary modal-close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
   <Footer />
 </Layout>
@@ -693,67 +736,159 @@ import PropertyCard from '../components/PropertyCard.astro';
     font-size: 16px;
   }
 
-  .form-container {
-    max-width: 600px;
+  .cta-box-inline {
+    background: linear-gradient(135deg, var(--primary-green), var(--olive-green));
+    color: var(--white);
+    padding: 50px;
+    border-radius: var(--border-radius-small);
+    text-align: center;
+    max-width: 700px;
     margin: 0 auto;
-    background-color: #f9f9f9;
+  }
+
+  .cta-box-inline h3 {
+    color: var(--white);
+    margin-bottom: 15px;
+    font-size: 28px;
+  }
+
+  .cta-box-inline p {
+    margin-bottom: 25px;
+    font-size: 18px;
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal.active {
+    display: flex;
+  }
+
+  .modal-content {
+    background-color: var(--white);
     padding: 40px;
     border-radius: var(--border-radius-small);
-    box-shadow: var(--box-shadow-subtle);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
   }
 
-  .service-enquiry-form .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-light);
   }
 
-  .service-enquiry-form .form-group {
-    margin-bottom: 20px;
-  }
-
-  .service-enquiry-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
+  .modal-close:hover {
     color: var(--text-primary);
   }
 
-  .service-enquiry-form .required {
-    color: #d32f2f;
+  .form-step {
+    display: none;
   }
 
-  .service-enquiry-form input,
-  .service-enquiry-form select,
-  .service-enquiry-form textarea {
+  .form-step.active {
+    display: block;
+  }
+
+  .form-step h3 {
+    color: var(--primary-green);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .button-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .choice-btn {
+    padding: 20px;
+    border: 2px solid var(--primary-green);
+    background: var(--white);
+    color: var(--primary-green);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .choice-btn:hover {
+    background: var(--primary-green);
+    color: var(--white);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .form-group input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: var(--border-radius-small);
-    font-size: 15px;
-    font-family: var(--font-body);
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 16px;
   }
 
-  .service-enquiry-form textarea {
-    resize: vertical;
-  }
-
-  .service-enquiry-form input:focus,
-  .service-enquiry-form select:focus,
-  .service-enquiry-form textarea:focus {
+  .form-group input:focus {
     outline: none;
     border-color: var(--primary-green);
   }
 
-  .form-actions {
-    margin-top: 30px;
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
   }
 
-  .button-large {
-    width: 100%;
-    padding: 15px 30px;
-    font-size: 16px;
+  .checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .success-message {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .success-message h3 {
+    color: var(--primary-green);
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .success-message p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
   }
 
   .form-message {
@@ -792,76 +927,157 @@ import PropertyCard from '../components/PropertyCard.astro';
       gap: 30px;
     }
 
-    .service-enquiry-form .form-row {
+    .button-group {
       grid-template-columns: 1fr;
     }
 
-    .form-container {
-      padding: 25px;
+    .modal-content {
+      padding: 30px 20px;
+    }
+
+    .cta-box-inline {
+      padding: 30px 20px;
     }
   }
 </style>
 
 <script>
-  const form = document.getElementById('serviceEnquiryForm');
+  // Progressive Profiling Form Logic
+  const modal = document.getElementById('lead-form-modal');
+  const openBtns = document.querySelectorAll('.open-form-btn');
+  const closeBtns = document.querySelectorAll('.modal-close');
+  const choiceBtns = document.querySelectorAll('.choice-btn');
+  const contactForm = document.getElementById('contact-form');
   const submitButton = document.getElementById('submitButton');
-  const formMessage = document.getElementById('formMessage');
-  const botField = document.getElementById('botField');
+  const leadSourceInput = document.getElementById('leadSource');
 
-  form?.addEventListener('submit', async (e) => {
+  let formData = {
+    goal: '',
+    budget: '',
+    timeline: ''
+  };
+
+  // Open modal
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.classList.add('active');
+      showStep(1);
+    });
+  });
+
+  // Close modal
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      resetForm();
+    });
+  });
+
+  // Click outside modal to close
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      resetForm();
+    }
+  });
+
+  // Handle choice button clicks
+  choiceBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const step = btn.closest('.form-step').dataset.step;
+      const value = btn.dataset.value;
+
+      if (step === '1') {
+        formData.goal = value;
+        showStep(2);
+      } else if (step === '2') {
+        formData.budget = value;
+        showStep(3);
+      } else if (step === '3') {
+        formData.timeline = value;
+        populateHiddenFields();
+        showStep(4);
+      }
+    });
+  });
+
+  // Handle form submission
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    if (botField?.value) return;
-
     submitButton.disabled = true;
-    submitButton.textContent = 'Submitting...';
+    submitButton.textContent = 'Sending...';
+    const formMessage = document.getElementById('formMessage');
+    formMessage.classList.add('hidden');
 
-    const formData = new FormData(form);
-    const formId = document.getElementById('formId').value;
-    const pageUri = document.getElementById('pageUri').value;
-    const leadSource = document.getElementById('leadSource').value;
+    const formDataObj = new FormData(contactForm);
+    const fields = {};
 
-    const fields = {
-      firstname: formData.get('firstName'),
-      lastname: formData.get('lastName'),
-      email: formData.get('email'),
-      phone: formData.get('phone'),
-      preferred_location: formData.get('location'),
-      message: formData.get('message') || '',
-      lead_source: leadSource
-    };
+    fields.firstname = formDataObj.get('firstName');
+    fields.lastname = formDataObj.get('lastName');
+    fields.email = formDataObj.get('email');
+    fields.phone = formDataObj.get('phone') || '';
+    fields.wants_agent_call = formDataObj.get('offMarketAlerts') ? 'true' : 'false';
+    fields.preferred_location = 'bali';
+    fields.lead_source = 'Off-Market Bali Alerts';
+    fields.property_goal = formDataObj.get('goal') || '';
+    fields.budget_range = formDataObj.get('budget') || '';
+    fields.timeline = formDataObj.get('timeline') || '';
 
-    const hutk = document.cookie.match(/hubspotutk=([^;]+)/)?.[1] || '';
-    const context = {
-      hutk,
-      pageUri,
-      pageName: document.title
+    const payload = {
+      formId: document.getElementById('formId').value,
+      fields: fields,
+      context: {
+        pageUri: window.location.href,
+        pageName: 'Off-Market Bali',
+        leadSource: 'Off-Market Bali Alerts'
+      }
     };
 
     try {
       const response = await fetch('/api/hubspot-form', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ formId, fields, context })
+        body: JSON.stringify(payload)
       });
 
       const result = await response.json();
 
       if (response.ok && result.success) {
-        formMessage.textContent = '✓ Thank you! We\'ll be in touch within 24 hours to discuss Bali villa opportunities.';
-        formMessage.className = 'form-message success';
-        form.reset();
+        showStep(5);
       } else {
-        throw new Error(result.message || 'Submission failed');
+        formMessage.textContent = 'There was an error. Please try again or email info@edwardsandsmith.com.au';
+        formMessage.className = 'form-message error';
+        formMessage.classList.remove('hidden');
       }
     } catch (error) {
-      formMessage.textContent = 'Sorry, something went wrong. Please email us at info@edwardsandsmith.com.au or call 0413 245 022.';
+      formMessage.textContent = 'There was an error. Please try again or email info@edwardsandsmith.com.au';
       formMessage.className = 'form-message error';
+      formMessage.classList.remove('hidden');
     } finally {
       submitButton.disabled = false;
-      submitButton.textContent = 'Request Free Consultation';
+      submitButton.textContent = 'Get Bali Villa Alerts →';
     }
   });
+
+  function showStep(stepNumber) {
+    document.querySelectorAll('.form-step').forEach(step => {
+      step.classList.remove('active');
+    });
+    document.querySelector(`[data-step="${stepNumber}"]`).classList.add('active');
+  }
+
+  function populateHiddenFields() {
+    document.getElementById('goal-value').value = formData.goal;
+    document.getElementById('budget-value').value = formData.budget;
+    document.getElementById('timeline-value').value = formData.timeline;
+  }
+
+  function resetForm() {
+    formData = { goal: '', budget: '', timeline: '' };
+    contactForm.reset();
+    showStep(1);
+  }
 </script>
 
 <script type="application/ld+json">
