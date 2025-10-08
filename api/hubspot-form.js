@@ -97,19 +97,38 @@ export default async function handler(req, res) {
 
     // WORKAROUND: Also update contact properties directly via Contacts API
     // This ensures purchase_purpose, budget_range, and purchase_timeline are saved
+    // Using "Create or Update" endpoint to handle both new and existing contacts
     if (fields.email) {
       try {
-        const contactUpdatePayload = {
-          properties: {
-            purchase_purpose: fields.purchase_purpose,
-            budget_range: fields.budget_range,
-            purchase_timeline: fields.purchase_timeline
-          }
+        // Build full contact properties object including all fields
+        const contactProperties = {
+          email: fields.email,
+          firstname: fields.firstname,
+          lastname: fields.lastname,
+          phone: fields.phone || '',
+          purchase_purpose: fields.purchase_purpose || '',
+          budget_range: fields.budget_range || '',
+          purchase_timeline: fields.purchase_timeline || '',
+          wants_agent_call: fields.wants_agent_call || '',
+          preferred_location: fields.preferred_location || '',
+          lead_source: fields.lead_source || ''
         };
 
-        console.log('Updating contact properties directly:', contactUpdatePayload);
+        // Remove empty values
+        Object.keys(contactProperties).forEach(key => {
+          if (contactProperties[key] === '') {
+            delete contactProperties[key];
+          }
+        });
 
-        const contactUpdateResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${fields.email}?idProperty=email`, {
+        const contactUpdatePayload = {
+          properties: contactProperties
+        };
+
+        console.log('Creating/updating contact with properties:', contactUpdatePayload);
+
+        // Use "Create or Update by email" endpoint - creates if doesn't exist, updates if exists
+        const contactUpdateResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(fields.email)}?idProperty=email`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -123,7 +142,30 @@ export default async function handler(req, res) {
           console.log('Contact properties updated successfully:', contactUpdateData.id);
         } else {
           const errorData = await contactUpdateResponse.json();
-          console.error('Failed to update contact properties:', errorData);
+          console.error('Failed to update contact properties (will retry after delay):', errorData);
+
+          // If contact not found, wait 2 seconds for HubSpot to create it, then retry
+          if (errorData.status === 'error' && errorData.message === 'resource not found') {
+            console.log('Contact not yet created by form submission, waiting 2 seconds...');
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            const retryResponse = await fetch(`https://api.hubapi.com/crm/v3/objects/contacts/${encodeURIComponent(fields.email)}?idProperty=email`, {
+              method: 'PATCH',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+              },
+              body: JSON.stringify(contactUpdatePayload)
+            });
+
+            if (retryResponse.ok) {
+              const retryData = await retryResponse.json();
+              console.log('Contact properties updated successfully on retry:', retryData.id);
+            } else {
+              const retryError = await retryResponse.json();
+              console.error('Failed to update contact properties on retry:', retryError);
+            }
+          }
         }
       } catch (contactError) {
         console.error('Error updating contact properties:', contactError.message);
