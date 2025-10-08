@@ -104,11 +104,9 @@ import Footer from '../components/Footer.astro';
               <h2>Start Your Property Search</h2>
               <p class="form-intro">Fill out the form below and we'll be in touch within 24 hours.</p>
 
-              <form class="consultation-form" name="consultation" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                <input type="hidden" name="form-name" value="consultation" />
-                <p class="hidden">
-                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                </p>
+              <form class="consultation-form" id="consultation-form" name="consultation">
+                <input type="hidden" id="formId" value="ca10e16f-6931-40a3-96c5-d69087bdd5f1" />
+                <input type="hidden" id="leadSource" value="Consultation Form" />
 
                 <!-- Personal Information -->
                 <div class="form-row">
@@ -248,8 +246,10 @@ import Footer from '../components/Footer.astro';
                 </div>
 
                 <div class="form-actions">
-                  <button type="submit" class="button-primary button-large">Submit Consultation Request</button>
+                  <button type="submit" class="button-primary button-large" id="submitButton">Submit Consultation Request</button>
                 </div>
+
+                <div id="formMessage" class="form-message hidden"></div>
 
                 <p class="form-disclaimer">By submitting this form, you consent to Edwards & Smith contacting you regarding your property requirements. We respect your privacy and will never share your information with third parties.</p>
               </form>
@@ -631,7 +631,106 @@ import Footer from '../components/Footer.astro';
       padding: 25px 20px;
     }
   }
+
+  .form-message {
+    padding: 15px;
+    border-radius: 4px;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+
+  .form-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+
+  .form-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+
+  .form-message.hidden {
+    display: none;
+  }
 </style>
+
+<script is:inline>
+  document.getElementById('consultation-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.log('Form submission started');
+
+    const submitButton = document.getElementById('submitButton');
+    const formMessage = document.getElementById('formMessage');
+    const form = e.target;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting...';
+    formMessage.classList.add('hidden');
+
+    const formData = new FormData(form);
+    const fields = {};
+
+    // Map form fields to HubSpot properties
+    fields.firstname = formData.get('firstName');
+    fields.lastname = formData.get('lastName');
+    fields.email = formData.get('email');
+    fields.phone = formData.get('phone') || '';
+    fields.budget_range = formData.get('budget') || '';
+    fields.preferred_location = formData.get('location') || '';
+    fields.property_type = formData.get('propertyType') || '';
+    fields.purchase_purpose = formData.get('purpose') || '';
+    fields.purchase_timeline = formData.get('timeline') || '';
+    fields.finance_status = formData.get('financeStatus') || '';
+    fields.buyer_situation = formData.get('situation') || '';
+    fields.minimum_bedrooms = formData.get('bedrooms') || '';
+    fields.referral_source = formData.get('referralSource') || '';
+    fields.message = formData.get('additionalInfo') || '';
+    fields.lead_source = 'Consultation Form';
+
+    const payload = {
+      formId: document.getElementById('formId').value,
+      fields: fields,
+      context: {
+        pageUri: window.location.href,
+        pageName: 'Book Free Consultation'
+      }
+    };
+
+    try {
+      console.log('Sending to HubSpot:', payload);
+      const response = await fetch('/api/hubspot-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      console.log('Response status:', response.status);
+      const result = await response.json();
+      console.log('Response data:', result);
+
+      if (response.ok && result.success) {
+        formMessage.textContent = 'Thank you! Your consultation request has been received. We\'ll contact you within 24 hours.';
+        formMessage.className = 'form-message success';
+        formMessage.classList.remove('hidden');
+        form.reset();
+      } else {
+        formMessage.textContent = 'There was an error submitting your request. Please try again or call us at 0413 245 022.';
+        formMessage.className = 'form-message error';
+        formMessage.classList.remove('hidden');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      formMessage.textContent = 'There was an error submitting your request. Please try again or call us at 0413 245 022.';
+      formMessage.className = 'form-message error';
+      formMessage.classList.remove('hidden');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Submit Consultation Request';
+    }
+  });
+</script>
 
 <script type="application/ld+json">
 {
