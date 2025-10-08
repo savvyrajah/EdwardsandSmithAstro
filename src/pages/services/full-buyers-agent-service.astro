@@ -397,7 +397,7 @@ import Footer from '../../components/Footer.astro';
             <input type="hidden" id="leadSource" value="Service Page Enquiry - Full Service">
             <input type="hidden" id="location" value="">
             <input type="hidden" id="goal-value" name="purchase_purpose" value="">
-            <input type="hidden" id="budget-value" name="budget" value="">
+            <input type="hidden" id="budget-value" name="budget_range" value="">
             <input type="hidden" id="timeline-value" name="purchase_timeline" value="">
 
             <div class="form-group">
@@ -1141,7 +1141,7 @@ import Footer from '../../components/Footer.astro';
     fields.preferred_location = '';
     fields.lead_source = document.getElementById('leadSource').value;
     fields.purchase_purpose = formDataObj.get('purchase_purpose') || '';
-    fields.budget_range = formDataObj.get('budget') || '';
+    fields.budget_range = formDataObj.get('budget_range') || '';
     fields.purchase_timeline = formDataObj.get('purchase_timeline') || '';
 
     const payload = {
