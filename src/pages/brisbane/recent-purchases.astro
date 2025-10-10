@@ -139,6 +139,7 @@ function locationToSlug(location: string): string {
         <h2>Looking to Buy in Brisbane?</h2>
         <p>Let our local experts help you secure your dream Brisbane property</p>
         <a href="/book-free-consultation" class="button-primary">Book Free Consultation</a>
+        <p class="cta-link">Learn more about our <a href="/brisbane-buyers-agent">Brisbane buyers agent services</a></p>
       </div>
     </section>
   </main>
@@ -324,6 +325,20 @@ function locationToSlug(location: string): string {
   .cta-section p {
     margin-bottom: 25px;
     font-size: var(--body-large);
+  }
+
+  .cta-link {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .cta-link a {
+    color: var(--white);
+    text-decoration: underline;
+  }
+
+  .cta-link a:hover {
+    opacity: 0.9;
   }
 
   @media (max-width: 1024px) {
