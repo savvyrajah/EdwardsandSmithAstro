@@ -4,11 +4,11 @@ Manual QA checklist for all website pages. Check off each page as you review it.
 
 ## Main Pages
 - [ ] **Homepage** - `/` (index.astro)
-- [ ] **About** - `/about`
-- [ ] **Team** - `/team`
+- [x] **About** - `/about`
+- [x] **Team** - `/team`
 - [ ] **Book Free Consultation** - `/book-free-consultation`
-- [ ] **Recent Purchases** - `/recent-purchases`
-- [ ] **404 Error Page** - `/404`
+- [x] **Recent Purchases** - `/recent-purchases`
+- [x ] **404 Error Page** - `/404`
 
 ## Service Pages
 - [ ] **Services Hub** - `/services`

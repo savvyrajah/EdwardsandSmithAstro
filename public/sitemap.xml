@@ -51,6 +51,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.edwardsandsmith.com.au/gold-coast-buyers-guide</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.edwardsandsmith.com.au/bali-buyers-guide</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
   <!-- Service Pages -->
   <url>
@@ -279,6 +291,26 @@
   </url>
   <url>
     <loc>https://www.edwardsandsmith.com.au/recent-purchases/gold-coast/robina-4226</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Bali Property Details -->
+  <url>
+    <loc>https://www.edwardsandsmith.com.au/recent-purchases/bali/villa-patrice-ungasan-80362</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.edwardsandsmith.com.au/recent-purchases/bali/villa-une-escale-ungasan-80362</loc>
+    <lastmod>2025-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.edwardsandsmith.com.au/recent-purchases/bali/villa-pulang-pererenan-80351</loc>
     <lastmod>2025-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -47,17 +47,7 @@ This plan outlines the complete migration of edwardsandsmith.com.au from WordPre
 - Creates urgency and intrigue while protecting seller privacy
 
 ### 1.0 Repository Cleanup
-**Objective:** Clean up GitHub repository and remove unused files
 
-**Status:** ✅ Ready to execute
-
-**Actions:**
-- Audit existing WordPress files and dependencies
-- Remove unused themes, plugins, and assets
-- Archive old code that won't be migrated
-- Set up clean directory structure for Astro project
-- Document what's being kept vs. removed
-- Keep only essential files for migration reference
 
 ### 1.1 Astro Project Architecture
 **Objective:** Set up a high-performance Astro project with optimal configuration
