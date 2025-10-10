@@ -94,13 +94,18 @@
 - Added: Gold Coast Buyers Agent (top of list)
 - Added: Brisbane Buyers Agent (second in list)
 
-### 3. Internal Links Added
+### 3. Internal Links Added ✅
 **Pages with new contextual links:**
-- `/services.astro` - Links to both landing pages
-- `/gold-coast/recent-purchases.astro` - Links to Gold Coast landing page
-- `/brisbane/recent-purchases.astro` - Links to Brisbane landing page
-- `/gold-coast-buyers-guide.astro` - Links to Gold Coast landing page
-- `/brisbane-buyers-guide.astro` - Links to Brisbane landing page
+- `/services.astro` - Links to both landing pages (in Why Choose Us section)
+- `/gold-coast/recent-purchases.astro` - Links to Gold Coast landing page (CTA section)
+- `/brisbane/recent-purchases.astro` - Links to Brisbane landing page (CTA section)
+- `/gold-coast-buyers-guide.astro` - Links to Gold Coast landing page (final CTA)
+- `/brisbane-buyers-guide.astro` - Links to Brisbane landing page (final CTA)
+
+**Total Internal Links:**
+- Gold Coast landing page: 3 contextual links
+- Brisbane landing page: 3 contextual links
+- All use descriptive anchor text with target keywords
 
 ---
 
@@ -239,8 +244,9 @@ src/pages/book-free-consultation.astro (NO CHANGES)
 ## Implementation Date
 
 **Executed:** October 10, 2025
-**Committed:** [Will be filled after commit]
-**Deployed:** [Will be filled after deployment]
+**Landing Pages Committed:** a0b0dcc (Oct 10, 2025)
+**Internal Links Committed:** 28ec4c4 (Oct 10, 2025)
+**Deployed:** [Pending user approval to push]
 
 ---
 
