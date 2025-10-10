@@ -21,8 +21,8 @@ import Footer from '../components/Footer.astro';
             <div class="badge-label">Properties Purchased 2024</div>
           </div>
           <div class="badge">
-            <div class="badge-number">200+</div>
-            <div class="badge-label">Buyers Helped</div>
+            <div class="badge-number">75+</div>
+            <div class="badge-label">Clients</div>
           </div>
           <div class="badge">
             <div class="badge-number">★★★★★</div>
@@ -54,7 +54,7 @@ import Footer from '../components/Footer.astro';
       <div class="container">
         <h2>What is a Gold Coast Buyers Agent?</h2>
         <p class="answer-text">
-          A Gold Coast buyers agent is a licensed professional who represents property buyers exclusively in the Gold Coast region. At Edwards & Smith, our buyers agents have secured over $75M in Gold Coast properties for 200+ clients, saving them an average of $65,000 through expert negotiation and access to off-market opportunities in sought-after suburbs like Burleigh Heads, Palm Beach, Mermaid Waters, and Broadbeach.
+          A Gold Coast buyers agent is a licensed professional who represents property buyers exclusively in the Gold Coast region. At Edwards & Smith, our buyers agents have secured over $75M in Gold Coast properties for 75+ clients, saving them an average of $65,000 through expert negotiation and access to off-market opportunities in sought-after suburbs from Currumbin to Broadbeach.
         </p>
         <p class="answer-text">
           Founded by former AFL players Jake Edwards (Carlton) and Ely Smith (Brisbane Lions), we bring the same dedication and strategic thinking from the field to your property search. Our transparent 2-3% fee structure and deep Gold Coast market knowledge ensure you secure the right property at the best price, typically within 4 weeks.
@@ -68,20 +68,46 @@ import Footer from '../components/Footer.astro';
         <h2>Why Choose Edwards & Smith for Gold Coast?</h2>
         <div class="benefits-grid">
           <div class="benefit-card">
-            <h3>🏟️ Founded by Ex-AFL Players</h3>
+            <div class="icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Founded by Ex-AFL Players</h3>
             <p>Jake Edwards (Carlton) and Ely Smith (Brisbane Lions) bring professional discipline and strategic thinking to your property search.</p>
           </div>
           <div class="benefit-card">
-            <h3>🔑 Access to Off-Market Properties</h3>
+            <div class="icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3>Access to Off-Market Properties</h3>
             <p>We secure properties before they hit the market through our extensive Gold Coast agent network and industry relationships.</p>
           </div>
           <div class="benefit-card">
-            <h3>💰 Transparent 2-3% Fee</h3>
+            <div class="icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3>Transparent 2-3% Fee</h3>
             <p>No hidden costs. Our fee only applies when you successfully purchase, and we've saved clients an average of $65,000.</p>
           </div>
           <div class="benefit-card">
-            <h3>📍 Deep Gold Coast Knowledge</h3>
-            <p>From Burleigh to Broadbeach, we know every suburb's market trends, school zones, and investment potential.</p>
+            <div class="icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Deep Gold Coast Knowledge</h3>
+            <p>From Currumbin to Broadbeach, we know every suburb's market trends, school zones, and investment potential.</p>
           </div>
         </div>
       </div>
@@ -136,7 +162,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
           <div class="property-card">
-            <img src="/assets/images/palmbeach2.jpg" alt="Palm Beach Property" loading="lazy" />
+            <img src="/assets/images/palm-beach-4221.jpg" alt="Palm Beach Property" loading="lazy" />
             <div class="property-info">
               <h3>Palm Beach, 4221</h3>
               <p class="result">✓ Secured below market value</p>
@@ -534,6 +560,19 @@ import Footer from '../components/Footer.astro';
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+
+  .benefit-card .icon {
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .benefit-card .icon svg {
+    width: 48px;
+    height: 48px;
   }
 
   .benefit-card h3 {
