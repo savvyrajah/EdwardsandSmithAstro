@@ -23,6 +23,9 @@ const { title, description = "Edwards & Smith Buyers Agents - Your trusted advis
     <link rel="dns-prefetch" href="https://js-ap1.hscollectedforms.net">
     <link rel="dns-prefetch" href="https://js-ap1.hs-analytics.net">
 
+    <!-- Preload critical resources for better LCP -->
+    <link rel="preload" href="/assets/images/hero-poster.jpg" as="image" fetchpriority="high">
+
     <link rel="icon" href="/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" href="/favicon.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -31,10 +34,6 @@ const { title, description = "Edwards & Smith Buyers Agents - Your trusted advis
     <!-- Google Fonts with optimized loading -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Belleza&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Belleza&display=swap"></noscript>
-
-    <!-- Start of HubSpot Embed Code -->
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js-ap1.hs-scripts.com/442333239.js"></script>
-    <!-- End of HubSpot Embed Code -->
 
     <!-- LocalBusiness Schema Markup for SEO/AEO -->
     <script type="application/ld+json">
@@ -109,13 +108,39 @@ const { title, description = "Edwards & Smith Buyers Agents - Your trusted advis
     <slot />
 
     <!-- Analytics scripts loaded after page content (non-blocking) -->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0W30ZS0JD1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0W30ZS0JD1');
+    <!-- Google Analytics - Delayed load for better performance -->
+    <script is:inline>
+      // Delay Google Analytics until page is fully loaded OR user interacts
+      function loadGoogleAnalytics() {
+        // Load gtag.js script
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0W30ZS0JD1';
+        document.head.appendChild(script);
+
+        // Initialize dataLayer
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0W30ZS0JD1');
+      }
+
+      // Load Google Analytics after page interaction OR after 2 seconds
+      var gaLoaded = false;
+      function initGA() {
+        if (!gaLoaded) {
+          gaLoaded = true;
+          loadGoogleAnalytics();
+        }
+      }
+
+      // Load on user interaction
+      ['mousemove', 'scroll', 'keydown', 'click', 'touchstart'].forEach(function(event) {
+        window.addEventListener(event, initGA, { once: true, passive: true });
+      });
+
+      // Or load after 2 seconds if no interaction
+      setTimeout(initGA, 2000);
     </script>
 
     <!-- PostHog Analytics - Delayed load for better performance -->

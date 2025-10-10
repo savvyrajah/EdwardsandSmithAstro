@@ -3,7 +3,7 @@
 
 <section class="hero">
   <div class="hero-video-container">
-    <video class="hero-video" autoplay muted playsinline loop preload="auto">
+    <video class="hero-video" autoplay muted playsinline loop preload="none" poster="/assets/images/hero-poster.jpg">
       <source src="/assets/videos/website-banner.mov" type="video/mp4">
     </video>
   </div>
@@ -13,6 +13,20 @@
     <a href="/book-free-consultation" class="button-primary">BOOK A FREE CONSULTATION CALL</a>
   </div>
 </section>
+
+<script>
+  // Lazy load video after page load to improve LCP
+  window.addEventListener('load', () => {
+    const video = document.querySelector('.hero-video') as HTMLVideoElement;
+    if (video && video.preload === 'none') {
+      // Start loading video after page is loaded
+      setTimeout(() => {
+        video.preload = 'auto';
+        video.load();
+      }, 1000);
+    }
+  });
+</script>
 
 <style>
   .hero {
