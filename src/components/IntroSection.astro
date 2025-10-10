@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import teamImage from '@/assets/images/K3A0522-1-scaled-e1752455696919.jpg';
 ---
 
 <section class="intro section">
   <div class="container-wide">
     <div class="intro-grid">
       <div class="intro-image">
-        <img src="/assets/images/K3A0522-1-scaled-e1752455696919.jpg" alt="Edwards & Smith Team" loading="lazy" />
+        <Image src={teamImage} alt="Edwards & Smith Team" loading="lazy" width={744} height={744} />
       </div>
       <div class="intro-content">
         <h2>YOUR GO TO BUYERS AGENTS IN GOLD COAST, BRISBANE & BALI</h2>

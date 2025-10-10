@@ -1,11 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import logoImage from '@/assets/images/Cream-Green-Minimalist-Fashion-Collection-Banner-e1736837350367.png';
 ---
 
 <header class="header">
   <div class="container-wide header-content">
     <div class="logo">
       <a href="/">
-        <img src="/assets/images/Cream-Green-Minimalist-Fashion-Collection-Banner-e1736837350367.png" alt="Edwards & Smith Buyers Agents" />
+        <Image src={logoImage} alt="Edwards & Smith Buyers Agents" width={292} height={55} loading="eager" />
       </a>
     </div>
     <nav class="nav">
